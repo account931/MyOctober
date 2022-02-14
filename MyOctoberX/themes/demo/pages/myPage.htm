@@ -1,0 +1,65 @@
+title = "MyPage"
+url = "/myPage"
+layout = "default"
+is_hidden = 0
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = 404
+postPage = 404
+==
+<?php
+$this['result'] = "yes";
+
+?>
+
+ <div class="col-sm-12 col-xs-12 alert alert-success">
+    <div class="container">
+        <h3>Blog component </h3> 
+		<ul>
+        <li>First load plugin "Blog" via -> Settings-> Updates & Plugins -> Install Plugins</li>
+        <li>Now can create, edit blogs via "Blog" in top menu</li>
+        <li>To add Blog to your page, go -> CMS -> Pages -> select your page -> click Components & select Blog-> select and drag item to the left markdown</li>
+        <li>In order to modify< for example, Blog appearance (add/change BS classes, add your text), go to ->  \localhost\myoctober\MyOctoberX\plugins\rainlab\blog\components\posts</li>
+		<li>The same way can add plugins "User", "Forum", etc</li>
+
+		</ul>
+	</div>
+ </div>
+
+<!-- inserted via /CMS -> Components -> Blog --> 
+{% component 'blogPosts' %}
+
+
+</br>
+<div class="jumbotron">
+    <div class="container">
+        /content/Welcome was removed !!!! <?=$this['result']; ?>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="page-header">
+        <h2>My page <small> !</small></h2>
+    </div>
+    <p>
+        My Page </br>
+		<i class="fa fa-automobile" style="font-size:36px;"></i>
+    </p>
+
+    
+	{% if result %}
+    <span class="lead" style="color:red;">
+        The result is <span class="label label-success">{{ result }}</span>
+    </span>
+    {% else %}
+    <span class="text-muted">
+        No result
+    </span>
+   {% endif %}
+
+</div>

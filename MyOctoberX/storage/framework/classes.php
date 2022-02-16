@@ -33,4 +33,7 @@
   'RainLab\\User\\Classes\\AuthManager' => 'plugins\\rainlab\\user\\classes\\AuthManager.php',
   'RainLab\\User\\Models\\Settings' => 'plugins\\rainlab\\user\\models\\Settings.php',
   'rainlab\\user\\Controllers\\users' => 'plugins\\rainlab\\user\\controllers\\users.php',
+  'backend\\Controllers\\media' => 'modules\\backend\\controllers\\media.php',
+  'RainLab\\User\\Models\\Throttle' => 'plugins\\rainlab\\user\\models\\Throttle.php',
+  'RainLab\\User\\Models\\MailBlocker' => 'plugins\\rainlab\\user\\models\\MailBlocker.php',
 );

@@ -1,0 +1,25 @@
+title = "onePost"
+url = "/onePost/:slug"
+layout = "default"
+is_hidden = 0
+
+[blogPost]
+slug = "{{ :slug }}"
+categoryPage = "onePost"
+==
+<div class="col-sm-12 col-xs-12 alert alert-success">
+    <div class="container">
+        <h3>One Blog Post</h3> 
+	</div>
+ </div>
+ 
+ <!-- View one blog, inserted via /CMS -> Components -> Blog --> 
+<div class="col-sm-12 col-xs-12 posts-one">
+     {% component 'blogPost' %}
+</div>
+ 
+ 
+
+ <div class="col-sm-12 col-xs-12 alert alert-danger">
+      <a href="{{ 'myPage'|page }}"> << Go back to Post List</a> 
+ </div>

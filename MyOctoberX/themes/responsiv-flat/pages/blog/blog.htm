@@ -1,12 +1,30 @@
 title = "Blog"
 url = "/blog"
 layout = "default"
-==
+is_hidden = 0
 
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog/category"
+postPage = "blog/post"
+==
 <section id="layout-title">
     <div class="container">
         <h3>Blog</h3>
     </div>
+	
+	
+	
+	<!-- View all blogs, inserted via /CMS -> Components -> Blog --> 
+    <div class="col-sm-12 col-xs-12 posts-all">
+	    {% component 'blogPosts' %}
+	</div>
+	
+	
+	
 </section>
 
 <div class="container">

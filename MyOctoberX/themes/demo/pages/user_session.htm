@@ -1,0 +1,28 @@
+title = "User session"
+url = "/user-session"
+layout = "default"
+is_hidden = 0
+
+[session]
+security = "all"
+==
+<div class="row">
+
+<div class="col-sm-12 col-xs-12">
+    <h3>User session</h3>
+</div>
+
+<div class="col-sm-12 col-xs-12">
+    {% component 'session' %}
+</div>
+
+<div class="col-sm-12 col-xs-12">
+<ul class="nav navbar-nav">
+    <li class="{% if this.page.id == 'account' %}active{% endif %}"><a href="{{ 'user-management' }}"><button class="btn">Account </button></a></li>
+    {% if user %}
+        <li><a href="#" data-request="onLogout"><button class="btn">Logout</button></a></li>
+    {% endif %}
+</ul>
+<d/div>
+
+</div>

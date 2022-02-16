@@ -14,7 +14,15 @@
     </div>
 
 {% else %}
-
+    </br>
+    <div class="col-sm-12 col-xs-12 alert alert-info"> 
+	    <p> You are now logged <p/>
+		<p> <i class="fa fa-address-card-o" style="font-size:24px"></i> &nbsp; <b> {{ user.name }} </b> <p/> 
+       	<p>	<i class="fa fa-envelope-o" style="font-size:24px"></i> &nbsp; <b>{{ user.email }} </b> <p/> 
+		<hr>
+		<p> <a href="#" data-request="onLogout"><button class="btn btn-success"> Logout</button> </a> </p>
+	</div>
+	
     {% partial __SELF__ ~ '::activation_check' %}
 
     {% partial __SELF__ ~ '::update' %}

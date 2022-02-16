@@ -48,20 +48,23 @@ class __TwigTemplate_9a9ee26744dd5b4d3583a963458691ffdd5d63b79bcedab85f6b99bbace
         <li>First load plugin \"Blog\" via -> Settings-> Updates & Plugins -> Install Plugins</li>
         <li>Now can create, edit blogs via \"Blog\" in top menu</li>
         <li>To add Blog to your page, go -> CMS -> Pages -> select your page -> click Components & select Blog-> select and drag item to the left markdown</li>
-        <li>The same way can add plugins \"User\", \"Forum\", etc</li>
+        <li>In order to modify< for example, Blog appearance (add/change BS classes, add your text), go to ->  \\localhost\\myoctober\\MyOctoberX\\plugins\\rainlab\\blog\\components\\posts</li>
+\t\t<li>The same way can add plugins \"User\", \"Forum\", etc</li>
 
 \t\t</ul>
 \t</div>
  </div>
 
-<!-- inserted via /CMS -> Components -> Blog --> 
-";
-        // line 20
+<!-- View all blogs, inserted via /CMS -> Components -> Blog --> 
+<div class=\"col-sm-12 col-xs-12 posts-all\">
+    ";
+        // line 22
         $context['__cms_component_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->componentFunction("blogPosts"        , $context['__cms_component_params']        );
         unset($context['__cms_component_params']);
-        // line 21
-        echo "
+        // line 23
+        echo "</div>
+
 
 </br>
 <div class=\"jumbotron\">
@@ -82,24 +85,24 @@ class __TwigTemplate_9a9ee26744dd5b4d3583a963458691ffdd5d63b79bcedab85f6b99bbace
 
     
 \t";
-        // line 41
+        // line 44
         if (($context["result"] ?? null)) {
-            // line 42
+            // line 45
             echo "    <span class=\"lead\" style=\"color:red;\">
         The result is <span class=\"label label-success\">";
-            // line 43
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(($context["result"] ?? null), 43, $this->source), "html", null, true);
+            // line 46
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(($context["result"] ?? null), 46, $this->source), "html", null, true);
             echo "</span>
     </span>
     ";
         } else {
-            // line 46
+            // line 49
             echo "    <span class=\"text-muted\">
         No result
     </span>
    ";
         }
-        // line 50
+        // line 53
         echo "
 </div>";
     }
@@ -116,7 +119,7 @@ class __TwigTemplate_9a9ee26744dd5b4d3583a963458691ffdd5d63b79bcedab85f6b99bbace
 
     public function getDebugInfo()
     {
-        return array (  103 => 50,  97 => 46,  91 => 43,  88 => 42,  86 => 41,  64 => 21,  60 => 20,  39 => 1,);
+        return array (  106 => 53,  100 => 49,  94 => 46,  91 => 45,  89 => 44,  66 => 23,  62 => 22,  39 => 1,);
     }
 
     public function getSourceContext()
@@ -133,14 +136,17 @@ class __TwigTemplate_9a9ee26744dd5b4d3583a963458691ffdd5d63b79bcedab85f6b99bbace
         <li>First load plugin \"Blog\" via -> Settings-> Updates & Plugins -> Install Plugins</li>
         <li>Now can create, edit blogs via \"Blog\" in top menu</li>
         <li>To add Blog to your page, go -> CMS -> Pages -> select your page -> click Components & select Blog-> select and drag item to the left markdown</li>
-        <li>The same way can add plugins \"User\", \"Forum\", etc</li>
+        <li>In order to modify< for example, Blog appearance (add/change BS classes, add your text), go to ->  \\localhost\\myoctober\\MyOctoberX\\plugins\\rainlab\\blog\\components\\posts</li>
+\t\t<li>The same way can add plugins \"User\", \"Forum\", etc</li>
 
 \t\t</ul>
 \t</div>
  </div>
 
-<!-- inserted via /CMS -> Components -> Blog --> 
-{% component 'blogPosts' %}
+<!-- View all blogs, inserted via /CMS -> Components -> Blog --> 
+<div class=\"col-sm-12 col-xs-12 posts-all\">
+    {% component 'blogPosts' %}
+</div>
 
 
 </br>
@@ -176,8 +182,8 @@ class __TwigTemplate_9a9ee26744dd5b4d3583a963458691ffdd5d63b79bcedab85f6b99bbace
     
     public function checkSecurity()
     {
-        static $tags = array("component" => 20, "if" => 41);
-        static $filters = array("escape" => 43);
+        static $tags = array("component" => 22, "if" => 44);
+        static $filters = array("escape" => 46);
         static $functions = array();
 
         try {

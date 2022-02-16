@@ -1,3 +1,10 @@
+.posts-all img{width:7%;} /* img width when in all post list */
+.posts-one img{width:31%;} /* img width when in one post display */
+
+.padding-x{padding: 2em 1em;}
+
+.classX{}
+
 @font-face {
   font-family: 'lato';
   src: url('../fonts/lato-black-webfont.eot');

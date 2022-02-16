@@ -61,3 +61,6 @@
 1.5.0: Implement support for October CMS v2.0
 1.5.1: Fixes interaction with Translate plugin
 1.5.2: Minor styling improvements
+1.8.1: 
+  - Add column myCustomX to post
+  - add_column_to_postX.php

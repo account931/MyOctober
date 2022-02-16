@@ -1,3 +1,16 @@
+## October CMS
+
+![Screenshot](Screenshots/1.png)
+![Screenshot](Screenshots/2.png)
+![Screenshot](Screenshots/3.png)
+![Screenshot](Screenshots/4.png)
+![Screenshot](Screenshots/5.png)
+![Screenshot](Screenshots/6.png)
+![Screenshot](Screenshots/7.png)
+![Screenshot](Screenshots/8.png)
+![Screenshot](Screenshots/9.png)
+![Screenshot](Screenshots/10.png)
+
 # Installation Wizard for October CMS v1.0
 
 The wizard installation will install the free version of October CMS (v1.0) for testing, trial and teaching purposes.
@@ -10,6 +23,10 @@ The wizard installation will install the free version of October CMS (v1.0) for 
 1. Follow the installation instructions.
 
 > **Note**: This version is no longer actively maintained and will only receive security updates. See [instructions below for installing v2.0 of October CMS](#installing-october-cms-v20).
+
+
+
+
 
 ### Minimum System Requirements
 

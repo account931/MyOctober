@@ -9,7 +9,7 @@ postsPerPage = 10
 noPostsMessage = "No posts found"
 sortOrder = "published_at desc"
 categoryPage = 404
-postPage = 404
+postPage = "onePost"
 ==
 <?php
 $this['result'] = "yes";
@@ -30,8 +30,10 @@ $this['result'] = "yes";
 	</div>
  </div>
 
-<!-- inserted via /CMS -> Components -> Blog --> 
-{% component 'blogPosts' %}
+<!-- View all blogs, inserted via /CMS -> Components -> Blog --> 
+<div class="col-sm-12 col-xs-12 posts-all">
+    {% component 'blogPosts' %}
+</div>
 
 
 </br>

@@ -1,6 +1,9 @@
 {% set post = __SELF__.post %}
+<!-- View one post -->
+<div class="col-sm-12 col-xs-12 alert alert-success"> View one post </div>
 
-<div class="content">{{ post.content_html|raw }}</div>
+<div class="content">{{ post.content_html|raw }}</div> <!--Post text -->
+
 
 {% if post.featured_images.count %}
     <div class="featured-images text-center">
@@ -16,6 +19,8 @@
     </div>
 {% endif %}
 
+
+<!-- Info about when was posted -->
 <p class="info">
     Posted
     {% if post.categories.count %} in
@@ -25,3 +30,9 @@
     {% endif %}
     on {{ post.published_at|date('M d, Y') }}
 </p>
+
+
+<!-- User, added by me, belongsTo relation, defined in \myoctober\MyOctoberX\plugins\rainlab\blog\models\Post.php -->
+<div class="content">Published by user: {{ post.user }}</div>
+<div class="content">Email: {{ post.user.email }}</div>
+<div class="content">myCustomX: {{ post.myCustomX }}</div>

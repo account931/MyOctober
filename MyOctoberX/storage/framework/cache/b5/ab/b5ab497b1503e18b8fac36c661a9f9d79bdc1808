@@ -1,0 +1,47 @@
+1645007040a:1:{s:16:"user_session.htm";a:10:{s:8:"fileName";s:16:"user_session.htm";s:7:"content";s:654:"title = "User session"
+url = "/user-session"
+layout = "default"
+is_hidden = 0
+
+[session]
+security = "all"
+==
+<div class="row">
+
+<div class="col-sm-12 col-xs-12">
+    <h3>User session</h3>
+</div>
+
+<div class="col-sm-12 col-xs-12">
+    {% component 'session' %}
+</div>
+
+<div class="col-sm-12 col-xs-12">
+<ul class="nav navbar-nav">
+    <li class="{% if this.page.id == 'account' %}active{% endif %}"><a href="{{ 'user-management' }}"><button class="btn">Account </button></a></li>
+    {% if user %}
+        <li><a href="#" data-request="onLogout"><button class="btn">Logout</button></a></li>
+    {% endif %}
+</ul>
+<d/div>
+
+</div>";s:5:"mtime";i:1645005782;s:6:"markup";s:537:"<div class="row">
+
+<div class="col-sm-12 col-xs-12">
+    <h3>User session</h3>
+</div>
+
+<div class="col-sm-12 col-xs-12">
+    {% component 'session' %}
+</div>
+
+<div class="col-sm-12 col-xs-12">
+<ul class="nav navbar-nav">
+    <li class="{% if this.page.id == 'account' %}active{% endif %}"><a href="{{ 'user-management' }}"><button class="btn">Account </button></a></li>
+    {% if user %}
+        <li><a href="#" data-request="onLogout"><button class="btn">Logout</button></a></li>
+    {% endif %}
+</ul>
+<d/div>
+
+</div>";s:4:"code";N;s:5:"title";s:12:"User session";s:3:"url";s:13:"/user-session";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:7:"session";a:1:{s:8:"security";s:3:"all";}}}

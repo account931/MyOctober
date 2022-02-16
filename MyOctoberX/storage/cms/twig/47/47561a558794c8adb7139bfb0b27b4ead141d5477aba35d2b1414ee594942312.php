@@ -65,27 +65,41 @@ class __TwigTemplate_eb4695f6a36726a9d020a191d099c33da50aece5728e1f362413ad5da1a
 ";
         } else {
             // line 17
-            echo "
+            echo "    </br>
+    <div class=\"col-sm-12 col-xs-12 alert alert-info\"> 
+\t    <p> You are now logged <p/>
+\t\t<p> <i class=\"fa fa-address-card-o\" style=\"font-size:24px\"></i> &nbsp; <b> ";
+            // line 20
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "name", [], "any", false, false, true, 20), 20, $this->source), "html", null, true);
+            echo " </b> <p/> 
+       \t<p>\t<i class=\"fa fa-envelope-o\" style=\"font-size:24px\"></i> &nbsp; <b>";
+            // line 21
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "email", [], "any", false, false, true, 21), 21, $this->source), "html", null, true);
+            echo " </b> <p/> 
+\t\t<hr>
+\t\t<p> <a href=\"#\" data-request=\"onLogout\"><button class=\"btn btn-success\"> Logout</button> </a> </p>
+\t</div>
+\t
     ";
-            // line 18
+            // line 26
             $context['__cms_partial_params'] = [];
             echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction((($context["__SELF__"] ?? null) . "::activation_check")            , $context['__cms_partial_params']            , true            );
             unset($context['__cms_partial_params']);
-            // line 19
+            // line 27
             echo "
     ";
-            // line 20
+            // line 28
             $context['__cms_partial_params'] = [];
             echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction((($context["__SELF__"] ?? null) . "::update")            , $context['__cms_partial_params']            , true            );
             unset($context['__cms_partial_params']);
-            // line 21
+            // line 29
             echo "
     ";
-            // line 22
+            // line 30
             $context['__cms_partial_params'] = [];
             echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction((($context["__SELF__"] ?? null) . "::deactivate_link")            , $context['__cms_partial_params']            , true            );
             unset($context['__cms_partial_params']);
-            // line 23
+            // line 31
             echo "
 ";
         }
@@ -103,7 +117,7 @@ class __TwigTemplate_eb4695f6a36726a9d020a191d099c33da50aece5728e1f362413ad5da1a
 
     public function getDebugInfo()
     {
-        return array (  89 => 23,  85 => 22,  82 => 21,  78 => 20,  75 => 19,  71 => 18,  68 => 17,  61 => 12,  57 => 11,  52 => 8,  48 => 7,  41 => 2,  39 => 1,);
+        return array (  103 => 31,  99 => 30,  96 => 29,  92 => 28,  89 => 27,  85 => 26,  77 => 21,  73 => 20,  68 => 17,  61 => 12,  57 => 11,  52 => 8,  48 => 7,  41 => 2,  39 => 1,);
     }
 
     public function getSourceContext()
@@ -124,7 +138,15 @@ class __TwigTemplate_eb4695f6a36726a9d020a191d099c33da50aece5728e1f362413ad5da1a
     </div>
 
 {% else %}
-
+    </br>
+    <div class=\"col-sm-12 col-xs-12 alert alert-info\"> 
+\t    <p> You are now logged <p/>
+\t\t<p> <i class=\"fa fa-address-card-o\" style=\"font-size:24px\"></i> &nbsp; <b> {{ user.name }} </b> <p/> 
+       \t<p>\t<i class=\"fa fa-envelope-o\" style=\"font-size:24px\"></i> &nbsp; <b>{{ user.email }} </b> <p/> 
+\t\t<hr>
+\t\t<p> <a href=\"#\" data-request=\"onLogout\"><button class=\"btn btn-success\"> Logout</button> </a> </p>
+\t</div>
+\t
     {% partial __SELF__ ~ '::activation_check' %}
 
     {% partial __SELF__ ~ '::update' %}
@@ -138,13 +160,13 @@ class __TwigTemplate_eb4695f6a36726a9d020a191d099c33da50aece5728e1f362413ad5da1a
     public function checkSecurity()
     {
         static $tags = array("if" => 1, "partial" => 7);
-        static $filters = array();
+        static $filters = array("escape" => 20);
         static $functions = array();
 
         try {
             $this->sandbox->checkSecurity(
                 ['if', 'partial'],
-                [],
+                ['escape'],
                 []
             );
         } catch (SecurityError $e) {

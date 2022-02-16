@@ -168,5 +168,64 @@ class Plugin extends PluginBase
                 return Post::resolveMenuItem($item, $url, $theme);
             }
         });
+		
+		
+	    //---------
+		// Слушаем событие экстенда полей формы
+		/*
+        Event::listen('backend.form.extendFields', function($widget) {
+
+        // Проверяем, что контроллер именно тот, который нам нужен
+        if ( ! $widget->getController() instanceof \RainLab\Blog\Controllers\Posts ) {
+            return;
+        }
+
+        // Проверяем, что модель именно та, которая нам нужна
+        if ( ! $widget->model instanceof \RainLab\Blog\Models\Post ) {
+            return;
+        }
+
+        // Добавляем поле
+        $widget->addFields([
+            'test' => [
+                'label' => 'test',
+                'type'  => 'text',
+            ]
+        ]);
+
+        // Удалить поле
+        //$widget->removeField('surname');
+    });
+	*/
+		//
+		
+		
+		
+		\Event::listen('backend.form.extendFields', function($widget) {
+    if (!$widget->getController() instanceof Posts || $widget->isNested || $widget->alias != 'form') {
+        return;
+    }
+
+    if (!$widget->model instanceof Post) {
+        return;
+    }
+
+    // Добавляем необходимые колонки
+    $widget->addSecondaryTabFields([
+        'myCustomX' => [
+            'label' => 'Избранное',
+            'type' => 'switch',
+            'span' => 'auto'
+        ],
+        'tags' => [
+            'label' => 'Теги',
+            'type' => 'taglist',
+            'mode' => 'relation',
+            'span' => 'auto'
+        ]
+    ]);
+});
+
+
     }
 }

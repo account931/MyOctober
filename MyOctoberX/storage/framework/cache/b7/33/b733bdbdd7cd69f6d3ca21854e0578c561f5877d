@@ -1,4 +1,4 @@
-1644832549a:1:{s:15:"site/header.htm";a:5:{s:8:"fileName";s:15:"site/header.htm";s:7:"content";s:1399:"<!-- Nav -->
+1645007577a:1:{s:15:"site/header.htm";a:5:{s:8:"fileName";s:15:"site/header.htm";s:7:"content";s:1864:"<!-- Nav -->
 <nav id="layout-nav" class="navbar navbar-inverse navbar-fixed-top navbar-autohide" role="navigation">
     <div class="container">
         <div class="navbar-header">
@@ -13,17 +13,21 @@
         <div class="collapse navbar-collapse navbar-main-collapse">
             <ul class="nav navbar-nav">
                 <li class="separator hidden-xs"></li>
-                <li class="{% if this.page.id == 'home' %}active{% endif %}">   <a href="{{ 'home'|page }}">Basic concepts</a></li>
-                <li class="{% if this.page.id == 'ajax' %}active{% endif %}">   <a href="{{ 'ajax'|page }}">AJAX framework</a></li>
-                <li class="{% if this.page.id == 'plugins' %}active{% endif %}"><a href="{{ 'plugins'|page }}">Plugin components</a></li>
-				<li class="{% if this.page.id == 'myPage' %}active{% endif %}"> <a href="{{ 'myPage'|page }}">myPage</a></li>
-				<li> <a href="{{ 'backend' }}">Admin</a></li>
+                <li class="{% if this.page.id == 'home' %}active{% endif %}">           <a href="{{ 'home'|page }}">            Basic concepts    </a></li>
+                <li class="{% if this.page.id == 'ajax' %}active{% endif %}">           <a href="{{ 'ajax'|page }}">            AJAX framework    </a></li>
+                <li class="{% if this.page.id == 'plugins' %}active{% endif %}">        <a href="{{ 'plugins'|page }}">         Plugin components </a></li>
+				<li class="{% if this.page.id == 'myPage' %}active{% endif %}">         <a href="{{ 'myPage'|page }}">          myPageBlog        </a></li>
+                <li class="{% if this.page.id == 'user-management' %}active{% endif %}"><a href="{{ 'user-management' }}"> User        </a></li>
+				<li class="{% if this.page.id == 'backend' %}active{% endif %}">        <a href="{{ 'backend' }}">         Admin </a></li>
+			    <!--<li class="{% if this.page.id == 'onePost' %}active{% endif %}">      <a href="{{ 'onePost'|page }}">      onePost   </a></li>-->
+
+				
 				
             </ul>
         </div>
     </div>
 </nav>
-";s:5:"mtime";i:1644594211;s:6:"markup";s:1398:"<!-- Nav -->
+";s:5:"mtime";i:1645004514;s:6:"markup";s:1863:"<!-- Nav -->
 <nav id="layout-nav" class="navbar navbar-inverse navbar-fixed-top navbar-autohide" role="navigation">
     <div class="container">
         <div class="navbar-header">
@@ -38,11 +42,15 @@
         <div class="collapse navbar-collapse navbar-main-collapse">
             <ul class="nav navbar-nav">
                 <li class="separator hidden-xs"></li>
-                <li class="{% if this.page.id == 'home' %}active{% endif %}">   <a href="{{ 'home'|page }}">Basic concepts</a></li>
-                <li class="{% if this.page.id == 'ajax' %}active{% endif %}">   <a href="{{ 'ajax'|page }}">AJAX framework</a></li>
-                <li class="{% if this.page.id == 'plugins' %}active{% endif %}"><a href="{{ 'plugins'|page }}">Plugin components</a></li>
-				<li class="{% if this.page.id == 'myPage' %}active{% endif %}"> <a href="{{ 'myPage'|page }}">myPage</a></li>
-				<li> <a href="{{ 'backend' }}">Admin</a></li>
+                <li class="{% if this.page.id == 'home' %}active{% endif %}">           <a href="{{ 'home'|page }}">            Basic concepts    </a></li>
+                <li class="{% if this.page.id == 'ajax' %}active{% endif %}">           <a href="{{ 'ajax'|page }}">            AJAX framework    </a></li>
+                <li class="{% if this.page.id == 'plugins' %}active{% endif %}">        <a href="{{ 'plugins'|page }}">         Plugin components </a></li>
+				<li class="{% if this.page.id == 'myPage' %}active{% endif %}">         <a href="{{ 'myPage'|page }}">          myPageBlog        </a></li>
+                <li class="{% if this.page.id == 'user-management' %}active{% endif %}"><a href="{{ 'user-management' }}"> User        </a></li>
+				<li class="{% if this.page.id == 'backend' %}active{% endif %}">        <a href="{{ 'backend' }}">         Admin </a></li>
+			    <!--<li class="{% if this.page.id == 'onePost' %}active{% endif %}">      <a href="{{ 'onePost'|page }}">      onePost   </a></li>-->
+
+				
 				
             </ul>
         </div>

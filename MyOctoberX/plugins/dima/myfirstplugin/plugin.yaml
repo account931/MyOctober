@@ -1,0 +1,6 @@
+plugin:
+    name: 'dima.myfirstplugin::lang.plugin.name'
+    description: 'dima.myfirstplugin::lang.plugin.description'
+    author: Dima
+    icon: oc-icon-adjust
+    homepage: ''

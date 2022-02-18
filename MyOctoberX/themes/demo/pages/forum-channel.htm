@@ -1,0 +1,17 @@
+<?php  //Display the list of all topics in selected channel, i.e selected at /forum, the page used for viewing an individual channels topics; ?>
+
+title = "Forum Channel"
+url = "/forum-channel/:slug"
+layout = "default"
+
+[forumChannel]
+memberPage = "forum-member"
+topicPage = "forum-topic"
+==
+
+
+<h1>{{ channel.title }}</h1>
+
+<div class="col-sm-12 col-xs-12"> 
+    {% component 'forumChannel' %}
+</div>

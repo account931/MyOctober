@@ -1,0 +1,21 @@
+1645213677a:1:{s:15:"forum-topic.htm";a:9:{s:8:"fileName";s:15:"forum-topic.htm";s:7:"content";s:344:"<?php
+//the page used for viewing a one discussion topic and posts/replies. 
+?>
+title = "Forum topic"
+url = "/forum-topic/:slug"
+layout = "default"
+
+[forumTopic]
+memberPage = "forum-member"
+channelPage = "forum-channel"
+==
+
+<h1>{{ topic.subject }}</h1>
+
+<div class="col-sm-12 col-xs-12"> 
+    {% component 'forumTopic' %}
+</div>";s:5:"mtime";i:1645209453;s:6:"markup";s:108:"<h1>{{ topic.subject }}</h1>
+
+<div class="col-sm-12 col-xs-12"> 
+    {% component 'forumTopic' %}
+</div>";s:4:"code";N;s:5:"title";s:11:"Forum topic";s:3:"url";s:18:"/forum-topic/:slug";s:6:"layout";s:7:"default";s:10:"forumTopic";a:2:{s:10:"memberPage";s:12:"forum-member";s:11:"channelPage";s:13:"forum-channel";}}}

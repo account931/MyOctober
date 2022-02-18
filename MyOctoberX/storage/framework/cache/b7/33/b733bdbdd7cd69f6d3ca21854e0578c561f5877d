@@ -1,4 +1,4 @@
-1645007577a:1:{s:15:"site/header.htm";a:5:{s:8:"fileName";s:15:"site/header.htm";s:7:"content";s:1864:"<!-- Nav -->
+1645213681a:1:{s:15:"site/header.htm";a:5:{s:8:"fileName";s:15:"site/header.htm";s:7:"content";s:2008:"<!-- Nav -->
 <nav id="layout-nav" class="navbar navbar-inverse navbar-fixed-top navbar-autohide" role="navigation">
     <div class="container">
         <div class="navbar-header">
@@ -17,7 +17,9 @@
                 <li class="{% if this.page.id == 'ajax' %}active{% endif %}">           <a href="{{ 'ajax'|page }}">            AJAX framework    </a></li>
                 <li class="{% if this.page.id == 'plugins' %}active{% endif %}">        <a href="{{ 'plugins'|page }}">         Plugin components </a></li>
 				<li class="{% if this.page.id == 'myPage' %}active{% endif %}">         <a href="{{ 'myPage'|page }}">          myPageBlog        </a></li>
-                <li class="{% if this.page.id == 'user-management' %}active{% endif %}"><a href="{{ 'user-management' }}"> User        </a></li>
+				<li class="{% if this.page.id == 'user-management' %}active{% endif %}"><a href="{{ 'user-management'|page }}"> User              </a></li>
+				<li class="{% if this.page.id == 'forum' %}active{% endif %}">          <a href="{{ 'forum'|page }}">           Forum             </a></li>
+
 				<li class="{% if this.page.id == 'backend' %}active{% endif %}">        <a href="{{ 'backend' }}">         Admin </a></li>
 			    <!--<li class="{% if this.page.id == 'onePost' %}active{% endif %}">      <a href="{{ 'onePost'|page }}">      onePost   </a></li>-->
 
@@ -27,7 +29,7 @@
         </div>
     </div>
 </nav>
-";s:5:"mtime";i:1645004514;s:6:"markup";s:1863:"<!-- Nav -->
+";s:5:"mtime";i:1645171460;s:6:"markup";s:2007:"<!-- Nav -->
 <nav id="layout-nav" class="navbar navbar-inverse navbar-fixed-top navbar-autohide" role="navigation">
     <div class="container">
         <div class="navbar-header">
@@ -46,7 +48,9 @@
                 <li class="{% if this.page.id == 'ajax' %}active{% endif %}">           <a href="{{ 'ajax'|page }}">            AJAX framework    </a></li>
                 <li class="{% if this.page.id == 'plugins' %}active{% endif %}">        <a href="{{ 'plugins'|page }}">         Plugin components </a></li>
 				<li class="{% if this.page.id == 'myPage' %}active{% endif %}">         <a href="{{ 'myPage'|page }}">          myPageBlog        </a></li>
-                <li class="{% if this.page.id == 'user-management' %}active{% endif %}"><a href="{{ 'user-management' }}"> User        </a></li>
+				<li class="{% if this.page.id == 'user-management' %}active{% endif %}"><a href="{{ 'user-management'|page }}"> User              </a></li>
+				<li class="{% if this.page.id == 'forum' %}active{% endif %}">          <a href="{{ 'forum'|page }}">           Forum             </a></li>
+
 				<li class="{% if this.page.id == 'backend' %}active{% endif %}">        <a href="{{ 'backend' }}">         Admin </a></li>
 			    <!--<li class="{% if this.page.id == 'onePost' %}active{% endif %}">      <a href="{{ 'onePost'|page }}">      onePost   </a></li>-->
 

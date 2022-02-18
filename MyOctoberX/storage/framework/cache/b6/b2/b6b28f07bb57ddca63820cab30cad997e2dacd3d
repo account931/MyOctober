@@ -1,0 +1,18 @@
+1645213677a:1:{s:16:"forum-member.htm";a:9:{s:8:"fileName";s:16:"forum-member.htm";s:7:"content";s:265:"title = "Forum member"
+url = "/forum-member/:slug"
+layout = "default"
+
+[forumMember]
+channelPage = "forum-channel"
+topicPage = "forum-topic"
+==
+
+<h1>{{ member.username }}</h1>
+
+<div class="col-sm-12 col-xs-12"> 
+    {% component 'forumMember' %}
+</div>";s:5:"mtime";i:1645208693;s:6:"markup";s:111:"<h1>{{ member.username }}</h1>
+
+<div class="col-sm-12 col-xs-12"> 
+    {% component 'forumMember' %}
+</div>";s:4:"code";N;s:5:"title";s:12:"Forum member";s:3:"url";s:19:"/forum-member/:slug";s:6:"layout";s:7:"default";s:11:"forumMember";a:2:{s:11:"channelPage";s:13:"forum-channel";s:9:"topicPage";s:11:"forum-topic";}}}

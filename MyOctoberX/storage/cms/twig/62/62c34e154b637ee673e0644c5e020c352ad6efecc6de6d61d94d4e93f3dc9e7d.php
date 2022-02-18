@@ -86,25 +86,34 @@ class __TwigTemplate_da4d775f17a80abd32b3c76cdb45f7138a592c65aaf4958b07ae3ffeada
         echo "\">         <a href=\"";
         echo $this->extensions['Cms\Twig\Extension']->pageFilter("myPage");
         echo "\">          myPageBlog        </a></li>
-                <li class=\"";
+\t\t\t\t<li class=\"";
         // line 20
         if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, true, 20), "id", [], "any", false, false, true, 20) == "user-management")) {
             echo "active";
         }
         echo "\"><a href=\"";
-        echo "user-management";
-        echo "\"> User        </a></li>
+        echo $this->extensions['Cms\Twig\Extension']->pageFilter("user-management");
+        echo "\"> User              </a></li>
 \t\t\t\t<li class=\"";
         // line 21
-        if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, true, 21), "id", [], "any", false, false, true, 21) == "backend")) {
+        if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, true, 21), "id", [], "any", false, false, true, 21) == "forum")) {
+            echo "active";
+        }
+        echo "\">          <a href=\"";
+        echo $this->extensions['Cms\Twig\Extension']->pageFilter("forum");
+        echo "\">           Forum             </a></li>
+
+\t\t\t\t<li class=\"";
+        // line 23
+        if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, true, 23), "id", [], "any", false, false, true, 23) == "backend")) {
             echo "active";
         }
         echo "\">        <a href=\"";
         echo "backend";
         echo "\">         Admin </a></li>
 \t\t\t    <!--<li class=\"";
-        // line 22
-        if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, true, 22), "id", [], "any", false, false, true, 22) == "onePost")) {
+        // line 24
+        if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, true, 24), "id", [], "any", false, false, true, 24) == "onePost")) {
             echo "active";
         }
         echo "\">      <a href=\"";
@@ -131,7 +140,7 @@ class __TwigTemplate_da4d775f17a80abd32b3c76cdb45f7138a592c65aaf4958b07ae3ffeada
 
     public function getDebugInfo()
     {
-        return array (  107 => 22,  99 => 21,  91 => 20,  83 => 19,  75 => 18,  67 => 17,  59 => 16,  51 => 11,  39 => 1,);
+        return array (  116 => 24,  108 => 23,  99 => 21,  91 => 20,  83 => 19,  75 => 18,  67 => 17,  59 => 16,  51 => 11,  39 => 1,);
     }
 
     public function getSourceContext()
@@ -155,7 +164,9 @@ class __TwigTemplate_da4d775f17a80abd32b3c76cdb45f7138a592c65aaf4958b07ae3ffeada
                 <li class=\"{% if this.page.id == 'ajax' %}active{% endif %}\">           <a href=\"{{ 'ajax'|page }}\">            AJAX framework    </a></li>
                 <li class=\"{% if this.page.id == 'plugins' %}active{% endif %}\">        <a href=\"{{ 'plugins'|page }}\">         Plugin components </a></li>
 \t\t\t\t<li class=\"{% if this.page.id == 'myPage' %}active{% endif %}\">         <a href=\"{{ 'myPage'|page }}\">          myPageBlog        </a></li>
-                <li class=\"{% if this.page.id == 'user-management' %}active{% endif %}\"><a href=\"{{ 'user-management' }}\"> User        </a></li>
+\t\t\t\t<li class=\"{% if this.page.id == 'user-management' %}active{% endif %}\"><a href=\"{{ 'user-management'|page }}\"> User              </a></li>
+\t\t\t\t<li class=\"{% if this.page.id == 'forum' %}active{% endif %}\">          <a href=\"{{ 'forum'|page }}\">           Forum             </a></li>
+
 \t\t\t\t<li class=\"{% if this.page.id == 'backend' %}active{% endif %}\">        <a href=\"{{ 'backend' }}\">         Admin </a></li>
 \t\t\t    <!--<li class=\"{% if this.page.id == 'onePost' %}active{% endif %}\">      <a href=\"{{ 'onePost'|page }}\">      onePost   </a></li>-->
 

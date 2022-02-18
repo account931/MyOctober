@@ -1,0 +1,17 @@
+<?php
+//the page used for viewing a one discussion topic and posts/replies. 
+?>
+title = "Forum topic"
+url = "/forum-topic/:slug"
+layout = "default"
+
+[forumTopic]
+memberPage = "forum-member"
+channelPage = "forum-channel"
+==
+
+<h1>{{ topic.subject }}</h1>
+
+<div class="col-sm-12 col-xs-12"> 
+    {% component 'forumTopic' %}
+</div>

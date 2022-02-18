@@ -1,0 +1,18 @@
+<?php 
+    // main page for your forum 
+?>
+title = "Forum"
+url = "/forum"
+layout = "default"
+is_hidden = 0
+
+[forumChannels]
+memberPage = "forum-member"
+channelPage = "forum-channel"
+topicPage = "forum-topic"
+includeStyles = 1
+==
+<div class="col-sm-12 col-xs-12 alert alert-info"> 
+    Forum
+</div>
+{% component 'forumChannels' %}

@@ -4,14 +4,15 @@ Tutorial https://octobercms.ru/blog/post/videokurs-october-cms-9
 Content:
 1.Install
 2.Edit pages
-3.How to build blog, user management, forum, etc 
+3.How to build blog, user management, forum, etc using plugins.
 4.Admin section
 5.Menu links
 6.Blog -> View one blog post
 7.Add new db column (for example to Blog)
 8.Image
 9.CLI Commands
-10.Miscellaneous
+
+999.Miscellaneous
 
 --------------
 1.Install
@@ -32,7 +33,7 @@ Go -> themes -> your active theme -> pages
 
 
 ---------------
-3.How to build blog, user management, forum, etc 
+3.How to build blog, user management, forum, etc using plugins.
 
 #How to build blog
 1.First load plugin "Blog" via -> Settings-> Updates & Plugins -> Install Plugins
@@ -40,6 +41,15 @@ Go -> themes -> your active theme -> pages
 3.To add Blog to your page, go -> CMS -> Pages -> select your page -> click Components & select Blog-> select and drag item to the left markdown
 4.In order to modify,for example, Blog appearance (add/change BS classes, add your text), go to ->  \localhost\myoctober\MyOctoberX\plugins\rainlab\blog\components\posts
 5.The same way can add plugins "User", "Forum", etc
+
+
+#Documentation
+User    https://octobercms.com/plugin/rainlab-user
+Blog    https://octobercms.com/plugin/rainlab-blog
+Forum   https://octobercms.com/plugin/rainlab-forum
+Builder https://octobercms.com/plugin/rainlab-builder
+
+
 
 
 
@@ -53,8 +63,7 @@ Admin section is at /backend
 
 ---------------
 5.Menu links
-
-localhost\myoctober\MyOctoberX\themes\demo\partials\site\header
+located at =>  localhost\myoctober\MyOctoberX\themes\demo\partials\site\header
 
 
 
@@ -114,20 +123,41 @@ php artisan cache:clear    #clear cache
 php artisan october:fresh  #delete demo theme
 
 
+----------------------------
+
 
 
 
 
 ---------------------------
 
-10.Miscellaneous
+999.Miscellaneous
 
+ #Plugins: User, Blog
  #URL link => <li> <a href="{{ 'user-management'|page }}"> User </a></li>  //page is an option to make sure
+ 
+------------------
+ #If else => 
+     {% if user %}
+        <li><a href="#" data-request="onLogout"><button class="btn">Logout</button></a></li>
+    {% endif %}
 
+------------------
+# If user logged => 
+    {% if not user %}
+        {% partial __SELF__ ~ '::signin' %}
+    {% else %}
+	    Hello, {{ user.name }} {{ user.email }}
+        {% partial __SELF__ ~ '::update' %}
+    {% endif %}
 
-
-
-
+---------------
+# For loop =>
+    {% for post in posts %}
+        {{ post.summary|raw }}
+    {% else %}
+        <li class="no-data">{{ __SELF__.noPostsMessage }}</li>
+    {% endfor %}
 
 
 

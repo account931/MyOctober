@@ -1,6 +1,7 @@
 ## October CMS
 
-![Screenshot](Screenshots/1.png)
+## Blog and User plugins
+![Screenshot](ScreenShots/1.png)
 ![Screenshot](Screenshots/2.png)
 ![Screenshot](Screenshots/3.png)
 ![Screenshot](Screenshots/4.png)
@@ -10,6 +11,18 @@
 ![Screenshot](Screenshots/8.png)
 ![Screenshot](Screenshots/9.png)
 ![Screenshot](Screenshots/10.png)
+
+
+## Forum plugin
+![Screenshot](ScreenShots/11.png)
+![Screenshot](ScreenShots/12.png)
+![Screenshot](ScreenShots/13.png)
+![Screenshot](ScreenShots/14.png)
+
+## Builder plugin
+![Screenshot](ScreenShots/15.png)
+
+
 
 # Installation Wizard for October CMS v1.0
 

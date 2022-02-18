@@ -1,0 +1,21 @@
+1645213677a:1:{s:9:"forum.htm";a:10:{s:8:"fileName";s:9:"forum.htm";s:7:"content";s:346:"<?php 
+    // main page for your forum 
+?>
+title = "Forum"
+url = "/forum"
+layout = "default"
+is_hidden = 0
+
+[forumChannels]
+memberPage = "forum-member"
+channelPage = "forum-channel"
+topicPage = "forum-topic"
+includeStyles = 1
+==
+<div class="col-sm-12 col-xs-12 alert alert-info"> 
+    Forum
+</div>
+{% component 'forumChannels' %}";s:5:"mtime";i:1645209487;s:6:"markup";s:103:"<div class="col-sm-12 col-xs-12 alert alert-info"> 
+    Forum
+</div>
+{% component 'forumChannels' %}";s:4:"code";N;s:5:"title";s:5:"Forum";s:3:"url";s:6:"/forum";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:13:"forumChannels";a:4:{s:10:"memberPage";s:12:"forum-member";s:11:"channelPage";s:13:"forum-channel";s:9:"topicPage";s:11:"forum-topic";s:13:"includeStyles";s:1:"1";}}}

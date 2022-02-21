@@ -1,5 +1,7 @@
 # ===================================
-#  Column Definitions
+#  Column Definitions (used for admin panel view)
+#    columns.yaml – Содержит параметры и информацию столбцов, которые нужно выводить при просмотре списка предметов в панели администратора.
+#    fields.yaml – Содержит параметры и информацию полей формы, которые нужно выводить при редактировании или создание предмета в панели администратора.
 # ===================================
 
 columns:
@@ -34,3 +36,7 @@ columns:
     published_at:
         label: rainlab.blog::lang.post.published
         type: date
+
+    myCustomX:
+        label: rainlab.blog::lang.post.myCustomX
+        

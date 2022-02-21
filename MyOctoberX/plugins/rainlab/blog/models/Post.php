@@ -30,9 +30,10 @@ class Post extends Model
      * Validation
      */
     public $rules = [
-        'title'   => 'required',
-        'slug'    => ['required', 'regex:/^[a-z0-9\/\:_\-\*\[\]\+\?\|]*$/i', 'unique:rainlab_blog_posts'],
-        'content' => 'required',
+        'title'     => 'required',
+        'slug'      => ['required', 'regex:/^[a-z0-9\/\:_\-\*\[\]\+\?\|]*$/i', 'unique:rainlab_blog_posts'],
+        'content'   => 'required',
+		'myCustomX' => 'required',
         'excerpt' => ''
     ];
 

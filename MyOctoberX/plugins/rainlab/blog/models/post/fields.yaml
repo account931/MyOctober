@@ -1,7 +1,8 @@
 # ===================================
-#  Field Definitions
+#  Field Definitions, fields to be used in Edit/Update form
+#    columns.yaml – Содержит параметры и информацию столбцов, которые нужно выводить при просмотре списка предметов в панели администратора.
+#    fields.yaml – Содержит параметры и информацию полей формы, которые нужно выводить при редактировании или создание предмета в панели администратора.
 # ===================================
-
 fields:
     title:
         label: rainlab.blog::lang.post.title
@@ -15,7 +16,12 @@ fields:
         preset:
             field: title
             type: slug
-
+    
+    myCustomX:
+        label: rainlab.blog::lang.post.myCustomX
+        span: left
+        placeholder: rainlab.blog::lang.post.customX_placeholder
+        
     toolbar:
         type: partial
         path: post_toolbar

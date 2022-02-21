@@ -38,7 +38,7 @@ return [
         'import_post' => 'Import posts'
     ],
     'post' => [
-        'title' => 'Title',
+        'title' => 'TitleX',
         'title_placeholder' => 'New post title',
         'content' => 'Content',
         'content_html' => 'HTML Content',
@@ -71,6 +71,8 @@ return [
         'posted_byline' => 'Posted in :categories on :date.',
         'posted_byline_no_categories' => 'Posted on :date.',
         'date_format' => 'M d, Y',
+		'myCustomX'           => 'myCustomZ',
+		'customX_placeholder' => 'Give your new customX value'
     ],
     'categories' => [
         'list_title' => 'Manage the blog categories',

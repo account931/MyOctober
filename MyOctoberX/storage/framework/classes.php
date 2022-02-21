@@ -91,4 +91,10 @@
   'RainLab\\Builder\\Classes\\ModelModel' => 'plugins\\rainlab\\builder\\classes\\ModelModel.php',
   'RainLab\\Builder\\Classes\\PluginVersion' => 'plugins\\rainlab\\builder\\classes\\PluginVersion.php',
   'RainLab\\Builder\\Classes\\ControllerModel' => 'plugins\\rainlab\\builder\\classes\\ControllerModel.php',
+  'RainLab\\Builder\\Classes\\MenusModel' => 'plugins\\rainlab\\builder\\classes\\MenusModel.php',
+  'RainLab\\Builder\\FormWidgets\\MenuEditor' => 'plugins\\rainlab\\builder\\formwidgets\\MenuEditor.php',
+  'RainLab\\Builder\\Classes\\PhpSourceStream' => 'plugins\\rainlab\\builder\\classes\\PhpSourceStream.php',
+  'RainLab\\Builder\\Classes\\PermissionsModel' => 'plugins\\rainlab\\builder\\classes\\PermissionsModel.php',
+  'RainLab\\Builder\\Classes\\ControllerBehaviorLibrary' => 'plugins\\rainlab\\builder\\classes\\ControllerBehaviorLibrary.php',
+  'RainLab\\Builder\\Classes\\StandardBehaviorsRegistry' => 'plugins\\rainlab\\builder\\classes\\StandardBehaviorsRegistry.php',
 );

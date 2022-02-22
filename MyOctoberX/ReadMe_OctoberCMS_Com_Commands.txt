@@ -77,7 +77,7 @@ located at =>  localhost\myoctober\MyOctoberX\themes\demo\partials\site\header
 6.Blog -> View one blog post
   #Create new page to display one blog entry
   #go -> CMS -> Pages -> select your page -> click Components & select Blog-> select and drag "Post" to the left markdown
-  # set {Url} to -> /onePost/:slug, set {Post slug} to -> >_:slug
+  # set {Url input (top right)} to -> /onePost/:slug,  and set  in options{Post slug} to -> >_:slug
   # Go to page with youl Post list, set {Post Page} to {onePost}
 
 
@@ -152,14 +152,29 @@ https://octoclub.ru/d/38-%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BF
 --------------------------
 9.Create plugin via Builder
 https://mraak.ru/octobercms/october-cms-builder-plugin-osnovy.html
+https://cms-dev.ru/blog/octobercms/sozdanie-plagina-chast-2.-frontend.html
 
+#Backend
+  Create plugin-> Add Database  -> Add Models (add form or list) -> Backend Menu (Crud url) ->
+   -> Add Controllers -> Вводим название контроллера, Связываем его с моделью и только что созданным пунктом меню. Не забываем отметить галочки List controller behavior и Form controller behavior.
+   -> back to Backend Menu -> add Controller url
 
+# Frontend =>
+    Create one page to view all records (CMS->Pages->Add) ->
+	  -> Components -> Builder -> add Record List 
+	  -> add Model class, Display column (just one column is possible to display)
+      -> Если нужно вывести другие поля из таблицы, обернуть в тэги, то ставим курсор на слово component в коде и в правом нижнем углу экрана щёлкаем по значку слева от лупы (Fork icon). 
+ 
+    Create second page to view one record (CMS->Pages->Add) ->
+	   -> Components -> Builder -> add Record Details 
+	   -> if slug DB column is not used(not present in DB), set {Url input (top right)} to -> /my-plugin-front-end-view-one/:id
+	   -> in Box option set Model class, Identifier value (:id), Key column(db column by which to search), Display column (just one column is possible to display)
+	   -> Если нужно вывести другие поля из таблицы, обернуть в тэги, то ставим курсор на слово component в коде и в правом нижнем углу экрана щёлкаем по значку слева от лупы (Fork icon). 
 
-
-
-
-
-
+	
+	#NB: for some bizzare reason, url from Record List page to Record Details was not created vis CMS, have to create manually and extended code with Fork icon to display more than 1 column
+	
+	
 ---------------------------
 10.Image
 ![technics_sl_1200g_3.jpg](http://localhost/myoctober/MyOctoberX/storage/app/uploads/public/620/b91/2ba/62.jpg){.classX}
@@ -219,7 +234,8 @@ php artisan october:fresh  #delete demo theme
     {% endfor %}
 
 
-
+---------------
+{# Comment format #}
 
 
 

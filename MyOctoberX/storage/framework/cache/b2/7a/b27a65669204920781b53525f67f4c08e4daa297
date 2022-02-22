@@ -1,0 +1,114 @@
+1645569379a:1:{s:32:"my-plugin-front-end-view-one.htm";a:10:{s:8:"fileName";s:32:"my-plugin-front-end-view-one.htm";s:7:"content";s:1957:"<?php //display one item display ?>-->
+title = "My plugin front-end-view-one"
+url = "/my-plugin-front-end-view-one/:id"
+layout = "default"
+is_hidden = 0
+
+[builderDetails]
+modelClass = "Dima\Myfirstplugin\Models\Myfirstplugin_images"
+identifierValue = "{{ :id }}"
+modelKeyColumn = "img_id"
+displayColumn = "img_name"
+notFoundMessage = "Record not found!!!!"
+==
+<h1>One detailed item</h1>
+
+<div class="col-sm-12 col-xs-12">
+
+{# Comment format #}
+{# <!-- Instead of using {% component 'builderDetails' %}, we use this extended code to display more than 1 default column & use customized layout --> #}
+{# <!-- Extended code is Inited via placing cursor on {% component in code & clicking icon left to Zoom icon (bottom right) -->  #}
+
+<hr> 
+{% set record = builderDetails.record %}
+{% set displayColumn = builderDetails.displayColumn %}
+{% set notFoundMessage = builderDetails.notFoundMessage %}
+
+{% if record %}
+    
+	
+	<h3> 
+	    <i class="fa fa-clone" style="font-size:24px"></i> 
+		Here are the item details 
+	</h3>
+	
+    <!-- Display one Column "img_name", specified in /pages/my-plugin-front-end-view-one -> Record Details -->
+	<div class="col-sm-12 col-xs-12">
+	    <i class="fa fa-clone" style="font-size:18px"></i>
+        {{ attribute(record, displayColumn) }}
+	</div>
+	
+	<!-- Display  Column created_at. Added by me-->
+	<div class="col-sm-12 col-xs-12">
+	    <i class="fa fa-clone" style="font-size:18px"></i>   
+	    created: {{record.created_at}} <!-- my add -->
+    </div>
+	
+	<!-- Display  Column img_id. Added by me-->
+	<div class="col-sm-12 col-xs-12">
+	    <i class="fa fa-clone" style="font-size:18px"></i>   
+	    Id: {{record.img_id}} <!-- my add -->
+    </div>
+				
+				
+{% else %}
+    {{ notFoundMessage }}
+{% endif %}
+</div>
+
+<div class="col-sm-12 col-xs-12">
+    <hr>
+    <a href="{{ 'my-plugin-front-end'|page }}"> Back to list </a>
+</div>
+
+<div style="height:20em;"></div>";s:5:"mtime";i:1645568776;s:6:"markup";s:1584:"<h1>One detailed item</h1>
+
+<div class="col-sm-12 col-xs-12">
+
+{# Comment format #}
+{# <!-- Instead of using {% component 'builderDetails' %}, we use this extended code to display more than 1 default column & use customized layout --> #}
+{# <!-- Extended code is Inited via placing cursor on {% component in code & clicking icon left to Zoom icon (bottom right) -->  #}
+
+<hr> 
+{% set record = builderDetails.record %}
+{% set displayColumn = builderDetails.displayColumn %}
+{% set notFoundMessage = builderDetails.notFoundMessage %}
+
+{% if record %}
+    
+	
+	<h3> 
+	    <i class="fa fa-clone" style="font-size:24px"></i> 
+		Here are the item details 
+	</h3>
+	
+    <!-- Display one Column "img_name", specified in /pages/my-plugin-front-end-view-one -> Record Details -->
+	<div class="col-sm-12 col-xs-12">
+	    <i class="fa fa-clone" style="font-size:18px"></i>
+        {{ attribute(record, displayColumn) }}
+	</div>
+	
+	<!-- Display  Column created_at. Added by me-->
+	<div class="col-sm-12 col-xs-12">
+	    <i class="fa fa-clone" style="font-size:18px"></i>   
+	    created: {{record.created_at}} <!-- my add -->
+    </div>
+	
+	<!-- Display  Column img_id. Added by me-->
+	<div class="col-sm-12 col-xs-12">
+	    <i class="fa fa-clone" style="font-size:18px"></i>   
+	    Id: {{record.img_id}} <!-- my add -->
+    </div>
+				
+				
+{% else %}
+    {{ notFoundMessage }}
+{% endif %}
+</div>
+
+<div class="col-sm-12 col-xs-12">
+    <hr>
+    <a href="{{ 'my-plugin-front-end'|page }}"> Back to list </a>
+</div>
+
+<div style="height:20em;"></div>";s:4:"code";N;s:5:"title";s:28:"My plugin front-end-view-one";s:3:"url";s:33:"/my-plugin-front-end-view-one/:id";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:14:"builderDetails";a:5:{s:10:"modelClass";s:46:"Dima\Myfirstplugin\Models\Myfirstplugin_images";s:15:"identifierValue";s:9:"{{ :id }}";s:14:"modelKeyColumn";s:6:"img_id";s:13:"displayColumn";s:8:"img_name";s:15:"notFoundMessage";s:20:"Record not found!!!!";}}}

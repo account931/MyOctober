@@ -1,0 +1,10 @@
+name: MyFirstPlugin
+form: $/dima/myfirstplugin/models/myfirstplugin_images/fields.yaml
+modelClass: Dima\Myfirstplugin\Models\Myfirstplugin_images
+defaultRedirect: dima/myfirstplugin/myfirstplugin
+create:
+    redirect: 'dima/myfirstplugin/myfirstplugin/update/:id'
+    redirectClose: dima/myfirstplugin/myfirstplugin
+update:
+    redirect: dima/myfirstplugin/myfirstplugin
+    redirectClose: dima/myfirstplugin/myfirstplugin

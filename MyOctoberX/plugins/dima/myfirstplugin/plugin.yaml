@@ -2,7 +2,7 @@ plugin:
     name: 'dima.myfirstplugin::lang.plugin.name'
     description: 'dima.myfirstplugin::lang.plugin.description'
     author: Dima
-    icon: oc-icon-adjust
+    icon: oc-icon-camera-retro
     homepage: ''
 navigation:
     main-menu-item:
@@ -11,14 +11,14 @@ navigation:
         icon: icon-life-ring
         sideMenu:
             side-menu-item:
-                label: 'Menu Item1'
-                url: /
+                label: FirstPlugin
+                url: dima/myfirstplugin/myfirstplugin
                 icon: icon-sitemap
             side-menu-item2:
                 label: 'Menu Item2'
                 url: /
                 icon: icon-sitemap
     main-menu-item2:
-        label: 'Menu ItemZ'
-        url: /
-        icon: icon-life-ring
+        label: MyPlugin
+        url: dima/myfirstplugin/myfirstplugin
+        icon: icon-adn

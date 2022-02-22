@@ -199,7 +199,7 @@ class Plugin extends PluginBase
 	*/
 		//
 		
-		
+	/*	
 		
 		\Event::listen('backend.form.extendFields', function($widget) {
     if (!$widget->getController() instanceof Posts || $widget->isNested || $widget->alias != 'form') {
@@ -224,7 +224,7 @@ class Plugin extends PluginBase
             'span' => 'auto'
         ]
     ]);
-});
+}); */
 
 
     }

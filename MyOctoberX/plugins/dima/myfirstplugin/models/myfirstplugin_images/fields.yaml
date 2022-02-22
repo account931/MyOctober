@@ -1,0 +1,25 @@
+fields:
+    img_blog_id:
+        label: 'Img blog id'
+        span: auto
+        type: number
+    img_name:
+        label: 'Img name'
+        span: auto
+        type: textarea
+    created_at:
+        label: 'Created at'
+        span: auto
+        type: datepicker
+    fileupload1:
+        label: 'File upload'
+        mode: file
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        trigger:
+            action: ''
+            field: img_name
+        type: fileupload

@@ -8,10 +8,10 @@
     {% for post in posts %}
         <li>
 		
-		    <!-- Blog title -->
+		    <!-- Blog title Column -->
             <h3><a href="{{ post.url }}">   <i class="fa fa-book" style="font-size:24px"></i> {{ post.title }}</a></h3>
             
-			<!-- when posted --> 	
+			<!-- when posted Column --> 	
             <p class="alert alert-danger">
                 <i class="fa fa-calendar" style="font-size:18px"></i> Posted
                 {% if post.categories.count %} in {% endif %}
@@ -21,7 +21,7 @@
                 on {{ post.published_at|date('M d, Y') }}
             </p>
 
-			<!-- Blog text -->
+			<!-- Blog text Column -->
             <div class="alert alert-success padding-x">
 			    <i class="fa fa-clone" style="font-size:18px"></i> 
 			    {{ post.summary|raw }}

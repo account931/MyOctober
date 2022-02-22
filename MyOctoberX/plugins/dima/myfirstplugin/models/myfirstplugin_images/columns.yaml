@@ -1,0 +1,18 @@
+columns:
+    img_blog_id:
+        label: img_blog_id
+        type: number
+        sortable: true
+    img_name:
+        label: img_name
+        type: text
+        sortable: true
+    created_at:
+        label: created_at
+        type: datetime
+    updated_at:
+        label: updated_at
+        type: datetime
+    img_id:
+        label: img_id
+        type: number

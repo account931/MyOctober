@@ -1,18 +1,36 @@
 columns:
-    img_blog_id:
-        label: img_blog_id
-        type: number
-        sortable: true
+
+    img_id:
+        label: img_id
+        type: number  
+        
     img_name:
         label: img_name
         type: text
         sortable: true
+        
     created_at:
         label: created_at
         type: datetime
+        
     updated_at:
         label: updated_at
         type: datetime
-    img_id:
-        label: img_id
+        
+    #Display Id of post in "rainlab_blog_posts"
+    img_blog_id:
+        label: img_blog_id
         type: number
+        sortable: true    
+    
+    #belongsTo relation, Display Column "title" from DB "rainlab_blog_posts"  by "img_blog_id" from DB "dima_myfirstplugin_images". belongsTo relation
+    img_idZ:
+        label: BlogName(FK)
+        type: text
+        relation: channelZ #relation method
+        valueFrom: title
+    
+    viewX:
+        label: view
+        type: text
+        default: <button>view one</button>

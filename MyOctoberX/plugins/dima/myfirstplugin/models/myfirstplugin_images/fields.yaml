@@ -1,8 +1,4 @@
 fields:
-    img_blog_id:
-        label: 'Img blog id'
-        span: auto
-        type: number
     img_name:
         label: 'Img name'
         span: auto
@@ -11,15 +7,10 @@ fields:
         label: 'Created at'
         span: auto
         type: datepicker
-    fileupload1:
-        label: 'File upload'
-        mode: file
-        useCaption: true
-        thumbOptions:
-            mode: crop
-            extension: auto
-        span: auto
-        trigger:
-            action: ''
-            field: img_name
-        type: fileupload
+        
+    #Dropdown, belonsTo relation, Display Column "id, title" from DB "rainlab_blog_posts"  by "img_id" from DB "dima_myfirstplugin_images". 
+    #must define public function getImgIdOptions(){} in model => \plugins\dima\myfirstplugin\models\Myfirstplugin_images
+    img_blog_id:
+        label: BlogNameZ(FK)
+        type: dropdown
+    

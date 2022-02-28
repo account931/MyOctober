@@ -40,19 +40,18 @@ pageNumber = "{{ :page }}"
                     <a href="{{ detailsPage|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}">
                 {% endif %}
 
-				<!-- Display one Column "img_name", specified in /pages/my-plugin-front-end-> Record list -->
+				<!-- Display one Column "img_name", specified in /pages/my-plugin-front-end-> Record list. Contains link to one page -->
 				<div class="col-sm-4 col-xs-4"> 
-				<i class="fa fa-clone" style="font-size:18px"></i>
-                {{ attribute(record, displayColumn) }}
+				    <i class="fa fa-clone" style="font-size:18px"></i>
+                    <a href="{{ 'my-plugin-front-end-view-one/'}}{{record.img_id }}"> {{ attribute(record, displayColumn) }}  </a>
 				</div>
 				
 				
 				<!-- Display Column img_blog_id. Added by me. Contains link to one page-->
 				<div class="col-sm-4 col-xs-4"> 
-				<i class="fa fa-clone" style="font-size:18px"></i> 
-                <a href="{{ 'my-plugin-front-end-view-one/'}}{{record.img_id }}">  id: {{record.img_id}}</a>	
-                			
-				 <!-- my add -->
+				    <i class="fa fa-clone" style="font-size:18px"></i> 
+                    <a href="{{ 'my-plugin-front-end-view-one/'}}{{record.img_id }}">  id: {{record.img_id}} </a>			
+				     <!-- my add -->
 				</div>
 				
 				<!-- Display  Column created_at. Added by me-->

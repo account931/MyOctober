@@ -38,19 +38,35 @@ notFoundMessage = "Record not found!!!!"
         {{ attribute(record, displayColumn) }}
 	</div>
 	
-	<!-- Display  Column created_at. Added by me-->
+	<!-- Display  Column "created_at". Added by me-->
 	<div class="col-sm-12 col-xs-12">
 	    <i class="fa fa-clone" style="font-size:18px"></i>   
 	    created: {{record.created_at}} <!-- my add -->
     </div>
 	
-	<!-- Display  Column img_id. Added by me-->
+	<!-- Display  Column "img_id". Added by me-->
 	<div class="col-sm-12 col-xs-12">
 	    <i class="fa fa-clone" style="font-size:18px"></i>   
 	    Id: {{record.img_id}} <!-- my add -->
     </div>
-				
-				
+	
+	
+	
+    <!-- Display  Column "img_blog_id". Added by me-->
+	<div class="col-sm-12 col-xs-12">
+	    <i class="fa fa-clone" style="font-size:18px"></i>   
+	    belongs to Blog Post id: {{record.img_blog_id}}
+    </div>
+	
+    <!--  belongsTo relation -->	
+	<!-- Display Column "title" from DB "rainlab_blog_posts"  by "img_blog_id" from DB "dima_myfirstplugin_images". belongsTo relation-->
+	<div class="col-sm-12 col-xs-12">
+	    <i class="fa fa-clone" style="font-size:18px"></i>   
+	    blog name(belongsTo realtion): {{  record.channelZ.title }}  <!-- channelZ is belongsTo relation definied in model-->
+    </div>
+			
+
+			
 {% else %}
     {{ notFoundMessage }}
 {% endif %}

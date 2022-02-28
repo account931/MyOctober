@@ -22,6 +22,29 @@ fields:
         span: left
         placeholder: rainlab.blog::lang.post.customX_placeholder
         
+        
+    #Dropdown, hasOne relation, Display Column "img_id, img_name" from DB " dima_myfirstplugin_images"  by "id" from DB "rainlab_blog_posts". hasOne relation
+    #must define public function getImgIdOptions(){} in model => \plugins\rainlab\blog\models\Posts
+    #img_id:
+        #label: ImgConnected(FK)
+        #type: dropdown
+        #span: left
+    
+    #File Upload   
+    fileupload1:
+        label: 'File upload'
+        mode: file
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        trigger:
+            action: ''
+            field: img_name
+        type: fileupload
+        
+    #Save, Cancel buttons    
     toolbar:
         type: partial
         path: post_toolbar

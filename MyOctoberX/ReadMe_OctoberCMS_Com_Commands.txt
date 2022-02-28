@@ -11,8 +11,11 @@ Content:
 7.Add new db column to some plugin (for example to Rainlab Blog)
 8.Create plugin via Artisan
 9.Create plugin via Builder
-10.Image
-11.CLI Commands
+10.Relations
+11.Component
+
+33.Image
+34.CLI Commands
 
 
 
@@ -174,9 +177,65 @@ https://cms-dev.ru/blog/octobercms/sozdanie-plagina-chast-2.-frontend.html
 	
 	#NB: for some bizzare reason, url from Record List page to Record Details was not created vis CMS, have to create manually and extended code with Fork icon to display more than 1 column
 	
+
+
+	
+	
+	
+	
+-------------------------
+10.Relations
+#Backend => 
+In model =>
+   public $belongsTo = [
+        'channelZ'  => ['\RainLab\Blog\Models\Post', 'key' => 'img_blog_id',  'otherKey' => 'id'], //Model to connect, this model ID, that model ID (i.e RainLab\Blog\Models\Post)
+    ];
+
+In column.yaml =>
+     img_idAnyName:
+        label: BlogName    //any name
+        type: number
+        relation: channelZ //realtion 
+        valueFrom: title  //column from connected model
+	
+	
+#Frontend => 	
+To display in view => {{  record.channelZ.title }}	
+	
+
+===
+10.1 How use Relation if update form with dropdown
+
+1.In fields.yaml => https://github.com/account931/MyOctober/blob/main/MyOctoberX/plugins/dima/myfirstplugin/models/myfirstplugin_images/fields.yaml
+#belongsTo relation, Display Column "title" from DB "rainlab_blog_posts"  by "img_blog_id" from DB "dima_myfirstplugin_images". belongsTo relation
+    #must define public function getImgIdcOptions(){} in model => Dima\Myfirstplugin\Models\Myfirstplugin
+    img_blog_id:
+        label: BlogNamM(FK)
+        type: dropdown	
+	
+	
+2.In model add function => see example => https://github.com/account931/MyOctober/blob/main/MyOctoberX/plugins/dima/myfirstplugin/models/Myfirstplugin_images.php	
+	//for relation update form(create dropdown). Relation, db with posts {rainlab_blog_posts}.
+    //used for column {img_blog_id}	in field_yaml
+	public function getImgBlogIdOptions()  //format get{ColumnName}Options
+    {
+		$teams = \RainLab\Blog\Models\Post::all(['id', 'title']); //columns from {rainlab_blog_posts}
+        $teamsOptions = [];
+        $teams->each(function($team) use (&$teamsOptions) {
+            $teamsOptions[$team->id] = $team->title;
+        });
+        return $teamsOptions;
+    }	
+	
+------------------------------
+
+11.Component
+https://docs.octobercms.com/2.x/plugin/components.html#component-class-definition
+
+
 	
 ---------------------------
-10.Image
+33.Image
 ![technics_sl_1200g_3.jpg](http://localhost/myoctober/MyOctoberX/storage/app/uploads/public/620/b91/2ba/62.jpg){.classX}
 
 
@@ -184,7 +243,7 @@ https://cms-dev.ru/blog/octobercms/sozdanie-plagina-chast-2.-frontend.html
 
 
 ---------------------------
-11.CLI Commands
+34.CLI Commands
 
 php artisan october:install
 php artisan october:update
@@ -234,8 +293,27 @@ php artisan october:fresh  #delete demo theme
     {% endfor %}
 
 
+	
+	
 ---------------
-{# Comment format #}
+Comment in views => {# Comment format #}
+Comment in yaml  => #
 
 
+--------------
+Displaying the list => https://octobercms.ru/docs/backend-lists.md
+<?= $this->listRender() ?>
+Sometimes you may wish to use your own logic along with the list. You can use your own index() action method in the controller, then call the List behavior index() method.
+
+
+
+
+
+-------------
+Issue fix with Builder plugin (primary key issue, October makes SQL query by 'id', while DB column is 'img_id' )
+If you have different DB primary key than the standard id, you have to change 3 files => The model The config_form.yaml The config_list.yaml
+   In model =>
+       public $table = 'dima_myfirstplugin_images';
+       public $primaryKey = 'img_id'; //Mega Fix
+  
 

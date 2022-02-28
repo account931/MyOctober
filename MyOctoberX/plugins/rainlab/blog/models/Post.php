@@ -80,7 +80,14 @@ class Post extends Model
      * Relations
      */
     public $belongsTo = [
-        'user' => BackendUser::class
+        'user'     => BackendUser::class,
+		//'userPost' => Dima\Myfirstplugin\Models\Myfirstplugin_images
+		
+    ];
+	
+	//hasOne relation(mine)
+	public $hasOne = [
+	    'getimgZ'  => ['\Dima\Myfirstplugin\Models\Myfirstplugin_images', 'key' => 'img_blog_id',  'otherKey' => 'id'], //Model, that model ID (i.e Myfirstplugin_images), this model ID
     ];
 
     public $belongsToMany = [
@@ -91,6 +98,29 @@ class Post extends Model
         ]
     ];
 
+	
+	//to use relations in update/edit form(makes dropdown list). Relation, db with images {dima_myfirstplugin_images}.
+    //used for column {img_id} in \plugins\rainlab\blog\models\post\fields.yaml
+	public function getImgIdOptions()  //format get{ColumnName}Options
+    {
+        //return Post::lists('title', 'id');
+		$teams = \Dima\Myfirstplugin\Models\Myfirstplugin_images::all(['img_id', 'img_name']); //columns from {dima_myfirstplugin_images}
+        $teamsOptions = [];
+
+        $teams->each(function($team) use (&$teamsOptions) {
+            $teamsOptions[$team->img_id] = $team->img_name;
+        });
+
+        return $teamsOptions;
+    }
+	
+	
+	
+	
+	
+	
+	
+	
     public $attachMany = [
         'featured_images' => [\System\Models\File::class, 'order' => 'sort_order'],
         'content_images'  => \System\Models\File::class

@@ -1,9 +1,16 @@
+# ===================================
+#  My Form Behavior Definitions
+#  Form Behavior is a controller modifier used for easily adding form functionality to a back-end page
+#  Docs: https://docs.octobercms.com/2.x/backend/forms.html
+# ===================================
 name: MyFirstPlugin
 form: $/dima/myfirstplugin/models/myfirstplugin_images/fields.yaml
 modelClass: Dima\Myfirstplugin\Models\Myfirstplugin_images
 defaultRedirect: dima/myfirstplugin/myfirstplugin
+
+#after creating new entry redirect to update page
 create:
-    redirect: 'dima/myfirstplugin/myfirstplugin/update/:id'
+    redirect: 'dima/myfirstplugin/myfirstplugin/update/:id' 
     redirectClose: dima/myfirstplugin/myfirstplugin
 update:
     redirect: dima/myfirstplugin/myfirstplugin

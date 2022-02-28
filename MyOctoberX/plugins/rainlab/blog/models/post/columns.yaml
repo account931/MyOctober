@@ -36,7 +36,15 @@ columns:
     published_at:
         label: rainlab.blog::lang.post.published
         type: date
-
+    
+    #my custom added column, manually added to DB
     myCustomX:
         label: rainlab.blog::lang.post.myCustomX
+        
+     #Foreign key    
+    img_id:
+        label: Img(FK)
+        type: number
+        relation: getimgZ  #relation method
+        valueFrom: img_name
         

@@ -73,7 +73,7 @@ class __TwigTemplate_3006c5baf1016dfc5016269b41615d00333d7da0ecca7daa59850c93eaf
             echo "
 \t</div>
 \t
-\t<!-- Display  Column created_at. Added by me-->
+\t<!-- Display  Column \"created_at\". Added by me-->
 \t<div class=\"col-sm-12 col-xs-12\">
 \t    <i class=\"fa fa-clone\" style=\"font-size:18px\"></i>   
 \t    created: ";
@@ -82,7 +82,7 @@ class __TwigTemplate_3006c5baf1016dfc5016269b41615d00333d7da0ecca7daa59850c93eaf
             echo " <!-- my add -->
     </div>
 \t
-\t<!-- Display  Column img_id. Added by me-->
+\t<!-- Display  Column \"img_id\". Added by me-->
 \t<div class=\"col-sm-12 col-xs-12\">
 \t    <i class=\"fa fa-clone\" style=\"font-size:18px\"></i>   
 \t    Id: ";
@@ -90,23 +90,45 @@ class __TwigTemplate_3006c5baf1016dfc5016269b41615d00333d7da0ecca7daa59850c93eaf
             echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["record"] ?? null), "img_id", [], "any", false, false, true, 37), 37, $this->source), "html", null, true);
             echo " <!-- my add -->
     </div>
-\t\t\t\t
-\t\t\t\t
+\t
+\t
+\t
+    <!-- Display  Column \"img_blog_id\". Added by me-->
+\t<div class=\"col-sm-12 col-xs-12\">
+\t    <i class=\"fa fa-clone\" style=\"font-size:18px\"></i>   
+\t    belongs to Blog Post id: ";
+            // line 45
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["record"] ?? null), "img_blog_id", [], "any", false, false, true, 45), 45, $this->source), "html", null, true);
+            echo "
+    </div>
+\t
+    <!--  belongsTo relation -->\t
+\t<!-- Display Column \"title\" from DB \"rainlab_blog_posts\"  by \"img_blog_id\" from DB \"dima_myfirstplugin_images\". belongsTo relation-->
+\t<div class=\"col-sm-12 col-xs-12\">
+\t    <i class=\"fa fa-clone\" style=\"font-size:18px\"></i>   
+\t    blog name(belongsTo realtion): ";
+            // line 52
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["record"] ?? null), "channelZ", [], "any", false, false, true, 52), "title", [], "any", false, false, true, 52), 52, $this->source), "html", null, true);
+            echo "  <!-- channelZ is belongsTo relation definied in model-->
+    </div>
+\t\t\t
+
+\t\t\t
 ";
         } else {
-            // line 42
+            // line 58
             echo "    ";
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(($context["notFoundMessage"] ?? null), 42, $this->source), "html", null, true);
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(($context["notFoundMessage"] ?? null), 58, $this->source), "html", null, true);
             echo "
 ";
         }
-        // line 44
+        // line 60
         echo "</div>
 
 <div class=\"col-sm-12 col-xs-12\">
     <hr>
     <a href=\"";
-        // line 48
+        // line 64
         echo $this->extensions['Cms\Twig\Extension']->pageFilter("my-plugin-front-end");
         echo "\"> Back to list </a>
 </div>
@@ -126,7 +148,7 @@ class __TwigTemplate_3006c5baf1016dfc5016269b41615d00333d7da0ecca7daa59850c93eaf
 
     public function getDebugInfo()
     {
-        return array (  110 => 48,  104 => 44,  98 => 42,  90 => 37,  81 => 31,  72 => 25,  60 => 15,  58 => 14,  55 => 13,  53 => 12,  51 => 11,  49 => 10,  45 => 8,  39 => 1,);
+        return array (  132 => 64,  126 => 60,  120 => 58,  111 => 52,  101 => 45,  90 => 37,  81 => 31,  72 => 25,  60 => 15,  58 => 14,  55 => 13,  53 => 12,  51 => 11,  49 => 10,  45 => 8,  39 => 1,);
     }
 
     public function getSourceContext()
@@ -158,19 +180,35 @@ class __TwigTemplate_3006c5baf1016dfc5016269b41615d00333d7da0ecca7daa59850c93eaf
         {{ attribute(record, displayColumn) }}
 \t</div>
 \t
-\t<!-- Display  Column created_at. Added by me-->
+\t<!-- Display  Column \"created_at\". Added by me-->
 \t<div class=\"col-sm-12 col-xs-12\">
 \t    <i class=\"fa fa-clone\" style=\"font-size:18px\"></i>   
 \t    created: {{record.created_at}} <!-- my add -->
     </div>
 \t
-\t<!-- Display  Column img_id. Added by me-->
+\t<!-- Display  Column \"img_id\". Added by me-->
 \t<div class=\"col-sm-12 col-xs-12\">
 \t    <i class=\"fa fa-clone\" style=\"font-size:18px\"></i>   
 \t    Id: {{record.img_id}} <!-- my add -->
     </div>
-\t\t\t\t
-\t\t\t\t
+\t
+\t
+\t
+    <!-- Display  Column \"img_blog_id\". Added by me-->
+\t<div class=\"col-sm-12 col-xs-12\">
+\t    <i class=\"fa fa-clone\" style=\"font-size:18px\"></i>   
+\t    belongs to Blog Post id: {{record.img_blog_id}}
+    </div>
+\t
+    <!--  belongsTo relation -->\t
+\t<!-- Display Column \"title\" from DB \"rainlab_blog_posts\"  by \"img_blog_id\" from DB \"dima_myfirstplugin_images\". belongsTo relation-->
+\t<div class=\"col-sm-12 col-xs-12\">
+\t    <i class=\"fa fa-clone\" style=\"font-size:18px\"></i>   
+\t    blog name(belongsTo realtion): {{  record.channelZ.title }}  <!-- channelZ is belongsTo relation definied in model-->
+    </div>
+\t\t\t
+
+\t\t\t
 {% else %}
     {{ notFoundMessage }}
 {% endif %}
@@ -187,7 +225,7 @@ class __TwigTemplate_3006c5baf1016dfc5016269b41615d00333d7da0ecca7daa59850c93eaf
     public function checkSecurity()
     {
         static $tags = array("set" => 10, "if" => 14);
-        static $filters = array("escape" => 25, "page" => 48);
+        static $filters = array("escape" => 25, "page" => 64);
         static $functions = array();
 
         try {

@@ -1,4 +1,4 @@
-1645569379a:1:{s:32:"my-plugin-front-end-view-one.htm";a:10:{s:8:"fileName";s:32:"my-plugin-front-end-view-one.htm";s:7:"content";s:1957:"<?php //display one item display ?>-->
+1645956630a:1:{s:32:"my-plugin-front-end-view-one.htm";a:10:{s:8:"fileName";s:32:"my-plugin-front-end-view-one.htm";s:7:"content";s:2594:"<?php //display one item display ?>-->
 title = "My plugin front-end-view-one"
 url = "/my-plugin-front-end-view-one/:id"
 layout = "default"
@@ -38,19 +38,35 @@ notFoundMessage = "Record not found!!!!"
         {{ attribute(record, displayColumn) }}
 	</div>
 	
-	<!-- Display  Column created_at. Added by me-->
+	<!-- Display  Column "created_at". Added by me-->
 	<div class="col-sm-12 col-xs-12">
 	    <i class="fa fa-clone" style="font-size:18px"></i>   
 	    created: {{record.created_at}} <!-- my add -->
     </div>
 	
-	<!-- Display  Column img_id. Added by me-->
+	<!-- Display  Column "img_id". Added by me-->
 	<div class="col-sm-12 col-xs-12">
 	    <i class="fa fa-clone" style="font-size:18px"></i>   
 	    Id: {{record.img_id}} <!-- my add -->
     </div>
-				
-				
+	
+	
+	
+    <!-- Display  Column "img_blog_id". Added by me-->
+	<div class="col-sm-12 col-xs-12">
+	    <i class="fa fa-clone" style="font-size:18px"></i>   
+	    belongs to Blog Post id: {{record.img_blog_id}}
+    </div>
+	
+    <!--  belongsTo relation -->	
+	<!-- Display Column "title" from DB "rainlab_blog_posts"  by "img_blog_id" from DB "dima_myfirstplugin_images". belongsTo relation-->
+	<div class="col-sm-12 col-xs-12">
+	    <i class="fa fa-clone" style="font-size:18px"></i>   
+	    blog name(belongsTo realtion): {{  record.channelZ.title }}  <!-- channelZ is belongsTo relation definied in model-->
+    </div>
+			
+
+			
 {% else %}
     {{ notFoundMessage }}
 {% endif %}
@@ -61,7 +77,7 @@ notFoundMessage = "Record not found!!!!"
     <a href="{{ 'my-plugin-front-end'|page }}"> Back to list </a>
 </div>
 
-<div style="height:20em;"></div>";s:5:"mtime";i:1645568776;s:6:"markup";s:1584:"<h1>One detailed item</h1>
+<div style="height:20em;"></div>";s:5:"mtime";i:1645608667;s:6:"markup";s:2221:"<h1>One detailed item</h1>
 
 <div class="col-sm-12 col-xs-12">
 
@@ -88,19 +104,35 @@ notFoundMessage = "Record not found!!!!"
         {{ attribute(record, displayColumn) }}
 	</div>
 	
-	<!-- Display  Column created_at. Added by me-->
+	<!-- Display  Column "created_at". Added by me-->
 	<div class="col-sm-12 col-xs-12">
 	    <i class="fa fa-clone" style="font-size:18px"></i>   
 	    created: {{record.created_at}} <!-- my add -->
     </div>
 	
-	<!-- Display  Column img_id. Added by me-->
+	<!-- Display  Column "img_id". Added by me-->
 	<div class="col-sm-12 col-xs-12">
 	    <i class="fa fa-clone" style="font-size:18px"></i>   
 	    Id: {{record.img_id}} <!-- my add -->
     </div>
-				
-				
+	
+	
+	
+    <!-- Display  Column "img_blog_id". Added by me-->
+	<div class="col-sm-12 col-xs-12">
+	    <i class="fa fa-clone" style="font-size:18px"></i>   
+	    belongs to Blog Post id: {{record.img_blog_id}}
+    </div>
+	
+    <!--  belongsTo relation -->	
+	<!-- Display Column "title" from DB "rainlab_blog_posts"  by "img_blog_id" from DB "dima_myfirstplugin_images". belongsTo relation-->
+	<div class="col-sm-12 col-xs-12">
+	    <i class="fa fa-clone" style="font-size:18px"></i>   
+	    blog name(belongsTo realtion): {{  record.channelZ.title }}  <!-- channelZ is belongsTo relation definied in model-->
+    </div>
+			
+
+			
 {% else %}
     {{ notFoundMessage }}
 {% endif %}

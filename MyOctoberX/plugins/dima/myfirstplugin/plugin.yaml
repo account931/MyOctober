@@ -19,6 +19,6 @@ navigation:
                 url: /
                 icon: icon-sitemap
     main-menu-item2:
-        label: MyPlugin
+        label: My1Plugin
         url: dima/myfirstplugin/myfirstplugin
-        icon: icon-adn
+        icon: icon-bomb

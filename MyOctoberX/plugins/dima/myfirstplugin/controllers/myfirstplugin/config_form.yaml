@@ -10,8 +10,13 @@ defaultRedirect: dima/myfirstplugin/myfirstplugin
 
 #after creating new entry redirect to update page
 create:
-    redirect: 'dima/myfirstplugin/myfirstplugin/update/:id' 
+    redirect: 'dima/myfirstplugin/myfirstplugin/update/:img_id'  #fix was {id}
     redirectClose: dima/myfirstplugin/myfirstplugin
 update:
     redirect: dima/myfirstplugin/myfirstplugin
     redirectClose: dima/myfirstplugin/myfirstplugin
+    
+#my preview added
+preview:
+    title: View Blog Post One
+    redirect: 'dima/myfirstplugin/myfirstplugin/preview/:img_id'  #

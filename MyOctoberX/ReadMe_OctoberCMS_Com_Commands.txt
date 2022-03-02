@@ -231,8 +231,27 @@ To display in view => {{  record.channelZ.title }}
 
 11.Component
 https://docs.octobercms.com/2.x/plugin/components.html#component-class-definition
+https://habr.com/ru/post/250415/
 
+1. Create component => php artisan create:component dima.myfirstplugin ProductsX
+2. In \MyOctoberX\plugins\dima\myfirstplugin\components\ProductsX =>  
+    use Dima\Myfirstplugin\Models\Myfirstplugin_images;
+    public function getProductsX(){
+		$data = Myfirstplugin_images::orderBy('img_id', 'desc')->get();
+        return $data; // Myfirstplugin_images::orderBy('img_id', 'desc')->get();
+    }
+3. Register component in => \MyOctoberX\plugins\dima\myfirstplugin\Plugin.php
+    public function registerComponents(){
+		return ['Dima\Myfirstplugin\Components\ProductsX' => 'ProductsXComponent']; //component that returns SQL query
+    }
 
+4. Use it in pages =>  \MyOctoberX\themes\demo\pages\somePage.htm =>
+    [ProductsXComponent] #here we specify that we need to use my custom component
+    ==
+    {% for productMy in ProductsXComponent.getProductsX %} <!-- Call method getProductsX in my component ProductsXComponent and loop it -->
+        <p> ID:      {{ productMy.img_id }}</p>      <!-- display id   -->
+        <p> Name:    {{ productMy.img_name|raw }}</p> <!--display name -->
+    {% endfor %}
 	
 ---------------------------
 33.Image
@@ -317,3 +336,14 @@ If you have different DB primary key than the standard id, you have to change 3 
        public $primaryKey = 'img_id'; //Mega Fix
   
 
+----------------
+Builder Create, Delete buttons => \plugins\dima\myfirstplugin\controllers\myfirstplugin\_list_toolbar.htm
+You can edit CRUD html in the same folder
+
+---------------
+
+
+
+--------------
+If after save/update, script redirect to wrong url, like "http://localhost/myoctober/MyOctoberX/backend/dima/myfirstplugin/myfirstplugin/preview/:id",
+then change {:id} to your relevant db primary column, i.e {:img_id} at => \\MyOctoberX\plugins\dima\myfirstplugin\controllers\myfirstplugin\config_form.yaml

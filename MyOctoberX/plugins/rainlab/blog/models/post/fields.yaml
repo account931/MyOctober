@@ -30,19 +30,15 @@ fields:
         #type: dropdown
         #span: left
     
-    #File Upload   
-    fileupload1:
-        label: 'File upload'
-        mode: file
-        useCaption: true
-        thumbOptions:
-            mode: crop
-            extension: auto
-        span: auto
-        trigger:
-            action: ''
-            field: img_name
-        type: fileupload
+
+        
+    #img_blog_id: Dropdown with relations. Images from table {dima_myfirstplugin_images}
+    id:
+        label: BlogNameG(FK)
+        type: dropdown
+        relation: getimgnnn #relation method
+        valueFrom: img_name
+        
         
     #Save, Cancel buttons    
     toolbar:

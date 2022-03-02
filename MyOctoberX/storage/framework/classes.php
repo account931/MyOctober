@@ -119,4 +119,5 @@
   'RainLab\\Builder\\Components\\RecordList' => 'plugins\\rainlab\\builder\\components\\RecordList.php',
   'RainLab\\Builder\\Components\\RecordDetails' => 'plugins\\rainlab\\builder\\components\\RecordDetails.php',
   'RainLab\\Builder\\Classes\\ComponentHelper' => 'plugins\\rainlab\\builder\\classes\\ComponentHelper.php',
+  'Dima\\Myfirstplugin\\Components\\ProductsX' => 'plugins\\dima\\myfirstplugin\\components\\ProductsX.php',
 );

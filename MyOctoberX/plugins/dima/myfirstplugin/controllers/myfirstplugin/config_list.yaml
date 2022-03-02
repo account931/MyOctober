@@ -2,6 +2,7 @@
 #  My List Behavior Config
 #  List behavior is a controller modifier used for easily adding a record list to a page
 #  Docs: https://octobercms.ru/docs/backend-lists.md
+
 # ===================================
 title: MyFirstPlugin
 modelClass: Dima\Myfirstplugin\Models\Myfirstplugin_images

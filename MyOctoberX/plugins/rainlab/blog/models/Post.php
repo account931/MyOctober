@@ -80,7 +80,9 @@ class Post extends Model
      * Relations
      */
     public $belongsTo = [
-        'user'     => BackendUser::class,
+        'user'      => BackendUser::class,
+        'getimgnnn' => ['\Dima\Myfirstplugin\Models\Myfirstplugin_images', 'key' => 'id', 'otherKey' => 'img_blog_id'], //Model, this model ID, that model ID (i.e RainLab\Blog\Models\Post)
+    
 		//'userPost' => Dima\Myfirstplugin\Models\Myfirstplugin_images
 		
     ];
@@ -115,6 +117,18 @@ class Post extends Model
     }
 	
 	
+	//for edit/update
+	public function getIdOptions()  //format get{ColumnName}Options
+    {
+	    $teams = \Dima\Myfirstplugin\Models\Myfirstplugin_images::all(['img_id', 'img_name']); //columns from {dima_myfirstplugin_images}
+        $teamsOptions = [];
+
+        $teams->each(function($team) use (&$teamsOptions) {
+            $teamsOptions[$team->img_id] = $team->img_name;
+        });
+
+        return $teamsOptions;	
+	}
 	
 	
 	

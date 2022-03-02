@@ -14,3 +14,10 @@ fields:
         label: BlogNameZ(FK)
         type: dropdown
     
+    #File Upload   
+    avatar:
+        label: Avatar
+        type: fileupload
+        #mode: image
+        #imageHeight: 260
+        #imageWidth: 260

@@ -30,7 +30,8 @@ columns:
         relation: channelZ #relation method
         valueFrom: title
     
+    #my view one post
     viewX:
         label: view
         type: text
-        default: <button>view one</button>
+        default: <button> <a href="myfirstplugin/preview/2"> view one</a></button>

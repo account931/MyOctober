@@ -14,6 +14,7 @@ detailsPage = "-"
 detailsUrlParameter = "id"
 recordsPerPage = 10
 pageNumber = "{{ :page }}"
+[ProductsXComponent] #here we specify that we need to use my custom component
 ==
 <h1>My Plugin frontend </h1>
 
@@ -30,6 +31,7 @@ pageNumber = "{{ :page }}"
 {% set detailsKeyColumn = builderList.detailsKeyColumn %}
 {% set detailsUrlParameter = builderList.detailsUrlParameter %}
 
+<h3> List by Builder </h3>
 <hr>
 <ul class="record-list">
     {% for record in records %}
@@ -90,4 +92,32 @@ pageNumber = "{{ :page }}"
 
 </div>
 
-<div style="height:20em;"></div>
+
+
+
+<div class="col-sm-12 col-xs-12">
+    <hr> 
+    <div class="col-sm-12 col-xs-12 alert alert-danger"> List by Component <b>ProductsX </b> registered as  ProductsXComponent</div>
+
+	<!-- List-group-item Styling -->
+    
+	
+    {% for productMy in ProductsXComponent.getProductsX %} <!-- Call method getProductsX in my component ProductsXComponent and loop it -->
+	<div class="col-sm-12 col-xs-12 list-group-item alert alert-success">
+	<p class="list-group-item"> ID:      {{ productMy.img_id }}</p>       <!--display id ---->
+    <p class="list-group-item"> Name:    {{ productMy.img_name|raw }}</p> <!--display name -->
+	<p class="list-group-item"> Created: {{ productMy.created_at }}</p>
+    <img src="{{ product.attachments.0.path }}"> <!--Выводим первую картинку из наших вложений!-->
+	<hr>
+	</div>
+    {% endfor %}
+    
+</div>
+
+
+
+
+
+<!-- Just instead of CSS margin-top -->
+<div style="height:30em;"></div>
+</div>

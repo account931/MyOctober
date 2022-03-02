@@ -1,4 +1,4 @@
-1645956630a:1:{s:23:"my-plugin-front-end.htm";a:10:{s:8:"fileName";s:23:"my-plugin-front-end.htm";s:7:"content";s:3460:"<?php //Comment: This page Displays list of all items ?>
+1646213088a:1:{s:23:"my-plugin-front-end.htm";a:11:{s:8:"fileName";s:23:"my-plugin-front-end.htm";s:7:"content";s:4514:"<?php //Comment: This page Displays list of all items ?>
 title = "My plugin front-end"
 url = "/my-plugin-front-end"
 layout = "default"
@@ -14,6 +14,7 @@ detailsPage = "-"
 detailsUrlParameter = "id"
 recordsPerPage = 10
 pageNumber = "{{ :page }}"
+[ProductsXComponent] #here we specify that we need to use my custom component
 ==
 <h1>My Plugin frontend </h1>
 
@@ -30,6 +31,7 @@ pageNumber = "{{ :page }}"
 {% set detailsKeyColumn = builderList.detailsKeyColumn %}
 {% set detailsUrlParameter = builderList.detailsUrlParameter %}
 
+<h3> List by Builder </h3>
 <hr>
 <ul class="record-list">
     {% for record in records %}
@@ -90,7 +92,35 @@ pageNumber = "{{ :page }}"
 
 </div>
 
-<div style="height:20em;"></div>";s:5:"mtime";i:1645602926;s:6:"markup";s:3016:"<h1>My Plugin frontend </h1>
+
+
+
+<div class="col-sm-12 col-xs-12">
+    <hr> 
+    <div class="col-sm-12 col-xs-12 alert alert-danger"> List by Component <b>ProductsX </b> registered as  ProductsXComponent</div>
+
+	<!-- List-group-item Styling -->
+    
+	
+    {% for productMy in ProductsXComponent.getProductsX %} <!-- Call method getProductsX in my component ProductsXComponent and loop it -->
+	<div class="col-sm-12 col-xs-12 list-group-item alert alert-success">
+	<p class="list-group-item"> ID:      {{ productMy.img_id }}</p>       <!--display id ---->
+    <p class="list-group-item"> Name:    {{ productMy.img_name|raw }}</p> <!--display name -->
+	<p class="list-group-item"> Created: {{ productMy.created_at }}</p>
+    <img src="{{ product.attachments.0.path }}"> <!--Выводим первую картинку из наших вложений!-->
+	<hr>
+	</div>
+    {% endfor %}
+    
+</div>
+
+
+
+
+
+<!-- Just instead of CSS margin-top -->
+<div style="height:30em;"></div>
+</div>";s:5:"mtime";i:1646212483;s:6:"markup";s:3991:"<h1>My Plugin frontend </h1>
 
 <div class="col-sm-12 col-xs-12"> 
 
@@ -105,6 +135,7 @@ pageNumber = "{{ :page }}"
 {% set detailsKeyColumn = builderList.detailsKeyColumn %}
 {% set detailsUrlParameter = builderList.detailsUrlParameter %}
 
+<h3> List by Builder </h3>
 <hr>
 <ul class="record-list">
     {% for record in records %}
@@ -165,4 +196,32 @@ pageNumber = "{{ :page }}"
 
 </div>
 
-<div style="height:20em;"></div>";s:4:"code";N;s:5:"title";s:19:"My plugin front-end";s:3:"url";s:20:"/my-plugin-front-end";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:11:"builderList";a:9:{s:10:"modelClass";s:46:"Dima\Myfirstplugin\Models\Myfirstplugin_images";s:5:"scope";s:1:"-";s:10:"scopeValue";s:12:"{{ :scope }}";s:13:"displayColumn";s:8:"img_name";s:16:"noRecordsMessage";s:17:"No records foundZ";s:11:"detailsPage";s:1:"-";s:19:"detailsUrlParameter";s:2:"id";s:14:"recordsPerPage";s:2:"10";s:10:"pageNumber";s:11:"{{ :page }}";}}}
+
+
+
+<div class="col-sm-12 col-xs-12">
+    <hr> 
+    <div class="col-sm-12 col-xs-12 alert alert-danger"> List by Component <b>ProductsX </b> registered as  ProductsXComponent</div>
+
+	<!-- List-group-item Styling -->
+    
+	
+    {% for productMy in ProductsXComponent.getProductsX %} <!-- Call method getProductsX in my component ProductsXComponent and loop it -->
+	<div class="col-sm-12 col-xs-12 list-group-item alert alert-success">
+	<p class="list-group-item"> ID:      {{ productMy.img_id }}</p>       <!--display id ---->
+    <p class="list-group-item"> Name:    {{ productMy.img_name|raw }}</p> <!--display name -->
+	<p class="list-group-item"> Created: {{ productMy.created_at }}</p>
+    <img src="{{ product.attachments.0.path }}"> <!--Выводим первую картинку из наших вложений!-->
+	<hr>
+	</div>
+    {% endfor %}
+    
+</div>
+
+
+
+
+
+<!-- Just instead of CSS margin-top -->
+<div style="height:30em;"></div>
+</div>";s:4:"code";N;s:5:"title";s:19:"My plugin front-end";s:3:"url";s:20:"/my-plugin-front-end";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:11:"builderList";a:9:{s:10:"modelClass";s:46:"Dima\Myfirstplugin\Models\Myfirstplugin_images";s:5:"scope";s:1:"-";s:10:"scopeValue";s:12:"{{ :scope }}";s:13:"displayColumn";s:8:"img_name";s:16:"noRecordsMessage";s:17:"No records foundZ";s:11:"detailsPage";s:1:"-";s:19:"detailsUrlParameter";s:2:"id";s:14:"recordsPerPage";s:2:"10";s:10:"pageNumber";s:11:"{{ :page }}";}s:18:"ProductsXComponent";a:0:{}}}

@@ -1,4 +1,5 @@
-1645956630a:1:{s:10:"myPage.htm";a:10:{s:8:"fileName";s:10:"myPage.htm";s:7:"content";s:1807:"title = "MyPage"
+1646213088a:1:{s:10:"myPage.htm";a:10:{s:8:"fileName";s:10:"myPage.htm";s:7:"content";s:1839:"<?php //view all blog list; ?>
+title = "MyPage"
 url = "/myPage"
 layout = "default"
 is_hidden = 0
@@ -64,7 +65,7 @@ $this['result'] = "yes";
     </span>
    {% endif %}
 
-</div>";s:5:"mtime";i:1645000521;s:6:"markup";s:1561:"<?php
+</div>";s:5:"mtime";i:1646141109;s:6:"markup";s:1561:"<?php
 $this['result'] = "yes";
 
 ?>

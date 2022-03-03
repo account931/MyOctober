@@ -12,7 +12,7 @@ displayColumn = "img_name"
 noRecordsMessage = "No records foundZ"
 detailsPage = "-"
 detailsUrlParameter = "id"
-recordsPerPage = 10
+recordsPerPage = 5
 pageNumber = "{{ :page }}"
 [ProductsXComponent] #here we specify that we need to use my custom component
 ==
@@ -108,8 +108,12 @@ pageNumber = "{{ :page }}"
     <p class="list-group-item"> Name:    {{ productMy.img_name|raw }}</p> <!--display name -->
 	<p class="list-group-item"> Created: {{ productMy.created_at }}</p>
     <img src="{{ product.attachments.0.path }}"> <!--Выводим первую картинку из наших вложений!-->
+	<button class="btn"><a href="{{ 'my-plugin-front-end-view-one/'}}{{productMy.img_id }}">  View id: {{productMy.img_id}} </a></button> <!-- Link to view one -->
 	<hr>
 	</div>
+
+    {% else %}
+        <div> No records were found. Make good use of it</div>
     {% endfor %}
     
 </div>

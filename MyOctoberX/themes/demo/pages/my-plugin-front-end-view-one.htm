@@ -62,10 +62,24 @@ notFoundMessage = "Record not found!!!!"
 	<!-- Display Column "title" from DB "rainlab_blog_posts"  by "img_blog_id" from DB "dima_myfirstplugin_images". belongsTo relation-->
 	<div class="col-sm-12 col-xs-12">
 	    <i class="fa fa-clone" style="font-size:18px"></i>   
-	    blog name(belongsTo realtion): {{  record.channelZ.title }}  <!-- channelZ is belongsTo relation definied in model-->
+	    blog Title (belongsTo realtion): {{  record.channelZ.title }}  <!-- channelZ is belongsTo relation definied in model-->
     </div>
 			
+    <!-- Image -->
+	<div class="col-sm-12 col-xs-12">
+	     
+		<!-- Only used if u specifiead in model polymorphic relation as  public $attachOne =[]--> 
+		<p><i class="fa fa-clone" style="font-size:18px"></i> Image was loaded as : {{ record.avatar.filename }}, path (DB {system_files}): <b> {{ record.avatar.getPath }} </b> </p> <!-- avata is $attachOne relation in model -->
+		
+		<img  data-src="{{ record.avatar.getPath}}" src="{{ record.avatar.getPath }}" alt="{{ record.avatar.content-type }}" style="max-width: 30%" />
+		<!-- End Only used if in model specifiead as public $attachOne --> 
 
+		
+	
+
+    </div>
+	
+	
 			
 {% else %}
     {{ notFoundMessage }}

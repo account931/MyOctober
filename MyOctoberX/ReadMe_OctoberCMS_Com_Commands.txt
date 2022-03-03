@@ -13,6 +13,7 @@ Content:
 9.Create plugin via Builder
 10.Relations
 11.Component
+12.File upload
 
 33.Image
 34.CLI Commands
@@ -110,6 +111,7 @@ https://site21.ru/blog/octobercms-extend-plugins/
        
 	    myCustomX:
             label: rainlab.blog::lang.post.myCustomX
+			type: textarea  #type: richeditor #стандартный wysiwyg редактор
 			
 	==		
 	3. Add the column lable name at => \myoctober\MyOctoberX\plugins\rainlab\blog\lang\en     => see axample => https://github.com/account931/MyOctober/blob/main/MyOctoberX/plugins/rainlab/blog/lang/en/lang.php
@@ -194,7 +196,7 @@ In model =>
 In column.yaml =>
      img_idAnyName:
         label: BlogName    //any name
-        type: number
+        type: number #type: textarea  #type: richeditor #стандартный wysiwyg редактор
         relation: channelZ //realtion 
         valueFrom: title  //column from connected model
 	
@@ -251,8 +253,58 @@ https://habr.com/ru/post/250415/
     {% for productMy in ProductsXComponent.getProductsX %} <!-- Call method getProductsX in my component ProductsXComponent and loop it -->
         <p> ID:      {{ productMy.img_id }}</p>      <!-- display id   -->
         <p> Name:    {{ productMy.img_name|raw }}</p> <!--display name -->
+		<a href="{{ 'my-plugin-front-end-view-one/'}}{{productMy.img_id }}">  View id: {{productMy.img_id}} </a> <!-- Link to view one -->
     {% endfor %}
-	
+
+
+--------------------------
+12.File upload
+ In fields.yaml =>
+    #File Upload   
+       avatar:
+        label: Avatar
+        type: fileupload
+        mode: image
+        #imageHeight: 260
+        #imageWidth: 260
+		
+  In model => 
+      public $attachOne = ['avatar' => 'System\Models\File' ]; //avatar is fields.yaml column,  'System\Models\File' is CMS build-in model
+
+  # Image is loaded to SQL DB (system_files} and contains column {attachment_type} for polymorphic relations
+
+
+
+   #Uploaded Images goes to => \MyOctoberX\storage\app\uploads\public, to get full path use method {getPath}
+   
+   # Display images in Views, (i.e in Pages), if u specifiead in model polymorphic relation as  public $attachOne =[];  => 
+   
+
+        <!-- Only used if in model specifiead as public $attachOne --> 
+		Image path: {{ record.avatar.filename }}  <!-- avata is $attachOne relation in model -->
+		<img  data-src="{{ record.avatar.getPath}}" src="{{ record.avatar.getPath }}" alt="{{ record.avatar.content-type }}" style="max-width: 100%" />
+		<!-- End Only used if in model specifiead as public $attachOne --> 
+
+		
+	# Display images in Views, (i.e in Pages), if u specifiead in model polymorphic relation as  public $attachMany =[];  => 
+   	
+		<!-- Only used if in model specifiead as public $attachMany --> 
+		{% if record.avatar.count %} 
+		    <p> found {{ record.avatar.count }} </p>
+            <div class="featured-images text-center">
+            {% for image in record.avatar %}
+            <p> 
+                <img  data-src="{{ image.getPath }}" src="{{ image.getPath }}" alt="{{ image.description }}" style="max-width: 100%" />
+            </p>
+            {% endfor %}
+            </div>
+	    {% else %}
+		    <p> No imagess</p>
+        {% endif %}
+        <!-- End Only used if in model specifiead as public $attachMany --> 
+		
+		
+		
 ---------------------------
 33.Image
 ![technics_sl_1200g_3.jpg](http://localhost/myoctober/MyOctoberX/storage/app/uploads/public/620/b91/2ba/62.jpg){.classX}
@@ -286,7 +338,8 @@ php artisan october:fresh  #delete demo theme
 999.Miscellaneous
 
  #Plugins: User, Blog
- #URL link => <li> <a href="{{ 'user-management'|page }}"> User </a></li>  //page is an option to make sure
+ #URL link     => <li> <a href="{{ 'user-management'|page }}"> User </a></li>  //page is an option to make sure
+ #Link with id => <a href="{{ 'my-plugin-front-end-view-one/'}}{{productMy.img_id }}">  View id: {{productMy.img_id}} </a> 
  
 ------------------
  #If else => 
@@ -312,7 +365,9 @@ php artisan october:fresh  #delete demo theme
     {% endfor %}
 
 
-	
+	{% for post in posts %}
+        {{ post.summary|raw }}
+    {% endfor %}
 	
 ---------------
 Comment in views => {# Comment format #}

@@ -1,4 +1,4 @@
-1646213088a:1:{s:23:"my-plugin-front-end.htm";a:11:{s:8:"fileName";s:23:"my-plugin-front-end.htm";s:7:"content";s:4514:"<?php //Comment: This page Displays list of all items ?>
+1646308493a:1:{s:23:"my-plugin-front-end.htm";a:11:{s:8:"fileName";s:23:"my-plugin-front-end.htm";s:7:"content";s:4757:"<?php //Comment: This page Displays list of all items ?>
 title = "My plugin front-end"
 url = "/my-plugin-front-end"
 layout = "default"
@@ -12,7 +12,7 @@ displayColumn = "img_name"
 noRecordsMessage = "No records foundZ"
 detailsPage = "-"
 detailsUrlParameter = "id"
-recordsPerPage = 10
+recordsPerPage = 5
 pageNumber = "{{ :page }}"
 [ProductsXComponent] #here we specify that we need to use my custom component
 ==
@@ -108,8 +108,12 @@ pageNumber = "{{ :page }}"
     <p class="list-group-item"> Name:    {{ productMy.img_name|raw }}</p> <!--display name -->
 	<p class="list-group-item"> Created: {{ productMy.created_at }}</p>
     <img src="{{ product.attachments.0.path }}"> <!--Выводим первую картинку из наших вложений!-->
+	<button class="btn"><a href="{{ 'my-plugin-front-end-view-one/'}}{{productMy.img_id }}">  View id: {{productMy.img_id}} </a></button> <!-- Link to view one -->
 	<hr>
 	</div>
+
+    {% else %}
+        <div> No records were found. Make good use of it</div>
     {% endfor %}
     
 </div>
@@ -120,7 +124,7 @@ pageNumber = "{{ :page }}"
 
 <!-- Just instead of CSS margin-top -->
 <div style="height:30em;"></div>
-</div>";s:5:"mtime";i:1646212483;s:6:"markup";s:3991:"<h1>My Plugin frontend </h1>
+</div>";s:5:"mtime";i:1646213114;s:6:"markup";s:4235:"<h1>My Plugin frontend </h1>
 
 <div class="col-sm-12 col-xs-12"> 
 
@@ -212,8 +216,12 @@ pageNumber = "{{ :page }}"
     <p class="list-group-item"> Name:    {{ productMy.img_name|raw }}</p> <!--display name -->
 	<p class="list-group-item"> Created: {{ productMy.created_at }}</p>
     <img src="{{ product.attachments.0.path }}"> <!--Выводим первую картинку из наших вложений!-->
+	<button class="btn"><a href="{{ 'my-plugin-front-end-view-one/'}}{{productMy.img_id }}">  View id: {{productMy.img_id}} </a></button> <!-- Link to view one -->
 	<hr>
 	</div>
+
+    {% else %}
+        <div> No records were found. Make good use of it</div>
     {% endfor %}
     
 </div>
@@ -224,4 +232,4 @@ pageNumber = "{{ :page }}"
 
 <!-- Just instead of CSS margin-top -->
 <div style="height:30em;"></div>
-</div>";s:4:"code";N;s:5:"title";s:19:"My plugin front-end";s:3:"url";s:20:"/my-plugin-front-end";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:11:"builderList";a:9:{s:10:"modelClass";s:46:"Dima\Myfirstplugin\Models\Myfirstplugin_images";s:5:"scope";s:1:"-";s:10:"scopeValue";s:12:"{{ :scope }}";s:13:"displayColumn";s:8:"img_name";s:16:"noRecordsMessage";s:17:"No records foundZ";s:11:"detailsPage";s:1:"-";s:19:"detailsUrlParameter";s:2:"id";s:14:"recordsPerPage";s:2:"10";s:10:"pageNumber";s:11:"{{ :page }}";}s:18:"ProductsXComponent";a:0:{}}}
+</div>";s:4:"code";N;s:5:"title";s:19:"My plugin front-end";s:3:"url";s:20:"/my-plugin-front-end";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:11:"builderList";a:9:{s:10:"modelClass";s:46:"Dima\Myfirstplugin\Models\Myfirstplugin_images";s:5:"scope";s:1:"-";s:10:"scopeValue";s:12:"{{ :scope }}";s:13:"displayColumn";s:8:"img_name";s:16:"noRecordsMessage";s:17:"No records foundZ";s:11:"detailsPage";s:1:"-";s:19:"detailsUrlParameter";s:2:"id";s:14:"recordsPerPage";s:1:"5";s:10:"pageNumber";s:11:"{{ :page }}";}s:18:"ProductsXComponent";a:0:{}}}

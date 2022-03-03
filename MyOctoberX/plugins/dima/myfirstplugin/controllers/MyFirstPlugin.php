@@ -1,6 +1,7 @@
 <?php namespace Dima\Myfirstplugin\Controllers;
 
 use Backend\Classes\Controller;
+use Illuminate\Support\Facades\Input;
 use BackendMenu;
 
 class MyFirstPlugin extends Controller
@@ -27,5 +28,46 @@ class MyFirstPlugin extends Controller
         // Call the ListController behavior index() method
         $this->getClassExtension('Backend.Behaviors.ListController')->index();
     } */
+	
+	
+
+    // ...
+	//ovveride defauld create function (when create new form))
+    public function create_onSave() //update_onSave($recordId)
+    {
+		//dd("v"); //works
+		
+		$inputs = post('Myfirstplugin_images'); //Gets all form input, {Myfirstplugin_images} is model name//$_POST; works as well
+		dd($_POST); // works as well);
+		//dd($inputs); //works, 
+		//dd($inputs['Myfirstplugin_images']['img_name']); //works
+		//dd(Input::get('img_name')); //does not work
+		dd(Input::file('file_input'));
+		
+		$file = new System\Models\File;
+        $file->data = Input::file('file_input');
+
+
+		/*
+        $inputs = post('Team');
+
+        // update team
+        $teamModel = \Rafie\SitepointDemo\Models\Team::findOrFail($recordId);
+        $teamModel->name = $inputs['name'];
+        $teamModel->save();
+
+        \Backend\Models\User::where('team_id', $teamModel->id)
+                            ->update(['team_id' => 0]);
+
+        // update users team_id
+        \Backend\Models\User::whereIn('id', $inputs['users'])
+                            ->update(['team_id' => $teamModel->id]);
+
+        \Flash::success("Team updated successfully");
+		*/
+		
+		\Flash::success("TeamXXX updated successfully");
+    }
+
 	
 }

@@ -106,29 +106,55 @@ class __TwigTemplate_3006c5baf1016dfc5016269b41615d00333d7da0ecca7daa59850c93eaf
 \t<!-- Display Column \"title\" from DB \"rainlab_blog_posts\"  by \"img_blog_id\" from DB \"dima_myfirstplugin_images\". belongsTo relation-->
 \t<div class=\"col-sm-12 col-xs-12\">
 \t    <i class=\"fa fa-clone\" style=\"font-size:18px\"></i>   
-\t    blog name(belongsTo realtion): ";
+\t    blog Title (belongsTo realtion): ";
             // line 52
             echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["record"] ?? null), "channelZ", [], "any", false, false, true, 52), "title", [], "any", false, false, true, 52), 52, $this->source), "html", null, true);
             echo "  <!-- channelZ is belongsTo relation definied in model-->
     </div>
 \t\t\t
+    <!-- Image -->
+\t<div class=\"col-sm-12 col-xs-12\">
+\t     
+\t\t<!-- Only used if u specifiead in model polymorphic relation as  public \$attachOne =[]--> 
+\t\t<p><i class=\"fa fa-clone\" style=\"font-size:18px\"></i> Image was loaded as : ";
+            // line 59
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["record"] ?? null), "avatar", [], "any", false, false, true, 59), "filename", [], "any", false, false, true, 59), 59, $this->source), "html", null, true);
+            echo ", path (DB {system_files}): <b> ";
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["record"] ?? null), "avatar", [], "any", false, false, true, 59), "getPath", [], "any", false, false, true, 59), 59, $this->source), "html", null, true);
+            echo " </b> </p> <!-- avata is \$attachOne relation in model -->
+\t\t
+\t\t<img  data-src=\"";
+            // line 61
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["record"] ?? null), "avatar", [], "any", false, false, true, 61), "getPath", [], "any", false, false, true, 61), 61, $this->source), "html", null, true);
+            echo "\" src=\"";
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["record"] ?? null), "avatar", [], "any", false, false, true, 61), "getPath", [], "any", false, false, true, 61), 61, $this->source), "html", null, true);
+            echo "\" alt=\"";
+            echo twig_escape_filter($this->env, (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["record"] ?? null), "avatar", [], "any", false, false, true, 61), "content", [], "any", false, false, true, 61) - ($context["type"] ?? null)), "html", null, true);
+            echo "\" style=\"max-width: 30%\" />
+\t\t<!-- End Only used if in model specifiead as public \$attachOne --> 
 
+\t\t
+\t
+
+    </div>
+\t
+\t
 \t\t\t
 ";
         } else {
-            // line 58
+            // line 72
             echo "    ";
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(($context["notFoundMessage"] ?? null), 58, $this->source), "html", null, true);
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(($context["notFoundMessage"] ?? null), 72, $this->source), "html", null, true);
             echo "
 ";
         }
-        // line 60
+        // line 74
         echo "</div>
 
 <div class=\"col-sm-12 col-xs-12\">
     <hr>
     <a href=\"";
-        // line 64
+        // line 78
         echo $this->extensions['Cms\Twig\Extension']->pageFilter("my-plugin-front-end");
         echo "\"> Back to list </a>
 </div>
@@ -148,7 +174,7 @@ class __TwigTemplate_3006c5baf1016dfc5016269b41615d00333d7da0ecca7daa59850c93eaf
 
     public function getDebugInfo()
     {
-        return array (  132 => 64,  126 => 60,  120 => 58,  111 => 52,  101 => 45,  90 => 37,  81 => 31,  72 => 25,  60 => 15,  58 => 14,  55 => 13,  53 => 12,  51 => 11,  49 => 10,  45 => 8,  39 => 1,);
+        return array (  158 => 78,  152 => 74,  146 => 72,  128 => 61,  121 => 59,  111 => 52,  101 => 45,  90 => 37,  81 => 31,  72 => 25,  60 => 15,  58 => 14,  55 => 13,  53 => 12,  51 => 11,  49 => 10,  45 => 8,  39 => 1,);
     }
 
     public function getSourceContext()
@@ -204,10 +230,24 @@ class __TwigTemplate_3006c5baf1016dfc5016269b41615d00333d7da0ecca7daa59850c93eaf
 \t<!-- Display Column \"title\" from DB \"rainlab_blog_posts\"  by \"img_blog_id\" from DB \"dima_myfirstplugin_images\". belongsTo relation-->
 \t<div class=\"col-sm-12 col-xs-12\">
 \t    <i class=\"fa fa-clone\" style=\"font-size:18px\"></i>   
-\t    blog name(belongsTo realtion): {{  record.channelZ.title }}  <!-- channelZ is belongsTo relation definied in model-->
+\t    blog Title (belongsTo realtion): {{  record.channelZ.title }}  <!-- channelZ is belongsTo relation definied in model-->
     </div>
 \t\t\t
+    <!-- Image -->
+\t<div class=\"col-sm-12 col-xs-12\">
+\t     
+\t\t<!-- Only used if u specifiead in model polymorphic relation as  public \$attachOne =[]--> 
+\t\t<p><i class=\"fa fa-clone\" style=\"font-size:18px\"></i> Image was loaded as : {{ record.avatar.filename }}, path (DB {system_files}): <b> {{ record.avatar.getPath }} </b> </p> <!-- avata is \$attachOne relation in model -->
+\t\t
+\t\t<img  data-src=\"{{ record.avatar.getPath}}\" src=\"{{ record.avatar.getPath }}\" alt=\"{{ record.avatar.content-type }}\" style=\"max-width: 30%\" />
+\t\t<!-- End Only used if in model specifiead as public \$attachOne --> 
 
+\t\t
+\t
+
+    </div>
+\t
+\t
 \t\t\t
 {% else %}
     {{ notFoundMessage }}
@@ -225,7 +265,7 @@ class __TwigTemplate_3006c5baf1016dfc5016269b41615d00333d7da0ecca7daa59850c93eaf
     public function checkSecurity()
     {
         static $tags = array("set" => 10, "if" => 14);
-        static $filters = array("escape" => 25, "page" => 64);
+        static $filters = array("escape" => 25, "page" => 78);
         static $functions = array();
 
         try {

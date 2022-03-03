@@ -1,4 +1,5 @@
 <?php 
+//Component
 namespace Dima\Myfirstplugin\Components;
 use Dima\Myfirstplugin\Models\Myfirstplugin_images;
 

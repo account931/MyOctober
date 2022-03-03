@@ -28,7 +28,7 @@ class Myfirstplugin_images extends Model
 	
 	
 	//public $attachOne = [ 'fileupload1' => 'System\Models\File']; 
-	public $attachOne = ['avatar' => 'System\Models\File'];
+	public $attachOne = ['avatar' => 'System\Models\File']; //avatar is a column in fields.yaml
    
    /*
     public $belongsToMany = [

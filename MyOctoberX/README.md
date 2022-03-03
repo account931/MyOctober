@@ -25,6 +25,9 @@
 ## My 1st plug-in on Builder plugin
 ![Screenshot](ScreenShots/16.png)
 
+## Image uploader in My 1st plug-in on Builder plugin
+![Screenshot](ScreenShots/17.png)
+![Screenshot](ScreenShots/18.png)
 
 # Installation Wizard for October CMS v1.0
 

@@ -2,7 +2,9 @@ fields:
     img_name:
         label: 'Img name'
         span: auto
-        type: textarea
+        #type: textarea
+        type: richeditor #стандартный wysiwyg редактор
+        
     created_at:
         label: 'Created at'
         span: auto
@@ -14,10 +16,10 @@ fields:
         label: BlogNameZ(FK)
         type: dropdown
     
-    #File Upload   
+    #File Upload   //in preview show the image at once???
     avatar:
         label: Avatar
         type: fileupload
-        #mode: image
+        mode: image
         #imageHeight: 260
         #imageWidth: 260

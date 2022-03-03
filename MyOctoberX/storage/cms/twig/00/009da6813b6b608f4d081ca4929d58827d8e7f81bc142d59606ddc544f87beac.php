@@ -218,6 +218,7 @@ class __TwigTemplate_82755f25e13685c6d4006acbda13bb7671258d7110bbbdd2df9e7f8c23b
         // line 87
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["ProductsXComponent"] ?? null), "getProductsX", [], "any", false, false, true, 87));
+        $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["productMy"]) {
             echo " <!-- Call method getProductsX in my component ProductsXComponent and loop it -->
 \t<div class=\"col-sm-12 col-xs-12 list-group-item alert alert-success\">
@@ -237,14 +238,28 @@ class __TwigTemplate_82755f25e13685c6d4006acbda13bb7671258d7110bbbdd2df9e7f8c23b
             // line 92
             echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["product"] ?? null), "attachments", [], "any", false, false, true, 92), 0, [], "any", false, false, true, 92), "path", [], "any", false, false, true, 92), 92, $this->source), "html", null, true);
             echo "\"> <!--Выводим первую картинку из наших вложений!-->
+\t<button class=\"btn\"><a href=\"";
+            // line 93
+            echo "my-plugin-front-end-view-one/";
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["productMy"], "img_id", [], "any", false, false, true, 93), 93, $this->source), "html", null, true);
+            echo "\">  View id: ";
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["productMy"], "img_id", [], "any", false, false, true, 93), 93, $this->source), "html", null, true);
+            echo " </a></button> <!-- Link to view one -->
 \t<hr>
 \t</div>
+
+    ";
+            $context['_iterated'] = true;
+        }
+        if (!$context['_iterated']) {
+            // line 98
+            echo "        <div> No records were found. Make good use of it</div>
     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['productMy'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 96
+        // line 100
         echo "    
 </div>
 
@@ -269,7 +284,7 @@ class __TwigTemplate_82755f25e13685c6d4006acbda13bb7671258d7110bbbdd2df9e7f8c23b
 
     public function getDebugInfo()
     {
-        return array (  248 => 96,  238 => 92,  234 => 91,  230 => 90,  226 => 89,  219 => 87,  204 => 74,  200 => 72,  194 => 70,  192 => 69,  189 => 68,  178 => 65,  173 => 64,  169 => 63,  166 => 62,  160 => 60,  158 => 59,  155 => 58,  153 => 57,  149 => 55,  140 => 53,  134 => 51,  131 => 50,  127 => 48,  125 => 47,  119 => 44,  106 => 37,  93 => 30,  87 => 26,  81 => 24,  78 => 23,  75 => 22,  72 => 20,  67 => 19,  61 => 15,  59 => 14,  57 => 13,  55 => 12,  53 => 11,  51 => 10,  49 => 9,  45 => 7,  39 => 1,);
+        return array (  263 => 100,  256 => 98,  243 => 93,  239 => 92,  235 => 91,  231 => 90,  227 => 89,  219 => 87,  204 => 74,  200 => 72,  194 => 70,  192 => 69,  189 => 68,  178 => 65,  173 => 64,  169 => 63,  166 => 62,  160 => 60,  158 => 59,  155 => 58,  153 => 57,  149 => 55,  140 => 53,  134 => 51,  131 => 50,  127 => 48,  125 => 47,  119 => 44,  106 => 37,  93 => 30,  87 => 26,  81 => 24,  78 => 23,  75 => 22,  72 => 20,  67 => 19,  61 => 15,  59 => 14,  57 => 13,  55 => 12,  53 => 11,  51 => 10,  49 => 9,  45 => 7,  39 => 1,);
     }
 
     public function getSourceContext()
@@ -366,8 +381,12 @@ class __TwigTemplate_82755f25e13685c6d4006acbda13bb7671258d7110bbbdd2df9e7f8c23b
     <p class=\"list-group-item\"> Name:    {{ productMy.img_name|raw }}</p> <!--display name -->
 \t<p class=\"list-group-item\"> Created: {{ productMy.created_at }}</p>
     <img src=\"{{ product.attachments.0.path }}\"> <!--Выводим первую картинку из наших вложений!-->
+\t<button class=\"btn\"><a href=\"{{ 'my-plugin-front-end-view-one/'}}{{productMy.img_id }}\">  View id: {{productMy.img_id}} </a></button> <!-- Link to view one -->
 \t<hr>
 \t</div>
+
+    {% else %}
+        <div> No records were found. Make good use of it</div>
     {% endfor %}
     
 </div>

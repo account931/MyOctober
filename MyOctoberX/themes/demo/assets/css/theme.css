@@ -4,6 +4,7 @@
 .padding-x{padding: 2em 1em;}
 
 .classX{}
+.small{font-size:0.6em;}
 
 @font-face {
   font-family: 'lato';

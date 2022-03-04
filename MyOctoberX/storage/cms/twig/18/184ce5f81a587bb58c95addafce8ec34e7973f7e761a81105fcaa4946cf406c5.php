@@ -102,7 +102,7 @@ class __TwigTemplate_3006c5baf1016dfc5016269b41615d00333d7da0ecca7daa59850c93eaf
             echo "
     </div>
 \t
-    <!--  belongsTo relation -->\t
+    <!--  belongsTo relation Column \"title\" -->\t
 \t<!-- Display Column \"title\" from DB \"rainlab_blog_posts\"  by \"img_blog_id\" from DB \"dima_myfirstplugin_images\". belongsTo relation-->
 \t<div class=\"col-sm-12 col-xs-12\">
 \t    <i class=\"fa fa-clone\" style=\"font-size:18px\"></i>   
@@ -111,50 +111,66 @@ class __TwigTemplate_3006c5baf1016dfc5016269b41615d00333d7da0ecca7daa59850c93eaf
             echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["record"] ?? null), "channelZ", [], "any", false, false, true, 52), "title", [], "any", false, false, true, 52), 52, $this->source), "html", null, true);
             echo "  <!-- channelZ is belongsTo relation definied in model-->
     </div>
-\t\t\t
-    <!-- Image -->
+\t
+
+\t
+    <!-- Image from SQL table (system_files}, polymorph relation public \$attachOne =[]   -->
 \t<div class=\"col-sm-12 col-xs-12\">
-\t     
-\t\t<!-- Only used if u specifiead in model polymorphic relation as  public \$attachOne =[]--> 
-\t\t<p><i class=\"fa fa-clone\" style=\"font-size:18px\"></i> Image was loaded as : ";
+\t    ";
             // line 59
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["record"] ?? null), "avatar", [], "any", false, false, true, 59), "filename", [], "any", false, false, true, 59), 59, $this->source), "html", null, true);
-            echo ", path (DB {system_files}): <b> ";
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["record"] ?? null), "avatar", [], "any", false, false, true, 59), "getPath", [], "any", false, false, true, 59), 59, $this->source), "html", null, true);
-            echo " </b> </p> <!-- avata is \$attachOne relation in model -->
+            if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["record"] ?? null), "avatar", [], "any", false, false, true, 59), "count", [], "any", false, false, true, 59)) {
+                echo " 
+\t\t    <!-- Only used if u specifiead in model polymorphic relation as  public \$attachOne =[]--> 
+\t\t    <p><i class=\"fa fa-clone\" style=\"font-size:18px\"></i> Image was loaded as : ";
+                // line 61
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["record"] ?? null), "avatar", [], "any", false, false, true, 61), "filename", [], "any", false, false, true, 61), 61, $this->source), "html", null, true);
+                echo ", path (DB {system_files}): <b> ";
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["record"] ?? null), "avatar", [], "any", false, false, true, 61), "getPath", [], "any", false, false, true, 61), 61, $this->source), "html", null, true);
+                echo " </b> </p> <!-- avata is \$attachOne relation in model -->
 \t\t
-\t\t<img  data-src=\"";
-            // line 61
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["record"] ?? null), "avatar", [], "any", false, false, true, 61), "getPath", [], "any", false, false, true, 61), 61, $this->source), "html", null, true);
-            echo "\" src=\"";
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["record"] ?? null), "avatar", [], "any", false, false, true, 61), "getPath", [], "any", false, false, true, 61), 61, $this->source), "html", null, true);
-            echo "\" alt=\"";
-            echo twig_escape_filter($this->env, (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["record"] ?? null), "avatar", [], "any", false, false, true, 61), "content", [], "any", false, false, true, 61) - ($context["type"] ?? null)), "html", null, true);
-            echo "\" style=\"max-width: 30%\" />
-\t\t<!-- End Only used if in model specifiead as public \$attachOne --> 
+\t\t    <img  data-src=\"";
+                // line 63
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["record"] ?? null), "avatar", [], "any", false, false, true, 63), "getPath", [], "any", false, false, true, 63), 63, $this->source), "html", null, true);
+                echo "\" src=\"";
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["record"] ?? null), "avatar", [], "any", false, false, true, 63), "getPath", [], "any", false, false, true, 63), 63, $this->source), "html", null, true);
+                echo "\" alt=\"";
+                echo twig_escape_filter($this->env, (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["record"] ?? null), "avatar", [], "any", false, false, true, 63), "content", [], "any", false, false, true, 63) - ($context["type"] ?? null)), "html", null, true);
+                echo "\" style=\"max-width: 30%\" />
+\t\t    <!-- End Only used if in model specifiead as public \$attachOne --> 
 
-\t\t
-\t
-
-    </div>
-\t
+\t\t";
+            } else {
+                // line 67
+                echo "\t\t    <!-- No connected image in SQL table (system_files},  polymorph relation. Show default image -->
+\t\t    <img  data-src=\"";
+                // line 68
+                echo url("/");
+                echo "/storage/app/media/My_images/no-image.jpg\" src=\"";
+                echo url("/");
+                echo "/storage/app/media/My_images/no-image.jpg\" alt=\"no-image\" style=\"max-width: 30%\" />
+\t\t";
+            }
+            // line 70
+            echo "    </div>
+\t <!-- End Image from SQL table (system_files}, polymorph relation public \$attachOne =[]  -->
+\t 
 \t
 \t\t\t
 ";
         } else {
-            // line 72
+            // line 76
             echo "    ";
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(($context["notFoundMessage"] ?? null), 72, $this->source), "html", null, true);
-            echo "
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(($context["notFoundMessage"] ?? null), 76, $this->source), "html", null, true);
+            echo " <!-- no record found -->
 ";
         }
-        // line 74
+        // line 78
         echo "</div>
 
 <div class=\"col-sm-12 col-xs-12\">
     <hr>
     <a href=\"";
-        // line 78
+        // line 82
         echo $this->extensions['Cms\Twig\Extension']->pageFilter("my-plugin-front-end");
         echo "\"> Back to list </a>
 </div>
@@ -174,7 +190,7 @@ class __TwigTemplate_3006c5baf1016dfc5016269b41615d00333d7da0ecca7daa59850c93eaf
 
     public function getDebugInfo()
     {
-        return array (  158 => 78,  152 => 74,  146 => 72,  128 => 61,  121 => 59,  111 => 52,  101 => 45,  90 => 37,  81 => 31,  72 => 25,  60 => 15,  58 => 14,  55 => 13,  53 => 12,  51 => 11,  49 => 10,  45 => 8,  39 => 1,);
+        return array (  174 => 82,  168 => 78,  162 => 76,  154 => 70,  147 => 68,  144 => 67,  133 => 63,  126 => 61,  121 => 59,  111 => 52,  101 => 45,  90 => 37,  81 => 31,  72 => 25,  60 => 15,  58 => 14,  55 => 13,  53 => 12,  51 => 11,  49 => 10,  45 => 8,  39 => 1,);
     }
 
     public function getSourceContext()
@@ -226,31 +242,35 @@ class __TwigTemplate_3006c5baf1016dfc5016269b41615d00333d7da0ecca7daa59850c93eaf
 \t    belongs to Blog Post id: {{record.img_blog_id}}
     </div>
 \t
-    <!--  belongsTo relation -->\t
+    <!--  belongsTo relation Column \"title\" -->\t
 \t<!-- Display Column \"title\" from DB \"rainlab_blog_posts\"  by \"img_blog_id\" from DB \"dima_myfirstplugin_images\". belongsTo relation-->
 \t<div class=\"col-sm-12 col-xs-12\">
 \t    <i class=\"fa fa-clone\" style=\"font-size:18px\"></i>   
 \t    blog Title (belongsTo realtion): {{  record.channelZ.title }}  <!-- channelZ is belongsTo relation definied in model-->
     </div>
-\t\t\t
-    <!-- Image -->
+\t
+
+\t
+    <!-- Image from SQL table (system_files}, polymorph relation public \$attachOne =[]   -->
 \t<div class=\"col-sm-12 col-xs-12\">
-\t     
-\t\t<!-- Only used if u specifiead in model polymorphic relation as  public \$attachOne =[]--> 
-\t\t<p><i class=\"fa fa-clone\" style=\"font-size:18px\"></i> Image was loaded as : {{ record.avatar.filename }}, path (DB {system_files}): <b> {{ record.avatar.getPath }} </b> </p> <!-- avata is \$attachOne relation in model -->
+\t    {% if record.avatar.count %} 
+\t\t    <!-- Only used if u specifiead in model polymorphic relation as  public \$attachOne =[]--> 
+\t\t    <p><i class=\"fa fa-clone\" style=\"font-size:18px\"></i> Image was loaded as : {{ record.avatar.filename }}, path (DB {system_files}): <b> {{ record.avatar.getPath }} </b> </p> <!-- avata is \$attachOne relation in model -->
 \t\t
-\t\t<img  data-src=\"{{ record.avatar.getPath}}\" src=\"{{ record.avatar.getPath }}\" alt=\"{{ record.avatar.content-type }}\" style=\"max-width: 30%\" />
-\t\t<!-- End Only used if in model specifiead as public \$attachOne --> 
+\t\t    <img  data-src=\"{{ record.avatar.getPath}}\" src=\"{{ record.avatar.getPath }}\" alt=\"{{ record.avatar.content-type }}\" style=\"max-width: 30%\" />
+\t\t    <!-- End Only used if in model specifiead as public \$attachOne --> 
 
-\t\t
-\t
-
+\t\t{% else %}
+\t\t    <!-- No connected image in SQL table (system_files},  polymorph relation. Show default image -->
+\t\t    <img  data-src=\"{{ url('/') }}/storage/app/media/My_images/no-image.jpg\" src=\"{{ url('/') }}/storage/app/media/My_images/no-image.jpg\" alt=\"no-image\" style=\"max-width: 30%\" />
+\t\t{% endif %}
     </div>
-\t
+\t <!-- End Image from SQL table (system_files}, polymorph relation public \$attachOne =[]  -->
+\t 
 \t
 \t\t\t
 {% else %}
-    {{ notFoundMessage }}
+    {{ notFoundMessage }} <!-- no record found -->
 {% endif %}
 </div>
 
@@ -265,14 +285,14 @@ class __TwigTemplate_3006c5baf1016dfc5016269b41615d00333d7da0ecca7daa59850c93eaf
     public function checkSecurity()
     {
         static $tags = array("set" => 10, "if" => 14);
-        static $filters = array("escape" => 25, "page" => 78);
-        static $functions = array();
+        static $filters = array("escape" => 25, "page" => 82);
+        static $functions = array("url" => 68);
 
         try {
             $this->sandbox->checkSecurity(
                 ['set', 'if'],
                 ['escape', 'page'],
-                []
+                ['url']
             );
         } catch (SecurityError $e) {
             $e->setSourceContext($this->source);

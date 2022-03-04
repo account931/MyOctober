@@ -35,17 +35,21 @@ class MyFirstPlugin extends Controller
 	//ovveride defauld create function (when create new form))
     public function create_onSave() //update_onSave($recordId)
     {
+		//CAN overide saving process here, but it was attempted to save separate image, no we know, it is not needed as images saved automatically to table (system_files}, polymorph relation public $attachOne =[]
+		
+		
+		
 		//dd("v"); //works
 		
 		$inputs = post('Myfirstplugin_images'); //Gets all form input, {Myfirstplugin_images} is model name//$_POST; works as well
-		dd($_POST); // works as well);
+		//dd($_POST); // works as well);
 		//dd($inputs); //works, 
 		//dd($inputs['Myfirstplugin_images']['img_name']); //works
 		//dd(Input::get('img_name')); //does not work
-		dd(Input::file('file_input'));
+		//dd(Input::file('file_input'));
 		
-		$file = new System\Models\File;
-        $file->data = Input::file('file_input');
+		//$file = new System\Models\File;
+        //$file->data = Input::file('file_input');
 
 
 		/*

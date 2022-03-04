@@ -22,7 +22,7 @@ class ProductsX extends ComponentBase
 	
 	public function getProductsX()
     {
-		$data = Myfirstplugin_images::orderBy('img_id', 'asc')->get(); //'desc'
+		$data = Myfirstplugin_images::orderBy('img_id', 'asc')->paginate(2); //'desc'  //Myfirstplugin_images::orderBy('img_id', 'asc')->get()  == withou pagination
         return $data; // Myfirstplugin_images::orderBy('img_id', 'desc')->get();
     }
 }

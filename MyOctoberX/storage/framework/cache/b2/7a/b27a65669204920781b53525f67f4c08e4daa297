@@ -1,4 +1,4 @@
-1646308712a:1:{s:32:"my-plugin-front-end-view-one.htm";a:10:{s:8:"fileName";s:32:"my-plugin-front-end-view-one.htm";s:7:"content";s:3226:"<?php //display one item display ?>-->
+1646386340a:1:{s:32:"my-plugin-front-end-view-one.htm";a:10:{s:8:"fileName";s:32:"my-plugin-front-end-view-one.htm";s:7:"content";s:3790:"<?php //display one item display ?>-->
 title = "My plugin front-end-view-one"
 url = "/my-plugin-front-end-view-one/:id"
 layout = "default"
@@ -58,31 +58,35 @@ notFoundMessage = "Record not found!!!!"
 	    belongs to Blog Post id: {{record.img_blog_id}}
     </div>
 	
-    <!--  belongsTo relation -->	
+    <!--  belongsTo relation Column "title" -->	
 	<!-- Display Column "title" from DB "rainlab_blog_posts"  by "img_blog_id" from DB "dima_myfirstplugin_images". belongsTo relation-->
 	<div class="col-sm-12 col-xs-12">
 	    <i class="fa fa-clone" style="font-size:18px"></i>   
 	    blog Title (belongsTo realtion): {{  record.channelZ.title }}  <!-- channelZ is belongsTo relation definied in model-->
     </div>
-			
-    <!-- Image -->
+	
+
+	
+    <!-- Image from SQL table (system_files}, polymorph relation public $attachOne =[]   -->
 	<div class="col-sm-12 col-xs-12">
-	     
-		<!-- Only used if u specifiead in model polymorphic relation as  public $attachOne =[]--> 
-		<p><i class="fa fa-clone" style="font-size:18px"></i> Image was loaded as : {{ record.avatar.filename }}, path (DB {system_files}): <b> {{ record.avatar.getPath }} </b> </p> <!-- avata is $attachOne relation in model -->
+	    {% if record.avatar.count %} 
+		    <!-- Only used if u specifiead in model polymorphic relation as  public $attachOne =[]--> 
+		    <p><i class="fa fa-clone" style="font-size:18px"></i> Image was loaded as : {{ record.avatar.filename }}, path (DB {system_files}): <b> {{ record.avatar.getPath }} </b> </p> <!-- avata is $attachOne relation in model -->
 		
-		<img  data-src="{{ record.avatar.getPath}}" src="{{ record.avatar.getPath }}" alt="{{ record.avatar.content-type }}" style="max-width: 30%" />
-		<!-- End Only used if in model specifiead as public $attachOne --> 
+		    <img  data-src="{{ record.avatar.getPath}}" src="{{ record.avatar.getPath }}" alt="{{ record.avatar.content-type }}" style="max-width: 30%" />
+		    <!-- End Only used if in model specifiead as public $attachOne --> 
 
-		
-	
-
+		{% else %}
+		    <!-- No connected image in SQL table (system_files},  polymorph relation. Show default image -->
+		    <img  data-src="{{ url('/') }}/storage/app/media/My_images/no-image.jpg" src="{{ url('/') }}/storage/app/media/My_images/no-image.jpg" alt="no-image" style="max-width: 30%" />
+		{% endif %}
     </div>
-	
+	 <!-- End Image from SQL table (system_files}, polymorph relation public $attachOne =[]  -->
+	 
 	
 			
 {% else %}
-    {{ notFoundMessage }}
+    {{ notFoundMessage }} <!-- no record found -->
 {% endif %}
 </div>
 
@@ -91,7 +95,7 @@ notFoundMessage = "Record not found!!!!"
     <a href="{{ 'my-plugin-front-end'|page }}"> Back to list </a>
 </div>
 
-<div style="height:20em;"></div>";s:5:"mtime";i:1646308109;s:6:"markup";s:2853:"<h1>One detailed item</h1>
+<div style="height:20em;"></div>";s:5:"mtime";i:1646382301;s:6:"markup";s:3417:"<h1>One detailed item</h1>
 
 <div class="col-sm-12 col-xs-12">
 
@@ -138,31 +142,35 @@ notFoundMessage = "Record not found!!!!"
 	    belongs to Blog Post id: {{record.img_blog_id}}
     </div>
 	
-    <!--  belongsTo relation -->	
+    <!--  belongsTo relation Column "title" -->	
 	<!-- Display Column "title" from DB "rainlab_blog_posts"  by "img_blog_id" from DB "dima_myfirstplugin_images". belongsTo relation-->
 	<div class="col-sm-12 col-xs-12">
 	    <i class="fa fa-clone" style="font-size:18px"></i>   
 	    blog Title (belongsTo realtion): {{  record.channelZ.title }}  <!-- channelZ is belongsTo relation definied in model-->
     </div>
-			
-    <!-- Image -->
+	
+
+	
+    <!-- Image from SQL table (system_files}, polymorph relation public $attachOne =[]   -->
 	<div class="col-sm-12 col-xs-12">
-	     
-		<!-- Only used if u specifiead in model polymorphic relation as  public $attachOne =[]--> 
-		<p><i class="fa fa-clone" style="font-size:18px"></i> Image was loaded as : {{ record.avatar.filename }}, path (DB {system_files}): <b> {{ record.avatar.getPath }} </b> </p> <!-- avata is $attachOne relation in model -->
+	    {% if record.avatar.count %} 
+		    <!-- Only used if u specifiead in model polymorphic relation as  public $attachOne =[]--> 
+		    <p><i class="fa fa-clone" style="font-size:18px"></i> Image was loaded as : {{ record.avatar.filename }}, path (DB {system_files}): <b> {{ record.avatar.getPath }} </b> </p> <!-- avata is $attachOne relation in model -->
 		
-		<img  data-src="{{ record.avatar.getPath}}" src="{{ record.avatar.getPath }}" alt="{{ record.avatar.content-type }}" style="max-width: 30%" />
-		<!-- End Only used if in model specifiead as public $attachOne --> 
+		    <img  data-src="{{ record.avatar.getPath}}" src="{{ record.avatar.getPath }}" alt="{{ record.avatar.content-type }}" style="max-width: 30%" />
+		    <!-- End Only used if in model specifiead as public $attachOne --> 
 
-		
-	
-
+		{% else %}
+		    <!-- No connected image in SQL table (system_files},  polymorph relation. Show default image -->
+		    <img  data-src="{{ url('/') }}/storage/app/media/My_images/no-image.jpg" src="{{ url('/') }}/storage/app/media/My_images/no-image.jpg" alt="no-image" style="max-width: 30%" />
+		{% endif %}
     </div>
-	
+	 <!-- End Image from SQL table (system_files}, polymorph relation public $attachOne =[]  -->
+	 
 	
 			
 {% else %}
-    {{ notFoundMessage }}
+    {{ notFoundMessage }} <!-- no record found -->
 {% endif %}
 </div>
 

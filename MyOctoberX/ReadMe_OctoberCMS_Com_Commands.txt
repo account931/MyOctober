@@ -259,6 +259,8 @@ https://habr.com/ru/post/250415/
 
 --------------------------
 12.File upload
+NB: if you want to uplad images, you don't have to create DB table for them, it already exists. Image is loaded to SQL DB (system_files} and contains column {attachment_type} for polymorphic relations
+ 
  In fields.yaml =>
     #File Upload   
        avatar:
@@ -271,7 +273,7 @@ https://habr.com/ru/post/250415/
   In model => 
       public $attachOne = ['avatar' => 'System\Models\File' ]; //avatar is fields.yaml column,  'System\Models\File' is CMS build-in model
 
-  # Image is loaded to SQL DB (system_files} and contains column {attachment_type} for polymorphic relations
+ 
 
 
 
@@ -280,10 +282,21 @@ https://habr.com/ru/post/250415/
    # Display images in Views, (i.e in Pages), if u specifiead in model polymorphic relation as  public $attachOne =[];  => 
    
 
-        <!-- Only used if in model specifiead as public $attachOne --> 
-		Image path: {{ record.avatar.filename }}  <!-- avata is $attachOne relation in model -->
-		<img  data-src="{{ record.avatar.getPath}}" src="{{ record.avatar.getPath }}" alt="{{ record.avatar.content-type }}" style="max-width: 100%" />
-		<!-- End Only used if in model specifiead as public $attachOne --> 
+        <!-- Image from SQL table (system_files}, polymorph relation public $attachOne =[]  -->
+	    <div class="col-sm-12 col-xs-12">
+	    {% if record.avatar.count %} 
+		    <!-- Only used if u specifiead in model polymorphic relation as  public $attachOne =[]--> 
+		    <p><i class="fa fa-clone" style="font-size:18px"></i> Image was loaded as : {{ record.avatar.filename }}, path (DB {system_files}): <b> {{ record.avatar.getPath }} </b> </p> <!-- avata is $attachOne relation in model -->
+		
+		    <img  data-src="{{ record.avatar.getPath}}" src="{{ record.avatar.getPath }}" alt="{{ record.avatar.content-type }}" style="max-width: 30%" />
+		    <!-- End Only used if in model specifiead as public $attachOne --> 
+
+		{% else %}
+		    <!-- No connected image in SQL table (system_files},  polymorph relation. Show default image -->
+		    <img  data-src="{{ url('/') }}/storage/app/media/My_images/no-image.jpg" src="{{ url('/') }}/storage/app/media/My_images/no-image.jpg" alt="no-image" style="max-width: 30%" />
+		{% endif %}
+        </div>
+	    <!-- End Image from SQL table (system_files}, polymorph relation public $attachOne =[]  --> 
 
 		
 	# Display images in Views, (i.e in Pages), if u specifiead in model polymorphic relation as  public $attachMany =[];  => 
@@ -304,15 +317,43 @@ https://habr.com/ru/post/250415/
         <!-- End Only used if in model specifiead as public $attachMany --> 
 		
 		
+
+
+
 		
 ---------------------------
 33.Image
 ![technics_sl_1200g_3.jpg](http://localhost/myoctober/MyOctoberX/storage/app/uploads/public/620/b91/2ba/62.jpg){.classX}
+<img  data-src="{{ url('/') }}/storage/app/media/My_images/no-image.jpg" src="{{ url('/') }}/storage/app/media/My_images/no-image.jpg" alt="no-image" style="max-width: 30%" />
 
 
 
 
+-------------------------
+34.Pagination 
+  1.Specify pagination in Active record =>  \MyOctoberX\plugins\dima\myfirstplugin\components\ProductsX.php
+    public function getProductsX() {
+		$data = Myfirstplugin_images::orderBy('img_id', 'asc')->paginate(5); //'desc'  //Myfirstplugin_images::orderBy('img_id', 'asc')->get()  == withou pagination
+        return $data; // Myfirstplugin_images::orderBy('img_id', 'desc')->get();
+    }
+	
+  2. Use in View => \MyOctoberX\themes\demo\pages\my-plugin-front-end.htm =>
+  
+     {% for productMy in ProductsXComponent.getProductsX %} <!-- Call method getProductsX in my component ProductsXComponent and loop it -->
+	    <div class="col-sm-12 col-xs-12 list-group-item alert alert-success">
+	        <p class="list-group-item"> ID:      {{ productMy.img_id }}</p>       <!--display id ---->
+		    <! -- ..........-->
+		</div>
+	{% else %}
+        <div> No records were found. Make good use of it</div>
+    {% endfor %}
+	
+	
+    <!-- My Pagination ------>
+    <div> {{ ProductsXComponent.getProductsX.render|raw }} </div>
 
+  
+  
 ---------------------------
 34.CLI Commands
 
@@ -340,7 +381,8 @@ php artisan october:fresh  #delete demo theme
  #Plugins: User, Blog
  #URL link     => <li> <a href="{{ 'user-management'|page }}"> User </a></li>  //page is an option to make sure
  #Link with id => <a href="{{ 'my-plugin-front-end-view-one/'}}{{productMy.img_id }}">  View id: {{productMy.img_id}} </a> 
- 
+ #Image Url =>  <img  data-src="{{ url('/') }}/storage/app/media/My_images/no-image.jpg" src="{{ url('/') }}/storage/app/media/My_images/no-image.jpg" alt="no-image" style="max-width: 30%" />
+
 ------------------
  #If else => 
      {% if user %}
@@ -402,3 +444,7 @@ You can edit CRUD html in the same folder
 --------------
 If after save/update, script redirect to wrong url, like "http://localhost/myoctober/MyOctoberX/backend/dima/myfirstplugin/myfirstplugin/preview/:id",
 then change {:id} to your relevant db primary column, i.e {:img_id} at => \\MyOctoberX\plugins\dima\myfirstplugin\controllers\myfirstplugin\config_form.yaml
+
+-------------
+
+Css => \myoctober\MyOctoberX\themes\demo\assets\css\theme.css

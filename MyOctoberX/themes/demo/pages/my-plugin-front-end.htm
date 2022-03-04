@@ -43,24 +43,46 @@ pageNumber = "{{ :page }}"
                 {% endif %}
 
 				<!-- Display one Column "img_name", specified in /pages/my-plugin-front-end-> Record list. Contains link to one page -->
-				<div class="col-sm-4 col-xs-4"> 
+				<div class="col-sm-3 col-xs-3"> 
 				    <i class="fa fa-clone" style="font-size:18px"></i>
                     <a href="{{ 'my-plugin-front-end-view-one/'}}{{record.img_id }}"> {{ attribute(record, displayColumn) }}  </a>
 				</div>
 				
 				
 				<!-- Display Column img_blog_id. Added by me. Contains link to one page-->
-				<div class="col-sm-4 col-xs-4"> 
+				<div class="col-sm-3 col-xs-3"> 
 				    <i class="fa fa-clone" style="font-size:18px"></i> 
                     <a href="{{ 'my-plugin-front-end-view-one/'}}{{record.img_id }}">  id: {{record.img_id}} </a>			
 				     <!-- my add -->
 				</div>
 				
 				<!-- Display  Column created_at. Added by me-->
-				<div class="col-sm-4 col-xs-4">
+				<div class="col-sm-3 col-xs-3">
 				<i class="fa fa-clone" style="font-size:18px"></i>   
 				created: {{record.created_at}} <!-- my add -->
 				</div>
+				
+				
+				
+				<!-- Image from SQL table (system_files}, polymorph relation public $attachOne =[]   -->
+	            <div class="col-sm-3 col-xs-3">
+	                {% if record.avatar.count %} 
+		                <!-- Only used if u specifiead in model polymorphic relation as  public $attachOne =[]--> 
+		                <!-- <p><i class="fa fa-clone" style="font-size:18px"></i> Image was loaded as : {{ record.avatar.filename }}, path (DB {system_files}): <b> {{ record.avatar.getPath }} </b> </p> --> <!-- avata is $attachOne relation in model -->
+		
+		                <img  data-src="{{ record.avatar.getPath}}" src="{{ record.avatar.getPath }}" alt="{{ record.avatar.content-type }}" style="max-width: 10%" />
+		                <!-- End Only used if in model specifiead as public $attachOne --> 
+
+		           {% else %}
+		               <!-- No connected image in SQL table (system_files},  polymorph relation. Show default image -->
+		               <img  data-src="{{ url('/') }}/storage/app/media/My_images/no-image.jpg" src="{{ url('/') }}/storage/app/media/My_images/no-image.jpg" alt="no-image" style="max-width: 10%" />
+		           {% endif %}
+               </div>
+	           <!-- End Image from SQL table (system_files}, polymorph relation public $attachOne =[]  -->
+			   
+			   
+			   
+			   
 
                 {% if detailsPage %}
                     </a>
@@ -107,7 +129,25 @@ pageNumber = "{{ :page }}"
 	<p class="list-group-item"> ID:      {{ productMy.img_id }}</p>       <!--display id ---->
     <p class="list-group-item"> Name:    {{ productMy.img_name|raw }}</p> <!--display name -->
 	<p class="list-group-item"> Created: {{ productMy.created_at }}</p>
-    <img src="{{ product.attachments.0.path }}"> <!--Выводим первую картинку из наших вложений!-->
+    
+	
+	<!-- Image from SQL table (system_files}, polymorph relation public $attachOne =[]   -->
+	<p class="list-group-item">
+	    {% if productMy.avatar.count %} 
+		    <!-- Only used if u specifiead in model polymorphic relation as  public $attachOne =[]--> 
+		    <p class="small"><i class="fa fa-clone" style="font-size:12px"></i> Image was loaded as : {{ productMy.avatar.filename }}, path (DB {system_files}): <b> {{ productMy.avatar.getPath }} </b> </p>  <!-- avata is $attachOne relation in model -->
+		
+		    <img  data-src="{{ productMy.avatar.getPath}}" src="{{ productMy.avatar.getPath }}" alt="{{ productMy.avatar.content-type }}" style="max-width: 6%" />
+		    <!-- End Only used if in model specifiead as public $attachOne --> 
+
+		{% else %}
+		    <!-- No connected image in SQL table (system_files},  polymorph relation. Show default image -->
+		    <img  data-src="{{ url('/') }}/storage/app/media/My_images/no-image.jpg" src="{{ url('/') }}/storage/app/media/My_images/no-image.jpg" alt="no-image" style="max-width: 6%" />
+		{% endif %}
+    </p>
+	<!-- End Image from SQL table (system_files}, polymorph relation public $attachOne =[]  -->
+			   
+	
 	<button class="btn"><a href="{{ 'my-plugin-front-end-view-one/'}}{{productMy.img_id }}">  View id: {{productMy.img_id}} </a></button> <!-- Link to view one -->
 	<hr>
 	</div>
@@ -115,11 +155,17 @@ pageNumber = "{{ :page }}"
     {% else %}
         <div> No records were found. Make good use of it</div>
     {% endfor %}
+	
+	
+	
     
 </div>
 
-
-
+<!-- My Pagination ------>
+<div>
+{{ ProductsXComponent.getProductsX.render|raw }}
+</div>
+<!-- End My Pagination -->
 
 
 <!-- Just instead of CSS margin-top -->

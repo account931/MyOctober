@@ -2,15 +2,15 @@
 
 ## Blog and User plugins
 ![Screenshot](ScreenShots/1.png)
-![Screenshot](Screenshots/2.png)
-![Screenshot](Screenshots/3.png)
-![Screenshot](Screenshots/4.png)
-![Screenshot](Screenshots/5.png)
-![Screenshot](Screenshots/6.png)
-![Screenshot](Screenshots/7.png)
-![Screenshot](Screenshots/8.png)
-![Screenshot](Screenshots/9.png)
-![Screenshot](Screenshots/10.png)
+![Screenshot](ScreenShots/2.png)
+![Screenshot](ScreenShots/3.png)
+![Screenshot](ScreenShots/4.png)
+![Screenshot](ScreenShots/5.png)
+![Screenshot](ScreenShots/6.png)
+![Screenshot](ScreenShots/7.png)
+![Screenshot](ScreenShots/8.png)
+![Screenshot](ScreenShots/9.png)
+![Screenshot](ScreenShots/10.png)
 
 
 ## Forum plugin
@@ -28,6 +28,9 @@
 ## Image uploader in My 1st plug-in on Builder plugin
 ![Screenshot](ScreenShots/17.png)
 ![Screenshot](ScreenShots/18.png)
+
+## My 1st plug-in on Builder plugin with pagination
+![Screenshot](ScreenShots/19.png)
 
 # Installation Wizard for October CMS v1.0
 

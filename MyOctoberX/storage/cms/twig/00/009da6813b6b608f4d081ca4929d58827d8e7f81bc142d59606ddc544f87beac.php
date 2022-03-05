@@ -59,41 +59,52 @@ class __TwigTemplate_82755f25e13685c6d4006acbda13bb7671258d7110bbbdd2df9e7f8c23b
         $context["detailsUrlParameter"] = twig_get_attribute($this->env, $this->source, ($context["builderList"] ?? null), "detailsUrlParameter", [], "any", false, false, true, 14);
         // line 15
         echo "
+<div class=\"col-sm-12 col-xs-12 alert alert-success\">
+    <ul> 
+\t    <li> This view is located at => MyOctoberX\\themes\\demo\\pages\\my-plugin-front-end.thm </li>
+        <li>Example of my plugin, display records from DB table 'dima_myfirstplugin_images'.</li> <li> Contains 2 parts: 1st - record listing is created by Builder plugin, 2nd - listing created manually via my component (incl pagination). </li>
+\t    <li>Records contains images, images are stored in build-in table (system_files} via polymorphic relation  \$attachOne; </li>
+\t    <li>Record contains \$belongsTo relation to display connected post title from table \"rainlab_blog_posts\" (by FK \"img_blog_id\" in table 'dima_myfirstplugin_images')</li>
+\t    <li> Back-end CRUD is extended with relation columns and every record Preview button</li>
+\t\t<li> Info: Initially table 'dima_myfirstplugin_images' was designed as table with images connected to \"rainlab_blog_posts\", but since it turned out that conencted images are stored in in build-in table (system_files}, this table was used as an independent for creating test record listing via Builder plugin and my custom component   </p>
+\t</ul>
+</div>
+
 <h3> List by Builder </h3>
 <hr>
 <ul class=\"record-list\">
     ";
-        // line 19
+        // line 30
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["records"] ?? null));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["record"]) {
-            // line 20
+            // line 31
             echo "        <li>
             ";
-            // line 22
+            // line 33
             echo "            ";
             ob_start();
-            // line 23
+            // line 34
             echo "                ";
             if (($context["detailsPage"] ?? null)) {
-                // line 24
+                // line 35
                 echo "                    <a href=\"";
-                echo $this->extensions['Cms\Twig\Extension']->pageFilter($this->sandbox->ensureToStringAllowed(($context["detailsPage"] ?? null), 24, $this->source), [($context["detailsUrlParameter"] ?? null) => twig_get_attribute($this->env, $this->source, $context["record"], ($context["detailsKeyColumn"] ?? null), [], "any", false, false, true, 24)]);
+                echo $this->extensions['Cms\Twig\Extension']->pageFilter($this->sandbox->ensureToStringAllowed(($context["detailsPage"] ?? null), 35, $this->source), [($context["detailsUrlParameter"] ?? null) => twig_get_attribute($this->env, $this->source, $context["record"], ($context["detailsKeyColumn"] ?? null), [], "any", false, false, true, 35)]);
                 echo "\">
                 ";
             }
-            // line 26
+            // line 37
             echo "
 \t\t\t\t<!-- Display one Column \"img_name\", specified in /pages/my-plugin-front-end-> Record list. Contains link to one page -->
 \t\t\t\t<div class=\"col-sm-3 col-xs-3\"> 
 \t\t\t\t    <i class=\"fa fa-clone\" style=\"font-size:18px\"></i>
                     <a href=\"";
-            // line 30
+            // line 41
             echo "my-plugin-front-end-view-one/";
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "img_id", [], "any", false, false, true, 30), 30, $this->source), "html", null, true);
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "img_id", [], "any", false, false, true, 41), 41, $this->source), "html", null, true);
             echo "\"> ";
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], ($context["displayColumn"] ?? null), [], "any", false, false, true, 30), 30, $this->source), "html", null, true);
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], ($context["displayColumn"] ?? null), [], "any", false, false, true, 41), 41, $this->source), "html", null, true);
             echo "  </a>
 \t\t\t\t</div>
 \t\t\t\t
@@ -102,11 +113,11 @@ class __TwigTemplate_82755f25e13685c6d4006acbda13bb7671258d7110bbbdd2df9e7f8c23b
 \t\t\t\t<div class=\"col-sm-3 col-xs-3\"> 
 \t\t\t\t    <i class=\"fa fa-clone\" style=\"font-size:18px\"></i> 
                     <a href=\"";
-            // line 37
+            // line 48
             echo "my-plugin-front-end-view-one/";
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "img_id", [], "any", false, false, true, 37), 37, $this->source), "html", null, true);
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "img_id", [], "any", false, false, true, 48), 48, $this->source), "html", null, true);
             echo "\">  id: ";
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "img_id", [], "any", false, false, true, 37), 37, $this->source), "html", null, true);
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "img_id", [], "any", false, false, true, 48), 48, $this->source), "html", null, true);
             echo " </a>\t\t\t
 \t\t\t\t     <!-- my add -->
 \t\t\t\t</div>
@@ -115,8 +126,8 @@ class __TwigTemplate_82755f25e13685c6d4006acbda13bb7671258d7110bbbdd2df9e7f8c23b
 \t\t\t\t<div class=\"col-sm-3 col-xs-3\">
 \t\t\t\t<i class=\"fa fa-clone\" style=\"font-size:18px\"></i>   
 \t\t\t\tcreated: ";
-            // line 44
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "created_at", [], "any", false, false, true, 44), 44, $this->source), "html", null, true);
+            // line 55
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "created_at", [], "any", false, false, true, 55), 55, $this->source), "html", null, true);
             echo " <!-- my add -->
 \t\t\t\t</div>
 \t\t\t\t
@@ -125,40 +136,40 @@ class __TwigTemplate_82755f25e13685c6d4006acbda13bb7671258d7110bbbdd2df9e7f8c23b
 \t\t\t\t<!-- Image from SQL table (system_files}, polymorph relation public \$attachOne =[]   -->
 \t            <div class=\"col-sm-3 col-xs-3\">
 \t                ";
-            // line 51
-            if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["record"], "avatar", [], "any", false, false, true, 51), "count", [], "any", false, false, true, 51)) {
+            // line 62
+            if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["record"], "avatar", [], "any", false, false, true, 62), "count", [], "any", false, false, true, 62)) {
                 echo " 
 \t\t                <!-- Only used if u specifiead in model polymorphic relation as  public \$attachOne =[]--> 
 \t\t                <!-- <p><i class=\"fa fa-clone\" style=\"font-size:18px\"></i> Image was loaded as : ";
-                // line 53
-                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["record"], "avatar", [], "any", false, false, true, 53), "filename", [], "any", false, false, true, 53), 53, $this->source), "html", null, true);
+                // line 64
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["record"], "avatar", [], "any", false, false, true, 64), "filename", [], "any", false, false, true, 64), 64, $this->source), "html", null, true);
                 echo ", path (DB {system_files}): <b> ";
-                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["record"], "avatar", [], "any", false, false, true, 53), "getPath", [], "any", false, false, true, 53), 53, $this->source), "html", null, true);
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["record"], "avatar", [], "any", false, false, true, 64), "getPath", [], "any", false, false, true, 64), 64, $this->source), "html", null, true);
                 echo " </b> </p> --> <!-- avata is \$attachOne relation in model -->
 \t\t
 \t\t                <img  data-src=\"";
-                // line 55
-                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["record"], "avatar", [], "any", false, false, true, 55), "getPath", [], "any", false, false, true, 55), 55, $this->source), "html", null, true);
+                // line 66
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["record"], "avatar", [], "any", false, false, true, 66), "getPath", [], "any", false, false, true, 66), 66, $this->source), "html", null, true);
                 echo "\" src=\"";
-                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["record"], "avatar", [], "any", false, false, true, 55), "getPath", [], "any", false, false, true, 55), 55, $this->source), "html", null, true);
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["record"], "avatar", [], "any", false, false, true, 66), "getPath", [], "any", false, false, true, 66), 66, $this->source), "html", null, true);
                 echo "\" alt=\"";
-                echo twig_escape_filter($this->env, (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["record"], "avatar", [], "any", false, false, true, 55), "content", [], "any", false, false, true, 55) - ($context["type"] ?? null)), "html", null, true);
+                echo twig_escape_filter($this->env, (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["record"], "avatar", [], "any", false, false, true, 66), "content", [], "any", false, false, true, 66) - ($context["type"] ?? null)), "html", null, true);
                 echo "\" style=\"max-width: 10%\" />
 \t\t                <!-- End Only used if in model specifiead as public \$attachOne --> 
 
 \t\t           ";
             } else {
-                // line 59
+                // line 70
                 echo "\t\t               <!-- No connected image in SQL table (system_files},  polymorph relation. Show default image -->
 \t\t               <img  data-src=\"";
-                // line 60
+                // line 71
                 echo url("/");
                 echo "/storage/app/media/My_images/no-image.jpg\" src=\"";
                 echo url("/");
                 echo "/storage/app/media/My_images/no-image.jpg\" alt=\"no-image\" style=\"max-width: 10%\" />
 \t\t           ";
             }
-            // line 62
+            // line 73
             echo "               </div>
 \t           <!-- End Image from SQL table (system_files}, polymorph relation public \$attachOne =[]  -->
 \t\t\t   
@@ -167,63 +178,63 @@ class __TwigTemplate_82755f25e13685c6d4006acbda13bb7671258d7110bbbdd2df9e7f8c23b
 \t\t\t   
 
                 ";
-            // line 69
+            // line 80
             if (($context["detailsPage"] ?? null)) {
-                // line 70
+                // line 81
                 echo "                    </a>
                 ";
             }
-            // line 72
+            // line 83
             echo "            ";
             echo trim(preg_replace('/>\s+</', '><', ob_get_clean()));
-            // line 73
+            // line 84
             echo "        </li>
     ";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 75
+            // line 86
             echo "        <li class=\"no-data\">";
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(($context["noRecordsMessage"] ?? null), 75, $this->source), "html", null, true);
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(($context["noRecordsMessage"] ?? null), 86, $this->source), "html", null, true);
             echo "</li>
     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['record'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 77
+        // line 88
         echo "</ul>
 
 ";
-        // line 79
-        if ((twig_get_attribute($this->env, $this->source, ($context["records"] ?? null), "lastPage", [], "any", false, false, true, 79) > 1)) {
-            // line 80
+        // line 90
+        if ((twig_get_attribute($this->env, $this->source, ($context["records"] ?? null), "lastPage", [], "any", false, false, true, 90) > 1)) {
+            // line 91
             echo "    <ul class=\"pagination\">
         ";
-            // line 81
-            if ((twig_get_attribute($this->env, $this->source, ($context["records"] ?? null), "currentPage", [], "any", false, false, true, 81) > 1)) {
-                // line 82
+            // line 92
+            if ((twig_get_attribute($this->env, $this->source, ($context["records"] ?? null), "currentPage", [], "any", false, false, true, 92) > 1)) {
+                // line 93
                 echo "            <li><a href=\"";
-                echo $this->extensions['Cms\Twig\Extension']->pageFilter($this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, true, 82), "baseFileName", [], "any", false, false, true, 82), 82, $this->source), [($context["pageParam"] ?? null) => (twig_get_attribute($this->env, $this->source, ($context["records"] ?? null), "currentPage", [], "any", false, false, true, 82) - 1)]);
+                echo $this->extensions['Cms\Twig\Extension']->pageFilter($this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, true, 93), "baseFileName", [], "any", false, false, true, 93), 93, $this->source), [($context["pageParam"] ?? null) => (twig_get_attribute($this->env, $this->source, ($context["records"] ?? null), "currentPage", [], "any", false, false, true, 93) - 1)]);
                 echo "\">&larr; Prev</a></li>
         ";
             }
-            // line 84
+            // line 95
             echo "
         ";
-            // line 85
+            // line 96
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(range(1, twig_get_attribute($this->env, $this->source, ($context["records"] ?? null), "lastPage", [], "any", false, false, true, 85)));
+            $context['_seq'] = twig_ensure_traversable(range(1, twig_get_attribute($this->env, $this->source, ($context["records"] ?? null), "lastPage", [], "any", false, false, true, 96)));
             foreach ($context['_seq'] as $context["_key"] => $context["page"]) {
-                // line 86
+                // line 97
                 echo "            <li class=\"";
-                echo (((twig_get_attribute($this->env, $this->source, ($context["records"] ?? null), "currentPage", [], "any", false, false, true, 86) == $context["page"])) ? ("active") : (null));
+                echo (((twig_get_attribute($this->env, $this->source, ($context["records"] ?? null), "currentPage", [], "any", false, false, true, 97) == $context["page"])) ? ("active") : (null));
                 echo "\">
                 <a href=\"";
-                // line 87
-                echo $this->extensions['Cms\Twig\Extension']->pageFilter($this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, true, 87), "baseFileName", [], "any", false, false, true, 87), 87, $this->source), [($context["pageParam"] ?? null) => $context["page"]]);
+                // line 98
+                echo $this->extensions['Cms\Twig\Extension']->pageFilter($this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, true, 98), "baseFileName", [], "any", false, false, true, 98), 98, $this->source), [($context["pageParam"] ?? null) => $context["page"]]);
                 echo "\">";
-                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed($context["page"], 87, $this->source), "html", null, true);
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed($context["page"], 98, $this->source), "html", null, true);
                 echo "</a>
             </li>
         ";
@@ -231,22 +242,22 @@ class __TwigTemplate_82755f25e13685c6d4006acbda13bb7671258d7110bbbdd2df9e7f8c23b
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['page'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 90
+            // line 101
             echo "
         ";
-            // line 91
-            if ((twig_get_attribute($this->env, $this->source, ($context["records"] ?? null), "lastPage", [], "any", false, false, true, 91) > twig_get_attribute($this->env, $this->source, ($context["records"] ?? null), "currentPage", [], "any", false, false, true, 91))) {
-                // line 92
+            // line 102
+            if ((twig_get_attribute($this->env, $this->source, ($context["records"] ?? null), "lastPage", [], "any", false, false, true, 102) > twig_get_attribute($this->env, $this->source, ($context["records"] ?? null), "currentPage", [], "any", false, false, true, 102))) {
+                // line 103
                 echo "            <li><a href=\"";
-                echo $this->extensions['Cms\Twig\Extension']->pageFilter($this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, true, 92), "baseFileName", [], "any", false, false, true, 92), 92, $this->source), [($context["pageParam"] ?? null) => (twig_get_attribute($this->env, $this->source, ($context["records"] ?? null), "currentPage", [], "any", false, false, true, 92) + 1)]);
+                echo $this->extensions['Cms\Twig\Extension']->pageFilter($this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, true, 103), "baseFileName", [], "any", false, false, true, 103), 103, $this->source), [($context["pageParam"] ?? null) => (twig_get_attribute($this->env, $this->source, ($context["records"] ?? null), "currentPage", [], "any", false, false, true, 103) + 1)]);
                 echo "\">Next &rarr;</a></li>
         ";
             }
-            // line 94
+            // line 105
             echo "    </ul>
 ";
         }
-        // line 96
+        // line 107
         echo "
 </div>
 
@@ -255,80 +266,80 @@ class __TwigTemplate_82755f25e13685c6d4006acbda13bb7671258d7110bbbdd2df9e7f8c23b
 
 <div class=\"col-sm-12 col-xs-12\">
     <hr> 
-    <div class=\"col-sm-12 col-xs-12 alert alert-danger\"> List by Component <b>ProductsX </b> registered as  ProductsXComponent</div>
+    <div class=\"col-sm-12 col-xs-12 alert alert-success\"> List of records created manually via Component <b>ProductsX </b> registered as  ProductsXComponent</div>
 
 \t<!-- List-group-item Styling -->
     
 \t
     ";
-        // line 109
+        // line 120
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["ProductsXComponent"] ?? null), "getProductsX", [], "any", false, false, true, 109));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["ProductsXComponent"] ?? null), "getProductsX", [], "any", false, false, true, 120));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["productMy"]) {
             echo " <!-- Call method getProductsX in my component ProductsXComponent and loop it -->
 \t<div class=\"col-sm-12 col-xs-12 list-group-item alert alert-success\">
 \t<p class=\"list-group-item\"> ID:      ";
-            // line 111
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["productMy"], "img_id", [], "any", false, false, true, 111), 111, $this->source), "html", null, true);
+            // line 122
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["productMy"], "img_id", [], "any", false, false, true, 122), 122, $this->source), "html", null, true);
             echo "</p>       <!--display id ---->
     <p class=\"list-group-item\"> Name:    ";
-            // line 112
-            echo $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["productMy"], "img_name", [], "any", false, false, true, 112), 112, $this->source);
+            // line 123
+            echo $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["productMy"], "img_name", [], "any", false, false, true, 123), 123, $this->source);
             echo "</p> <!--display name -->
 \t<p class=\"list-group-item\"> Created: ";
-            // line 113
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["productMy"], "created_at", [], "any", false, false, true, 113), 113, $this->source), "html", null, true);
+            // line 124
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["productMy"], "created_at", [], "any", false, false, true, 124), 124, $this->source), "html", null, true);
             echo "</p>
     
 \t
 \t<!-- Image from SQL table (system_files}, polymorph relation public \$attachOne =[]   -->
 \t<p class=\"list-group-item\">
 \t    ";
-            // line 118
-            if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["productMy"], "avatar", [], "any", false, false, true, 118), "count", [], "any", false, false, true, 118)) {
+            // line 129
+            if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["productMy"], "avatar", [], "any", false, false, true, 129), "count", [], "any", false, false, true, 129)) {
                 echo " 
 \t\t    <!-- Only used if u specifiead in model polymorphic relation as  public \$attachOne =[]--> 
 \t\t    <p class=\"small\"><i class=\"fa fa-clone\" style=\"font-size:12px\"></i> Image was loaded as : ";
-                // line 120
-                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["productMy"], "avatar", [], "any", false, false, true, 120), "filename", [], "any", false, false, true, 120), 120, $this->source), "html", null, true);
+                // line 131
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["productMy"], "avatar", [], "any", false, false, true, 131), "filename", [], "any", false, false, true, 131), 131, $this->source), "html", null, true);
                 echo ", path (DB {system_files}): <b> ";
-                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["productMy"], "avatar", [], "any", false, false, true, 120), "getPath", [], "any", false, false, true, 120), 120, $this->source), "html", null, true);
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["productMy"], "avatar", [], "any", false, false, true, 131), "getPath", [], "any", false, false, true, 131), 131, $this->source), "html", null, true);
                 echo " </b> </p>  <!-- avata is \$attachOne relation in model -->
 \t\t
 \t\t    <img  data-src=\"";
-                // line 122
-                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["productMy"], "avatar", [], "any", false, false, true, 122), "getPath", [], "any", false, false, true, 122), 122, $this->source), "html", null, true);
+                // line 133
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["productMy"], "avatar", [], "any", false, false, true, 133), "getPath", [], "any", false, false, true, 133), 133, $this->source), "html", null, true);
                 echo "\" src=\"";
-                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["productMy"], "avatar", [], "any", false, false, true, 122), "getPath", [], "any", false, false, true, 122), 122, $this->source), "html", null, true);
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["productMy"], "avatar", [], "any", false, false, true, 133), "getPath", [], "any", false, false, true, 133), 133, $this->source), "html", null, true);
                 echo "\" alt=\"";
-                echo twig_escape_filter($this->env, (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["productMy"], "avatar", [], "any", false, false, true, 122), "content", [], "any", false, false, true, 122) - ($context["type"] ?? null)), "html", null, true);
+                echo twig_escape_filter($this->env, (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["productMy"], "avatar", [], "any", false, false, true, 133), "content", [], "any", false, false, true, 133) - ($context["type"] ?? null)), "html", null, true);
                 echo "\" style=\"max-width: 6%\" />
 \t\t    <!-- End Only used if in model specifiead as public \$attachOne --> 
 
 \t\t";
             } else {
-                // line 126
+                // line 137
                 echo "\t\t    <!-- No connected image in SQL table (system_files},  polymorph relation. Show default image -->
 \t\t    <img  data-src=\"";
-                // line 127
+                // line 138
                 echo url("/");
                 echo "/storage/app/media/My_images/no-image.jpg\" src=\"";
                 echo url("/");
                 echo "/storage/app/media/My_images/no-image.jpg\" alt=\"no-image\" style=\"max-width: 6%\" />
 \t\t";
             }
-            // line 129
+            // line 140
             echo "    </p>
 \t<!-- End Image from SQL table (system_files}, polymorph relation public \$attachOne =[]  -->
 \t\t\t   
 \t
 \t<button class=\"btn\"><a href=\"";
-            // line 133
+            // line 144
             echo "my-plugin-front-end-view-one/";
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["productMy"], "img_id", [], "any", false, false, true, 133), 133, $this->source), "html", null, true);
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["productMy"], "img_id", [], "any", false, false, true, 144), 144, $this->source), "html", null, true);
             echo "\">  View id: ";
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["productMy"], "img_id", [], "any", false, false, true, 133), 133, $this->source), "html", null, true);
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["productMy"], "img_id", [], "any", false, false, true, 144), 144, $this->source), "html", null, true);
             echo " </a></button> <!-- Link to view one -->
 \t<hr>
 \t</div>
@@ -337,14 +348,14 @@ class __TwigTemplate_82755f25e13685c6d4006acbda13bb7671258d7110bbbdd2df9e7f8c23b
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 138
+            // line 149
             echo "        <div> No records were found. Make good use of it</div>
     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['productMy'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 140
+        // line 151
         echo "\t
 \t
 \t
@@ -354,8 +365,8 @@ class __TwigTemplate_82755f25e13685c6d4006acbda13bb7671258d7110bbbdd2df9e7f8c23b
 <!-- My Pagination ------>
 <div>
 ";
-        // line 148
-        echo $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["ProductsXComponent"] ?? null), "getProductsX", [], "any", false, false, true, 148), "render", [], "any", false, false, true, 148), 148, $this->source);
+        // line 159
+        echo $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["ProductsXComponent"] ?? null), "getProductsX", [], "any", false, false, true, 159), "render", [], "any", false, false, true, 159), 159, $this->source);
         echo "
 </div>
 <!-- End My Pagination -->
@@ -378,7 +389,7 @@ class __TwigTemplate_82755f25e13685c6d4006acbda13bb7671258d7110bbbdd2df9e7f8c23b
 
     public function getDebugInfo()
     {
-        return array (  358 => 148,  348 => 140,  341 => 138,  328 => 133,  322 => 129,  315 => 127,  312 => 126,  301 => 122,  294 => 120,  289 => 118,  281 => 113,  277 => 112,  273 => 111,  265 => 109,  250 => 96,  246 => 94,  240 => 92,  238 => 91,  235 => 90,  224 => 87,  219 => 86,  215 => 85,  212 => 84,  206 => 82,  204 => 81,  201 => 80,  199 => 79,  195 => 77,  186 => 75,  180 => 73,  177 => 72,  173 => 70,  171 => 69,  162 => 62,  155 => 60,  152 => 59,  141 => 55,  134 => 53,  129 => 51,  119 => 44,  106 => 37,  93 => 30,  87 => 26,  81 => 24,  78 => 23,  75 => 22,  72 => 20,  67 => 19,  61 => 15,  59 => 14,  57 => 13,  55 => 12,  53 => 11,  51 => 10,  49 => 9,  45 => 7,  39 => 1,);
+        return array (  369 => 159,  359 => 151,  352 => 149,  339 => 144,  333 => 140,  326 => 138,  323 => 137,  312 => 133,  305 => 131,  300 => 129,  292 => 124,  288 => 123,  284 => 122,  276 => 120,  261 => 107,  257 => 105,  251 => 103,  249 => 102,  246 => 101,  235 => 98,  230 => 97,  226 => 96,  223 => 95,  217 => 93,  215 => 92,  212 => 91,  210 => 90,  206 => 88,  197 => 86,  191 => 84,  188 => 83,  184 => 81,  182 => 80,  173 => 73,  166 => 71,  163 => 70,  152 => 66,  145 => 64,  140 => 62,  130 => 55,  117 => 48,  104 => 41,  98 => 37,  92 => 35,  89 => 34,  86 => 33,  83 => 31,  78 => 30,  61 => 15,  59 => 14,  57 => 13,  55 => 12,  53 => 11,  51 => 10,  49 => 9,  45 => 7,  39 => 1,);
     }
 
     public function getSourceContext()
@@ -397,6 +408,17 @@ class __TwigTemplate_82755f25e13685c6d4006acbda13bb7671258d7110bbbdd2df9e7f8c23b
 {% set detailsPage = builderList.detailsPage %}
 {% set detailsKeyColumn = builderList.detailsKeyColumn %}
 {% set detailsUrlParameter = builderList.detailsUrlParameter %}
+
+<div class=\"col-sm-12 col-xs-12 alert alert-success\">
+    <ul> 
+\t    <li> This view is located at => MyOctoberX\\themes\\demo\\pages\\my-plugin-front-end.thm </li>
+        <li>Example of my plugin, display records from DB table 'dima_myfirstplugin_images'.</li> <li> Contains 2 parts: 1st - record listing is created by Builder plugin, 2nd - listing created manually via my component (incl pagination). </li>
+\t    <li>Records contains images, images are stored in build-in table (system_files} via polymorphic relation  \$attachOne; </li>
+\t    <li>Record contains \$belongsTo relation to display connected post title from table \"rainlab_blog_posts\" (by FK \"img_blog_id\" in table 'dima_myfirstplugin_images')</li>
+\t    <li> Back-end CRUD is extended with relation columns and every record Preview button</li>
+\t\t<li> Info: Initially table 'dima_myfirstplugin_images' was designed as table with images connected to \"rainlab_blog_posts\", but since it turned out that conencted images are stored in in build-in table (system_files}, this table was used as an independent for creating test record listing via Builder plugin and my custom component   </p>
+\t</ul>
+</div>
 
 <h3> List by Builder </h3>
 <hr>
@@ -486,7 +508,7 @@ class __TwigTemplate_82755f25e13685c6d4006acbda13bb7671258d7110bbbdd2df9e7f8c23b
 
 <div class=\"col-sm-12 col-xs-12\">
     <hr> 
-    <div class=\"col-sm-12 col-xs-12 alert alert-danger\"> List by Component <b>ProductsX </b> registered as  ProductsXComponent</div>
+    <div class=\"col-sm-12 col-xs-12 alert alert-success\"> List of records created manually via Component <b>ProductsX </b> registered as  ProductsXComponent</div>
 
 \t<!-- List-group-item Styling -->
     
@@ -542,9 +564,9 @@ class __TwigTemplate_82755f25e13685c6d4006acbda13bb7671258d7110bbbdd2df9e7f8c23b
     
     public function checkSecurity()
     {
-        static $tags = array("set" => 9, "for" => 19, "spaceless" => 22, "if" => 23);
-        static $filters = array("page" => 24, "escape" => 30, "raw" => 112);
-        static $functions = array("url" => 60, "range" => 85);
+        static $tags = array("set" => 9, "for" => 30, "spaceless" => 33, "if" => 34);
+        static $filters = array("page" => 35, "escape" => 41, "raw" => 123);
+        static $functions = array("url" => 71, "range" => 96);
 
         try {
             $this->sandbox->checkSecurity(

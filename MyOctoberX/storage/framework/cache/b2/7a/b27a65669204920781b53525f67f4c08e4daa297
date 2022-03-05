@@ -1,4 +1,4 @@
-1646386340a:1:{s:32:"my-plugin-front-end-view-one.htm";a:10:{s:8:"fileName";s:32:"my-plugin-front-end-view-one.htm";s:7:"content";s:3790:"<?php //display one item display ?>-->
+1646502003a:1:{s:32:"my-plugin-front-end-view-one.htm";a:10:{s:8:"fileName";s:32:"my-plugin-front-end-view-one.htm";s:7:"content";s:3790:"<?php //display one item display ?>-->
 title = "My plugin front-end-view-one"
 url = "/my-plugin-front-end-view-one/:id"
 layout = "default"

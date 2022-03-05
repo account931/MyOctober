@@ -27,7 +27,7 @@ class Myfirstplugin_images extends Model
     ];
 	
 	
-	//public $attachOne = [ 'fileupload1' => 'System\Models\File']; 
+	//Realation for images. Images are stored in build-in table (system_files} via polymorphic relation; 
 	public $attachOne = ['avatar' => 'System\Models\File']; //avatar is a column in fields.yaml
    
    /*

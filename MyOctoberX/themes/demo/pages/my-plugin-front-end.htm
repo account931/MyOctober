@@ -31,6 +31,17 @@ pageNumber = "{{ :page }}"
 {% set detailsKeyColumn = builderList.detailsKeyColumn %}
 {% set detailsUrlParameter = builderList.detailsUrlParameter %}
 
+<div class="col-sm-12 col-xs-12 alert alert-success">
+    <ul> 
+	    <li> This view is located at => MyOctoberX\themes\demo\pages\my-plugin-front-end.thm </li>
+        <li>Example of my plugin, display records from DB table 'dima_myfirstplugin_images'.</li> <li> Contains 2 parts: 1st - record listing is created by Builder plugin, 2nd - listing created manually via my component (incl pagination). </li>
+	    <li>Records contains images, images are stored in build-in table (system_files} via polymorphic relation  $attachOne; </li>
+	    <li>Record contains $belongsTo relation to display connected post title from table "rainlab_blog_posts" (by FK "img_blog_id" in table 'dima_myfirstplugin_images')</li>
+	    <li> Back-end CRUD is extended with relation columns and every record Preview button</li>
+		<li> Info: Initially table 'dima_myfirstplugin_images' was designed as table with images connected to "rainlab_blog_posts", but since it turned out that conencted images are stored in in build-in table (system_files}, this table was used as an independent for creating test record listing via Builder plugin and my custom component   </p>
+	</ul>
+</div>
+
 <h3> List by Builder </h3>
 <hr>
 <ul class="record-list">
@@ -119,7 +130,7 @@ pageNumber = "{{ :page }}"
 
 <div class="col-sm-12 col-xs-12">
     <hr> 
-    <div class="col-sm-12 col-xs-12 alert alert-danger"> List by Component <b>ProductsX </b> registered as  ProductsXComponent</div>
+    <div class="col-sm-12 col-xs-12 alert alert-success"> List of records created manually via Component <b>ProductsX </b> registered as  ProductsXComponent</div>
 
 	<!-- List-group-item Styling -->
     

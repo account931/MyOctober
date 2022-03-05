@@ -1,4 +1,4 @@
-1646386340a:1:{s:10:"myPage.htm";a:10:{s:8:"fileName";s:10:"myPage.htm";s:7:"content";s:1839:"<?php //view all blog list; ?>
+1646502242a:1:{s:10:"myPage.htm";a:10:{s:8:"fileName";s:10:"myPage.htm";s:7:"content";s:2563:"<?php //view all blog list via rainlab.blog plugin ?>
 title = "MyPage"
 url = "/myPage"
 layout = "default"
@@ -26,12 +26,22 @@ $this['result'] = "yes";
         <li>To add Blog to your page, go -> CMS -> Pages -> select your page -> click Components & select Blog-> select and drag item to the left markdown</li>
         <li>In order to modify< for example, Blog appearance (add/change BS classes, add your text), go to ->  \localhost\myoctober\MyOctoberX\plugins\rainlab\blog\components\posts</li>
 		<li>The same way can add plugins "User", "Forum", etc</li>
-
 		</ul>
 	</div>
  </div>
 
-<!-- View all blogs, inserted via /CMS -> Components -> Blog --> 
+ 
+ <div class="col-sm-12 col-xs-12 alert alert-info">
+    <ul> 
+	    <li> This view is located at =>  Panel\domains\localhost\myoctober\MyOctoberX\themes\demo\pages\myPage.htm
+	    <li> Component displaying this records list is located at => \MyOctoberX\plugins\rainlab\blog\components\posts\default.htm </li>
+		<li>This in original rainlab.blog plugin, customly modified by me (added table column "myCustomX" and connected images, images are stored in build-in table (system_files} via polymorphic relation $attachOne  </li>
+		<li>  Apart from this, every record contains created by rainbow $belongsToMany relation "Category" and $belongsTo User</li>
+	</ul>
+</div>
+
+
+<!-- View all blogs via rainlab.blog plugin  inserted via /CMS -> Components -> Blog --> 
 <div class="col-sm-12 col-xs-12 posts-all">
     {% component 'blogPosts' %}
 </div>
@@ -65,7 +75,7 @@ $this['result'] = "yes";
     </span>
    {% endif %}
 
-</div>";s:5:"mtime";i:1646141109;s:6:"markup";s:1561:"<?php
+</div>";s:5:"mtime";i:1646501637;s:6:"markup";s:2262:"<?php
 $this['result'] = "yes";
 
 ?>
@@ -79,12 +89,22 @@ $this['result'] = "yes";
         <li>To add Blog to your page, go -> CMS -> Pages -> select your page -> click Components & select Blog-> select and drag item to the left markdown</li>
         <li>In order to modify< for example, Blog appearance (add/change BS classes, add your text), go to ->  \localhost\myoctober\MyOctoberX\plugins\rainlab\blog\components\posts</li>
 		<li>The same way can add plugins "User", "Forum", etc</li>
-
 		</ul>
 	</div>
  </div>
 
-<!-- View all blogs, inserted via /CMS -> Components -> Blog --> 
+ 
+ <div class="col-sm-12 col-xs-12 alert alert-info">
+    <ul> 
+	    <li> This view is located at =>  Panel\domains\localhost\myoctober\MyOctoberX\themes\demo\pages\myPage.htm
+	    <li> Component displaying this records list is located at => \MyOctoberX\plugins\rainlab\blog\components\posts\default.htm </li>
+		<li>This in original rainlab.blog plugin, customly modified by me (added table column "myCustomX" and connected images, images are stored in build-in table (system_files} via polymorphic relation $attachOne  </li>
+		<li>  Apart from this, every record contains created by rainbow $belongsToMany relation "Category" and $belongsTo User</li>
+	</ul>
+</div>
+
+
+<!-- View all blogs via rainlab.blog plugin  inserted via /CMS -> Components -> Blog --> 
 <div class="col-sm-12 col-xs-12 posts-all">
     {% component 'blogPosts' %}
 </div>

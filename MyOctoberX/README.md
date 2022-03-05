@@ -24,13 +24,16 @@
 
 ## My 1st plug-in on Builder plugin
 ![Screenshot](ScreenShots/16.png)
+![Screenshot](ScreenShots/16.1.png)
 
-## Image uploader in My 1st plug-in on Builder plugin
+## My 1st plug-in on Builder plugin with pagination
+![Screenshot](ScreenShots/16.2.png)
+
+## Image uploader in My 1st plug-in on Builder plugin (edit & view one item)
 ![Screenshot](ScreenShots/17.png)
 ![Screenshot](ScreenShots/18.png)
 
-## My 1st plug-in on Builder plugin with pagination
-![Screenshot](ScreenShots/19.png)
+
 
 # Installation Wizard for October CMS v1.0
 

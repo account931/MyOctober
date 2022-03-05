@@ -1,4 +1,4 @@
-1646386253a:1:{s:23:"my-plugin-front-end.htm";a:11:{s:8:"fileName";s:23:"my-plugin-front-end.htm";s:7:"content";s:7272:"<?php //Comment: This page Displays list of all items ?>
+1646502320a:1:{s:23:"my-plugin-front-end.htm";a:11:{s:8:"fileName";s:23:"my-plugin-front-end.htm";s:7:"content";s:8471:"<?php //Comment: This page Displays list of all items ?>
 title = "My plugin front-end"
 url = "/my-plugin-front-end"
 layout = "default"
@@ -30,6 +30,17 @@ pageNumber = "{{ :page }}"
 {% set detailsPage = builderList.detailsPage %}
 {% set detailsKeyColumn = builderList.detailsKeyColumn %}
 {% set detailsUrlParameter = builderList.detailsUrlParameter %}
+
+<div class="col-sm-12 col-xs-12 alert alert-success">
+    <ul> 
+	    <li> This view is located at => MyOctoberX\themes\demo\pages\my-plugin-front-end.thm </li>
+        <li>Example of my plugin, display records from DB table 'dima_myfirstplugin_images'.</li> <li> Contains 2 parts: 1st - record listing is created by Builder plugin, 2nd - listing created manually via my component (incl pagination). </li>
+	    <li>Records contains images, images are stored in build-in table (system_files} via polymorphic relation  $attachOne; </li>
+	    <li>Record contains $belongsTo relation to display connected post title from table "rainlab_blog_posts" (by FK "img_blog_id" in table 'dima_myfirstplugin_images')</li>
+	    <li> Back-end CRUD is extended with relation columns and every record Preview button</li>
+		<li> Info: Initially table 'dima_myfirstplugin_images' was designed as table with images connected to "rainlab_blog_posts", but since it turned out that conencted images are stored in in build-in table (system_files}, this table was used as an independent for creating test record listing via Builder plugin and my custom component   </p>
+	</ul>
+</div>
 
 <h3> List by Builder </h3>
 <hr>
@@ -119,7 +130,7 @@ pageNumber = "{{ :page }}"
 
 <div class="col-sm-12 col-xs-12">
     <hr> 
-    <div class="col-sm-12 col-xs-12 alert alert-danger"> List by Component <b>ProductsX </b> registered as  ProductsXComponent</div>
+    <div class="col-sm-12 col-xs-12 alert alert-success"> List of records created manually via Component <b>ProductsX </b> registered as  ProductsXComponent</div>
 
 	<!-- List-group-item Styling -->
     
@@ -170,7 +181,7 @@ pageNumber = "{{ :page }}"
 
 <!-- Just instead of CSS margin-top -->
 <div style="height:30em;"></div>
-</div>";s:5:"mtime";i:1646385650;s:6:"markup";s:6750:"<h1>My Plugin frontend </h1>
+</div>";s:5:"mtime";i:1646501716;s:6:"markup";s:7949:"<h1>My Plugin frontend </h1>
 
 <div class="col-sm-12 col-xs-12"> 
 
@@ -184,6 +195,17 @@ pageNumber = "{{ :page }}"
 {% set detailsPage = builderList.detailsPage %}
 {% set detailsKeyColumn = builderList.detailsKeyColumn %}
 {% set detailsUrlParameter = builderList.detailsUrlParameter %}
+
+<div class="col-sm-12 col-xs-12 alert alert-success">
+    <ul> 
+	    <li> This view is located at => MyOctoberX\themes\demo\pages\my-plugin-front-end.thm </li>
+        <li>Example of my plugin, display records from DB table 'dima_myfirstplugin_images'.</li> <li> Contains 2 parts: 1st - record listing is created by Builder plugin, 2nd - listing created manually via my component (incl pagination). </li>
+	    <li>Records contains images, images are stored in build-in table (system_files} via polymorphic relation  $attachOne; </li>
+	    <li>Record contains $belongsTo relation to display connected post title from table "rainlab_blog_posts" (by FK "img_blog_id" in table 'dima_myfirstplugin_images')</li>
+	    <li> Back-end CRUD is extended with relation columns and every record Preview button</li>
+		<li> Info: Initially table 'dima_myfirstplugin_images' was designed as table with images connected to "rainlab_blog_posts", but since it turned out that conencted images are stored in in build-in table (system_files}, this table was used as an independent for creating test record listing via Builder plugin and my custom component   </p>
+	</ul>
+</div>
 
 <h3> List by Builder </h3>
 <hr>
@@ -273,7 +295,7 @@ pageNumber = "{{ :page }}"
 
 <div class="col-sm-12 col-xs-12">
     <hr> 
-    <div class="col-sm-12 col-xs-12 alert alert-danger"> List by Component <b>ProductsX </b> registered as  ProductsXComponent</div>
+    <div class="col-sm-12 col-xs-12 alert alert-success"> List of records created manually via Component <b>ProductsX </b> registered as  ProductsXComponent</div>
 
 	<!-- List-group-item Styling -->
     

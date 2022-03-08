@@ -1,9 +1,14 @@
 ## October CMS
+- <p>Ready decision for Blog, Forum, User management</p>
 
 ## Blog and User plugins
 ![Screenshot](ScreenShots/1.png)
 ![Screenshot](ScreenShots/2.png)
+
+## Blog plugin extended with connected image (via polymorphic relation public $attachOne ).Images are stored in build-in table (system_files}
+![Screenshot](ScreenShots/2.1.png)
 ![Screenshot](ScreenShots/3.png)
+![Screenshot](ScreenShots/3.1.png)
 ![Screenshot](ScreenShots/4.png)
 ![Screenshot](ScreenShots/5.png)
 ![Screenshot](ScreenShots/6.png)

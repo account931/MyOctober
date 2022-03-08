@@ -14,10 +14,11 @@ Content:
 10.Relations
 11.Component
 12.File upload
+13.Pagination 
+14.Shopaholic
 
 33.Image
 34.CLI Commands
-
 
 
 
@@ -229,6 +230,27 @@ To display in view => {{  record.channelZ.title }}
         return $teamsOptions;
     }	
 	
+	
+====
+10.2 How use hasOne Relation to update/edit form with dropdown
+#In model =>
+    public $hasOne = [
+	    'getimgZ'  => ['\Dima\Myfirstplugin\Models\Myfirstplugin_images', 'key' => 'img_blog_id',  'otherKey' => 'id'], //Model, that model ID (i.e Myfirstplugin_images), this model ID
+    ];
+	
+# In In fields.yaml =>
+    #Dropdown with hasOne relations. Images from table {dima_myfirstplugin_images}
+    getimgZ:  #getimgZ is a hasOne relation in model
+        label: dima_myfirstplugin_images(FK)
+        type: dropdown
+        relation: getimgZ #getimgnnn #relation method
+        valueFrom: img_name
+        emptyOption: 'No found'
+	
+	
+	
+	
+	
 ------------------------------
 
 11.Component
@@ -271,6 +293,7 @@ NB: if you want to uplad images, you don't have to create DB table for them, it 
         #imageWidth: 260
 		
   In model => 
+     //Relation for images. Images are stored in build-in table (system_files} via polymorphic relation;
       public $attachOne = ['avatar' => 'System\Models\File' ]; //avatar is fields.yaml column,  'System\Models\File' is CMS build-in model
 
  
@@ -282,7 +305,9 @@ NB: if you want to uplad images, you don't have to create DB table for them, it 
    # Display images in Views, (i.e in Pages), if u specifiead in model polymorphic relation as  public $attachOne =[];  => 
    
 
-        <!-- Image from SQL table (system_files}, polymorph relation public $attachOne =[]  -->
+        <!-- Image from SQL table (system_files}, polymorph relation public $attachOne =[] avatar
+
+		is specified in fields.yaml  -->
 	    <div class="col-sm-12 col-xs-12">
 	    {% if record.avatar.count %} 
 		    <!-- Only used if u specifiead in model polymorphic relation as  public $attachOne =[]--> 
@@ -297,9 +322,11 @@ NB: if you want to uplad images, you don't have to create DB table for them, it 
 		{% endif %}
         </div>
 	    <!-- End Image from SQL table (system_files}, polymorph relation public $attachOne =[]  --> 
+		
+		
 
 		
-	# Display images in Views, (i.e in Pages), if u specifiead in model polymorphic relation as  public $attachMany =[];  => 
+	# Display images in Views, (i.e in Pages), if u specifiead in model polymorphic relation as  public $attachMany =[]; NOT TESTED => 
    	
 		<!-- Only used if in model specifiead as public $attachMany --> 
 		{% if record.avatar.count %} 
@@ -320,17 +347,8 @@ NB: if you want to uplad images, you don't have to create DB table for them, it 
 
 
 
-		
----------------------------
-33.Image
-![technics_sl_1200g_3.jpg](http://localhost/myoctober/MyOctoberX/storage/app/uploads/public/620/b91/2ba/62.jpg){.classX}
-<img  data-src="{{ url('/') }}/storage/app/media/My_images/no-image.jpg" src="{{ url('/') }}/storage/app/media/My_images/no-image.jpg" alt="no-image" style="max-width: 30%" />
-
-
-
-
 -------------------------
-34.Pagination 
+13.Pagination 
   1.Specify pagination in Active record =>  \MyOctoberX\plugins\dima\myfirstplugin\components\ProductsX.php
     public function getProductsX() {
 		$data = Myfirstplugin_images::orderBy('img_id', 'asc')->paginate(5); //'desc'  //Myfirstplugin_images::orderBy('img_id', 'asc')->get()  == withou pagination
@@ -338,7 +356,7 @@ NB: if you want to uplad images, you don't have to create DB table for them, it 
     }
 	
   2. Use in View => \MyOctoberX\themes\demo\pages\my-plugin-front-end.htm =>
-  
+     <!-- Display all paginated records -->
      {% for productMy in ProductsXComponent.getProductsX %} <!-- Call method getProductsX in my component ProductsXComponent and loop it -->
 	    <div class="col-sm-12 col-xs-12 list-group-item alert alert-success">
 	        <p class="list-group-item"> ID:      {{ productMy.img_id }}</p>       <!--display id ---->
@@ -354,6 +372,35 @@ NB: if you want to uplad images, you don't have to create DB table for them, it 
 
   
   
+  
+  
+-------------------------
+ 
+14.Shopaholic
+If while installing plugin u encounter error "In Currency.php line 42: Trait 'Kharanenka\Scope\ActiveField' not found" => 
+    try running composer i in the plugins/lovata/toolbox folder.
+
+
+
+
+
+
+
+		
+---------------------------
+33.Image
+![technics_sl_1200g_3.jpg](http://localhost/myoctober/MyOctoberX/storage/app/uploads/public/620/b91/2ba/62.jpg){.classX}
+<img  data-src="{{ url('/') }}/storage/app/media/My_images/no-image.jpg" src="{{ url('/') }}/storage/app/media/My_images/no-image.jpg" alt="no-image" style="max-width: 30%" />
+
+
+
+
+
+
+ 
+ 
+ 
+ 
 ---------------------------
 34.CLI Commands
 
@@ -448,3 +495,12 @@ then change {:id} to your relevant db primary column, i.e {:img_id} at => \\MyOc
 -------------
 
 Css => \myoctober\MyOctoberX\themes\demo\assets\css\theme.css
+
+
+---------------
+If you encounter issue, while you drag the component item to CMS page, the item is draggeed by component is not added to MarkUp=> inseart manually => 
+    [ProductsXComponent]
+     ==
+	<div class="col-sm-12 col-xs-12">
+        {% component 'account' %}
+	</div>

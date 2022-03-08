@@ -1,13 +1,13 @@
 <?php //view all blog list via rainlab.blog plugin ?>
-title = "MyPage"
+title = "MyPageBlog"
 url = "/myPage"
 layout = "default"
 is_hidden = 0
 
 [blogPosts]
 pageNumber = "{{ :page }}"
-postsPerPage = 10
-noPostsMessage = "No posts found"
+postsPerPage = 2
+noPostsMessage = "No posts found so far"
 sortOrder = "published_at desc"
 categoryPage = 404
 postPage = "onePost"
@@ -55,7 +55,8 @@ $this['result'] = "yes";
 </div>
 
 <div class="container">
-
+    
+	<!-- Just testing below -->
     <div class="page-header">
         <h2>My page <small> !</small></h2>
     </div>

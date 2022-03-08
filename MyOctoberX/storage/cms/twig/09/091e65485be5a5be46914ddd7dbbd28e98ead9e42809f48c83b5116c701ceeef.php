@@ -38,7 +38,7 @@ class __TwigTemplate_11ee6732376d1836d6cdc2f3fa6307b99f2e3360c7f0e37db31c076f23d
         // line 1
         echo "<div class=\"col-sm-12 col-xs-12 alert alert-success\">
     <div class=\"container\">
-        <h3>One Blog Post</h3> 
+        <h3>One Blog Post <span style=\"font-size:0.5em;\">(located in {/pages/onePost.htm})</span></h3> 
 \t</div>
  </div>
  
@@ -54,11 +54,13 @@ class __TwigTemplate_11ee6732376d1836d6cdc2f3fa6307b99f2e3360c7f0e37db31c076f23d
  
  
 
- <div class=\"col-sm-12 col-xs-12 alert alert-danger\">
+ <div class=\"col-sm-12 col-xs-12\">
+    <div class=\"col-sm-10 col-xs-10 alert alert-danger\">
       <a href=\"";
-        // line 15
+        // line 16
         echo $this->extensions['Cms\Twig\Extension']->pageFilter("myPage");
         echo "\"> << Go back to Post List</a> 
+\t</div>
  </div>";
     }
 
@@ -74,14 +76,14 @@ class __TwigTemplate_11ee6732376d1836d6cdc2f3fa6307b99f2e3360c7f0e37db31c076f23d
 
     public function getDebugInfo()
     {
-        return array (  60 => 15,  53 => 10,  49 => 9,  39 => 1,);
+        return array (  61 => 16,  53 => 10,  49 => 9,  39 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("<div class=\"col-sm-12 col-xs-12 alert alert-success\">
     <div class=\"container\">
-        <h3>One Blog Post</h3> 
+        <h3>One Blog Post <span style=\"font-size:0.5em;\">(located in {/pages/onePost.htm})</span></h3> 
 \t</div>
  </div>
  
@@ -92,15 +94,17 @@ class __TwigTemplate_11ee6732376d1836d6cdc2f3fa6307b99f2e3360c7f0e37db31c076f23d
  
  
 
- <div class=\"col-sm-12 col-xs-12 alert alert-danger\">
+ <div class=\"col-sm-12 col-xs-12\">
+    <div class=\"col-sm-10 col-xs-10 alert alert-danger\">
       <a href=\"{{ 'myPage'|page }}\"> << Go back to Post List</a> 
+\t</div>
  </div>", "C:\\Users\\user\\Downloads\\OSPanel\\domains\\localhost\\myoctober\\MyOctoberX/themes/demo/pages/onePost.htm", "");
     }
     
     public function checkSecurity()
     {
         static $tags = array("component" => 9);
-        static $filters = array("page" => 15);
+        static $filters = array("page" => 16);
         static $functions = array();
 
         try {

@@ -1,3 +1,66 @@
-<p>This is the default markup for component ProductsX</p>
+<?php //This is the default markup for component ProductsX ?>
 
+<h1>My Plugin frontend </h1>
+<p>This is the default markup for component ProductsX, it will appear where ever u add component 'ProductsXComponent'   </p>
+<p>The same layout as in in pages/my-plugin-front-end.htm but without Builder section</p>
 <small>You can delete this file if you want</small>
+
+
+<div class="col-sm-12 col-xs-12"> 
+
+
+
+<div class="col-sm-12 col-xs-12">
+    <hr> 
+    <div class="col-sm-12 col-xs-12 alert alert-success"> List of records created manually via Component <b>ProductsX </b> registered as  ProductsXComponent</div>
+
+	<!-- List-group-item Styling -->
+    
+	
+    {% for productMy in ProductsXComponent.getProductsX %} <!-- Call method getProductsX in my component ProductsXComponent and loop it -->
+	<div class="col-sm-12 col-xs-12 list-group-item alert alert-success">
+	<p class="list-group-item"> ID:      {{ productMy.img_id }}</p>       <!--display id ---->
+    <p class="list-group-item"> Name:    {{ productMy.img_name|raw }}</p> <!--display name -->
+	<p class="list-group-item"> Created: {{ productMy.created_at }}</p>
+    
+	
+	<!-- Image from SQL table (system_files}, polymorph relation public $attachOne =[]   -->
+	<p class="list-group-item">
+	    {% if productMy.avatar.count %} 
+		    <!-- Only used if u specifiead in model polymorphic relation as  public $attachOne =[]--> 
+		    <p class="small"><i class="fa fa-clone" style="font-size:12px"></i> Image was loaded as : {{ productMy.avatar.filename }}, path (DB {system_files}): <b> {{ productMy.avatar.getPath }} </b> </p>  <!-- avata is $attachOne relation in model -->
+		
+		    <img  data-src="{{ productMy.avatar.getPath}}" src="{{ productMy.avatar.getPath }}" alt="{{ productMy.avatar.content-type }}" style="max-width: 6%" />
+		    <!-- End Only used if in model specifiead as public $attachOne --> 
+
+		{% else %}
+		    <!-- No connected image in SQL table (system_files},  polymorph relation. Show default image -->
+		    <img  data-src="{{ url('/') }}/storage/app/media/My_images/no-image.jpg" src="{{ url('/') }}/storage/app/media/My_images/no-image.jpg" alt="no-image" style="max-width: 6%" />
+		{% endif %}
+    </p>
+	<!-- End Image from SQL table (system_files}, polymorph relation public $attachOne =[]  -->
+			   
+	
+	<button class="btn"><a href="{{ 'my-plugin-front-end-view-one/'}}{{productMy.img_id }}">  View id: {{productMy.img_id}} </a></button> <!-- Link to view one -->
+	<hr>
+	</div>
+
+    {% else %}
+        <div> No records were found. Make good use of it</div>
+    {% endfor %}
+	
+	
+	
+    
+</div>
+
+<!-- My Pagination ------>
+<div>
+{{ ProductsXComponent.getProductsX.render|raw }}
+</div>
+<!-- End My Pagination -->
+
+
+<!-- Just instead of CSS margin-top -->
+<div style="height:30em;"></div>
+</div>

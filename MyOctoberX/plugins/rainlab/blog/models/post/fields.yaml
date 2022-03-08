@@ -33,11 +33,32 @@ fields:
 
         
     #img_blog_id: Dropdown with relations. Images from table {dima_myfirstplugin_images}
-    id:
-        label: BlogNameG(FK)
+    getimgZ:  #img_id:  #getimgZ is a hasOne relation in model
+        label: dima_myfirstplugin_images(FK)
         type: dropdown
-        relation: getimgnnn #relation method
+        relation: getimgZ #getimgnnn #relation method
         valueFrom: img_name
+        emptyOption: 'No found'
+        #placeholder: -- select a status --
+        default: n
+        
+        
+    #getimgZ:
+        #label: Father
+        #oc.commentPosition: ''
+        #nameFrom: img_name
+        #descriptionFrom: description
+        #emptyOption: 'No father'
+        #span: left
+        #type: relation
+        
+    #File Upload   //in preview show the image at once???
+    avatarn:
+        label: Blog img
+        type: fileupload
+        mode: image
+        imageHeight: 260
+        imageWidth: 260
         
         
     #Save, Cancel buttons    

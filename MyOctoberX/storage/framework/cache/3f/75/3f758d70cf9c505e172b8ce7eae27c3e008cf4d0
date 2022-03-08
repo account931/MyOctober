@@ -1,4 +1,4 @@
-1646502003a:1:{s:11:"onePost.htm";a:10:{s:8:"fileName";s:11:"onePost.htm";s:7:"content";s:572:"title = "onePost"
+1646733230a:1:{s:11:"onePost.htm";a:10:{s:8:"fileName";s:11:"onePost.htm";s:7:"content";s:692:"title = "onePost"
 url = "/onePost/:slug"
 layout = "default"
 is_hidden = 0
@@ -9,7 +9,7 @@ categoryPage = "onePost"
 ==
 <div class="col-sm-12 col-xs-12 alert alert-success">
     <div class="container">
-        <h3>One Blog Post</h3> 
+        <h3>One Blog Post <span style="font-size:0.5em;">(located in {/pages/onePost.htm})</span></h3> 
 	</div>
  </div>
  
@@ -20,11 +20,13 @@ categoryPage = "onePost"
  
  
 
- <div class="col-sm-12 col-xs-12 alert alert-danger">
+ <div class="col-sm-12 col-xs-12">
+    <div class="col-sm-10 col-xs-10 alert alert-danger">
       <a href="{{ 'myPage'|page }}"> << Go back to Post List</a> 
- </div>";s:5:"mtime";i:1645000607;s:6:"markup";s:428:"<div class="col-sm-12 col-xs-12 alert alert-success">
+	</div>
+ </div>";s:5:"mtime";i:1646731343;s:6:"markup";s:548:"<div class="col-sm-12 col-xs-12 alert alert-success">
     <div class="container">
-        <h3>One Blog Post</h3> 
+        <h3>One Blog Post <span style="font-size:0.5em;">(located in {/pages/onePost.htm})</span></h3> 
 	</div>
  </div>
  
@@ -35,6 +37,8 @@ categoryPage = "onePost"
  
  
 
- <div class="col-sm-12 col-xs-12 alert alert-danger">
+ <div class="col-sm-12 col-xs-12">
+    <div class="col-sm-10 col-xs-10 alert alert-danger">
       <a href="{{ 'myPage'|page }}"> << Go back to Post List</a> 
+	</div>
  </div>";s:4:"code";N;s:5:"title";s:7:"onePost";s:3:"url";s:14:"/onePost/:slug";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:8:"blogPost";a:2:{s:4:"slug";s:11:"{{ :slug }}";s:12:"categoryPage";s:7:"onePost";}}}

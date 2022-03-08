@@ -1,10 +1,31 @@
 {% set post = __SELF__.post %}
 <!-- View one post -->
-<div class="col-sm-12 col-xs-12 alert alert-success"> View one post </div>
-
-<div class="content">{{ post.content_html|raw }}</div> <!--Post text -->
+<div class="col-sm-12 col-xs-12 alert alert-success"> View one post {{ post.id }} </div>
 
 
+<!-- Image from SQL table (system_files}, polymorph relation public $attachOne =[] avatarn is specified in fields.yaml   -->
+	<p>
+	{% if post.avatarn.count %} 
+		<!-- Only used if u specifiead in model polymorphic relation as  public $attachOne =[]--> 
+		<p class="small"><i class="fa fa-clone" style="font-size:12px"></i> Image was loaded as : {{ post.avatarn.filename }}, path (DB {system_files}): <b> {{ post.avatarn.getPath }} </b> </p>  <!-- avata is $attachOne relation in model -->
+		<img  data-src="{{ post.avatarn.getPath}}" src="{{ post.avatarn.getPath }}" alt="{{ post.avatarn.content-type }}" class="medium-img" />
+		<!-- End Only used if in model specifiead as public $attachOne --> 
+
+    {% else %}
+		<!-- No connected image in SQL table (system_files},  polymorph relation. Show default image -->
+		<img  data-src="{{ url('/') }}/storage/app/media/My_images/no-image.jpg" src="{{ url('/') }}/storage/app/media/My_images/no-image.jpg" alt="no-image" style="max-width: 6%" />
+    {% endif %}
+    </p><hr>
+<!-- End Image from SQL table (system_files}, polymorph relation public $attachOne =[]  -->
+			
+			
+<!--Post text -->			
+<div class="content">
+    {{ post.content_html|raw }}
+</div> 
+<!--Post text -->
+
+<!-- $attachMany images relations ?? --> 
 {% if post.featured_images.count %}
     <div class="featured-images text-center">
         {% for image in post.featured_images %}
@@ -22,6 +43,7 @@
 
 <!-- Info about when was posted -->
 <p class="info">
+    <i class="fa fa-calendar" style="font-size:24px"></i>
     Posted
     {% if post.categories.count %} in
         {% for category in post.categories %}
@@ -29,10 +51,11 @@
         {% endfor %}
     {% endif %}
     on {{ post.published_at|date('M d, Y') }}
-</p>
+</p><hr>
 
 
 <!-- User, added by me, belongsTo relation, defined in \myoctober\MyOctoberX\plugins\rainlab\blog\models\Post.php -->
-<div class="content">Published by user: {{ post.user }}</div>
-<div class="content">Email: {{ post.user.email }}</div>
-<div class="content">myCustomX: {{ post.myCustomX }}</div>
+
+<div class="content"><i class="fa fa-envelope-o" style="font-size:24px"></i>     Email:             <b>{{ post.user.email }}</b></div>
+<div class="content"><i class="	fa fa-folder-open-o" style="font-size:24px"></i> myCustomX column:  <b>{{ post.myCustomX }}</b></div><hr>
+<div class="content">var_dump user: {{ post.user }}</div> <hr>

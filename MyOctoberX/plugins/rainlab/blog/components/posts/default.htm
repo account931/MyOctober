@@ -4,11 +4,29 @@
 <!-------- Original ---------->
 <ul class="post-list">
     {% for post in posts %}
-        <li>
+        <li class="list-group-item">
 		
-		    <!-- Blog title Column -->
+		    
+		    <!-- Blog title Column, contains link to one post view -->
             <h3><a href="{{ post.url }}">   <i class="fa fa-book" style="font-size:24px"></i> {{ post.title }}</a></h3>
             
+			
+			<!-- Image from SQL table (system_files}, polymorph relation public $attachOne =[]. avatarn is specified in fields.yaml   -->
+	        <p>
+	        {% if post.avatarn.count %} 
+		        <!-- Only used if u specifiead in model polymorphic relation as  public $attachOne =[]--> 
+		        <p class="small"><i class="fa fa-clone" style="font-size:12px"></i> Image was loaded as : {{ post.avatarn.filename }}, path (DB {system_files}): <b> {{ post.avatarn.getPath }} </b> </p>  <!-- avata is $attachOne relation in model -->
+		        <img  data-src="{{ post.avatarn.getPath}}" src="{{ post.avatarn.getPath }}" alt="{{ post.avatarn.content-type }}" class="small-img" />
+		        <!-- End Only used if in model specifiead as public $attachOne --> 
+
+		    {% else %}
+		        <!-- No connected image in SQL table (system_files},  polymorph relation. Show default image -->
+		        <img  data-src="{{ url('/') }}/storage/app/media/My_images/no-image.jpg" src="{{ url('/') }}/storage/app/media/My_images/no-image.jpg" alt="no-image" style="max-width: 6%" />
+		    {% endif %}
+            </p>
+	        <!-- End Image from SQL table (system_files}, polymorph relation public $attachOne =[]  -->
+			
+			
 			<!-- when posted Column --> 	
             <p class="alert alert-danger">
                 <i class="fa fa-calendar" style="font-size:18px"></i> Posted
@@ -25,12 +43,22 @@
 			    {{ post.summary|raw }}
 			</div>
 			
-        </li><hr>
+	
+
+            <!-- Read more link, contains link to one post view -->
+            <p>
+			    <a href="{{ post.url }}"> <i class="fa fa-external-link" style="font-size:18px"></i> read more...</a>
+            </p>			
+			   
+			
+        </li><hr><hr>
     {% else %}
+	    <!-- No post found message -->
         <li class="no-data">{{ __SELF__.noPostsMessage }}</li>
     {% endfor %}
 </ul>
 
+<!-- Build in pagination. Does not work -->
 {% if posts.lastPage > 1 %}
     <ul class="pagination">
         {% if posts.currentPage > 1 %}
@@ -48,4 +76,10 @@
         {% endif %}
     </ul>
 {% endif %}
+<!-- Build in pagination -->
 <!-------- End Original ---------->
+
+
+<!-- My added pagination (works )--> 
+ <div> {{ posts.render|raw }} </div>
+ <!-- My added pagination (works )--> 

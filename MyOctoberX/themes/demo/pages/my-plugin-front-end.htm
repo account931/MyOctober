@@ -142,7 +142,7 @@ pageNumber = "{{ :page }}"
 	<p class="list-group-item"> Created: {{ productMy.created_at }}</p>
     
 	
-	<!-- Image from SQL table (system_files}, polymorph relation public $attachOne =[]   -->
+	<!-- Image from SQL table (system_files}, polymorph relation public $attachOne =[] avatar is specified in fields.yaml   -->
 	<p class="list-group-item">
 	    {% if productMy.avatar.count %} 
 		    <!-- Only used if u specifiead in model polymorphic relation as  public $attachOne =[]--> 

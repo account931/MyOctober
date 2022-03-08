@@ -39,38 +39,86 @@ class __TwigTemplate_ec35aa92fb3482f3ed78b87b1701f10950eb473679bd3cf0f21b83c6956
         $context["post"] = twig_get_attribute($this->env, $this->source, ($context["__SELF__"] ?? null), "post", [], "any", false, false, true, 1);
         // line 2
         echo "<!-- View one post -->
-<div class=\"col-sm-12 col-xs-12 alert alert-success\"> View one post </div>
-
-<div class=\"content\">";
-        // line 5
-        echo $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "content_html", [], "any", false, false, true, 5), 5, $this->source);
-        echo "</div> <!--Post text -->
+<div class=\"col-sm-12 col-xs-12 alert alert-success\"> View one post ";
+        // line 3
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "id", [], "any", false, false, true, 3), 3, $this->source), "html", null, true);
+        echo " </div>
 
 
-";
+<!-- Image from SQL table (system_files}, polymorph relation public \$attachOne =[] avatarn is specified in fields.yaml   -->
+\t<p>
+\t";
         // line 8
-        if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "featured_images", [], "any", false, false, true, 8), "count", [], "any", false, false, true, 8)) {
-            // line 9
+        if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "avatarn", [], "any", false, false, true, 8), "count", [], "any", false, false, true, 8)) {
+            echo " 
+\t\t<!-- Only used if u specifiead in model polymorphic relation as  public \$attachOne =[]--> 
+\t\t<p class=\"small\"><i class=\"fa fa-clone\" style=\"font-size:12px\"></i> Image was loaded as : ";
+            // line 10
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "avatarn", [], "any", false, false, true, 10), "filename", [], "any", false, false, true, 10), 10, $this->source), "html", null, true);
+            echo ", path (DB {system_files}): <b> ";
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "avatarn", [], "any", false, false, true, 10), "getPath", [], "any", false, false, true, 10), 10, $this->source), "html", null, true);
+            echo " </b> </p>  <!-- avata is \$attachOne relation in model -->
+\t\t<img  data-src=\"";
+            // line 11
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "avatarn", [], "any", false, false, true, 11), "getPath", [], "any", false, false, true, 11), 11, $this->source), "html", null, true);
+            echo "\" src=\"";
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "avatarn", [], "any", false, false, true, 11), "getPath", [], "any", false, false, true, 11), 11, $this->source), "html", null, true);
+            echo "\" alt=\"";
+            echo twig_escape_filter($this->env, (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "avatarn", [], "any", false, false, true, 11), "content", [], "any", false, false, true, 11) - ($context["type"] ?? null)), "html", null, true);
+            echo "\" class=\"medium-img\" />
+\t\t<!-- End Only used if in model specifiead as public \$attachOne --> 
+
+    ";
+        } else {
+            // line 15
+            echo "\t\t<!-- No connected image in SQL table (system_files},  polymorph relation. Show default image -->
+\t\t<img  data-src=\"";
+            // line 16
+            echo url("/");
+            echo "/storage/app/media/My_images/no-image.jpg\" src=\"";
+            echo url("/");
+            echo "/storage/app/media/My_images/no-image.jpg\" alt=\"no-image\" style=\"max-width: 6%\" />
+    ";
+        }
+        // line 18
+        echo "    </p><hr>
+<!-- End Image from SQL table (system_files}, polymorph relation public \$attachOne =[]  -->
+\t\t\t
+\t\t\t
+<!--Post text -->\t\t\t
+<div class=\"content\">
+    ";
+        // line 24
+        echo $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "content_html", [], "any", false, false, true, 24), 24, $this->source);
+        echo "
+</div> 
+<!--Post text -->
+
+<!-- \$attachMany images relations ?? --> 
+";
+        // line 29
+        if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "featured_images", [], "any", false, false, true, 29), "count", [], "any", false, false, true, 29)) {
+            // line 30
             echo "    <div class=\"featured-images text-center\">
         ";
-            // line 10
+            // line 31
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "featured_images", [], "any", false, false, true, 10));
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "featured_images", [], "any", false, false, true, 31));
             foreach ($context['_seq'] as $context["_key"] => $context["image"]) {
-                // line 11
+                // line 32
                 echo "            <p>
                 <img
                     data-src=\"";
-                // line 13
-                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["image"], "filename", [], "any", false, false, true, 13), 13, $this->source), "html", null, true);
+                // line 34
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["image"], "filename", [], "any", false, false, true, 34), 34, $this->source), "html", null, true);
                 echo "\"
                     src=\"";
-                // line 14
-                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["image"], "path", [], "any", false, false, true, 14), 14, $this->source), "html", null, true);
+                // line 35
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["image"], "path", [], "any", false, false, true, 35), 35, $this->source), "html", null, true);
                 echo "\"
                     alt=\"";
-                // line 15
-                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["image"], "description", [], "any", false, false, true, 15), 15, $this->source), "html", null, true);
+                // line 36
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["image"], "description", [], "any", false, false, true, 36), 36, $this->source), "html", null, true);
                 echo "\"
                     style=\"max-width: 100%\" />
             </p>
@@ -79,24 +127,25 @@ class __TwigTemplate_ec35aa92fb3482f3ed78b87b1701f10950eb473679bd3cf0f21b83c6956
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['image'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 19
+            // line 40
             echo "    </div>
 ";
         }
-        // line 21
+        // line 42
         echo "
 
 <!-- Info about when was posted -->
 <p class=\"info\">
+    <i class=\"fa fa-calendar\" style=\"font-size:24px\"></i>
     Posted
     ";
-        // line 26
-        if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "categories", [], "any", false, false, true, 26), "count", [], "any", false, false, true, 26)) {
+        // line 48
+        if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "categories", [], "any", false, false, true, 48), "count", [], "any", false, false, true, 48)) {
             echo " in
         ";
-            // line 27
+            // line 49
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "categories", [], "any", false, false, true, 27));
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "categories", [], "any", false, false, true, 49));
             $context['loop'] = [
               'parent' => $context['_parent'],
               'index0' => 0,
@@ -111,16 +160,16 @@ class __TwigTemplate_ec35aa92fb3482f3ed78b87b1701f10950eb473679bd3cf0f21b83c6956
                 $context['loop']['last'] = 1 === $length;
             }
             foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
-                // line 28
+                // line 50
                 echo "            <a href=\"";
-                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["category"], "url", [], "any", false, false, true, 28), 28, $this->source), "html", null, true);
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["category"], "url", [], "any", false, false, true, 50), 50, $this->source), "html", null, true);
                 echo "\">";
-                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["category"], "name", [], "any", false, false, true, 28), 28, $this->source), "html", null, true);
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["category"], "name", [], "any", false, false, true, 50), 50, $this->source), "html", null, true);
                 echo "</a>";
-                if ( !twig_get_attribute($this->env, $this->source, $context["loop"], "last", [], "any", false, false, true, 28)) {
+                if ( !twig_get_attribute($this->env, $this->source, $context["loop"], "last", [], "any", false, false, true, 50)) {
                     echo ", ";
                 }
-                // line 29
+                // line 51
                 echo "        ";
                 ++$context['loop']['index0'];
                 ++$context['loop']['index'];
@@ -134,29 +183,30 @@ class __TwigTemplate_ec35aa92fb3482f3ed78b87b1701f10950eb473679bd3cf0f21b83c6956
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 30
+            // line 52
             echo "    ";
         }
-        // line 31
+        // line 53
         echo "    on ";
-        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "published_at", [], "any", false, false, true, 31), 31, $this->source), "M d, Y"), "html", null, true);
+        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "published_at", [], "any", false, false, true, 53), 53, $this->source), "M d, Y"), "html", null, true);
         echo "
-</p>
+</p><hr>
 
 
 <!-- User, added by me, belongsTo relation, defined in \\myoctober\\MyOctoberX\\plugins\\rainlab\\blog\\models\\Post.php -->
-<div class=\"content\">Published by user: ";
-        // line 36
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "user", [], "any", false, false, true, 36), 36, $this->source), "html", null, true);
-        echo "</div>
-<div class=\"content\">Email: ";
-        // line 37
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "user", [], "any", false, false, true, 37), "email", [], "any", false, false, true, 37), 37, $this->source), "html", null, true);
-        echo "</div>
-<div class=\"content\">myCustomX: ";
-        // line 38
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "myCustomX", [], "any", false, false, true, 38), 38, $this->source), "html", null, true);
-        echo "</div>";
+
+<div class=\"content\"><i class=\"fa fa-envelope-o\" style=\"font-size:24px\"></i>     Email:             <b>";
+        // line 59
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "user", [], "any", false, false, true, 59), "email", [], "any", false, false, true, 59), 59, $this->source), "html", null, true);
+        echo "</b></div>
+<div class=\"content\"><i class=\"\tfa fa-folder-open-o\" style=\"font-size:24px\"></i> myCustomX column:  <b>";
+        // line 60
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "myCustomX", [], "any", false, false, true, 60), 60, $this->source), "html", null, true);
+        echo "</b></div><hr>
+<div class=\"content\">var_dump user: ";
+        // line 61
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "user", [], "any", false, false, true, 61), 61, $this->source), "html", null, true);
+        echo "</div> <hr>";
     }
 
     public function getTemplateName()
@@ -171,18 +221,39 @@ class __TwigTemplate_ec35aa92fb3482f3ed78b87b1701f10950eb473679bd3cf0f21b83c6956
 
     public function getDebugInfo()
     {
-        return array (  158 => 38,  154 => 37,  150 => 36,  141 => 31,  138 => 30,  124 => 29,  115 => 28,  98 => 27,  94 => 26,  87 => 21,  83 => 19,  73 => 15,  69 => 14,  65 => 13,  61 => 11,  57 => 10,  54 => 9,  52 => 8,  46 => 5,  41 => 2,  39 => 1,);
+        return array (  208 => 61,  204 => 60,  200 => 59,  190 => 53,  187 => 52,  173 => 51,  164 => 50,  147 => 49,  143 => 48,  135 => 42,  131 => 40,  121 => 36,  117 => 35,  113 => 34,  109 => 32,  105 => 31,  102 => 30,  100 => 29,  92 => 24,  84 => 18,  77 => 16,  74 => 15,  63 => 11,  57 => 10,  52 => 8,  44 => 3,  41 => 2,  39 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% set post = __SELF__.post %}
 <!-- View one post -->
-<div class=\"col-sm-12 col-xs-12 alert alert-success\"> View one post </div>
-
-<div class=\"content\">{{ post.content_html|raw }}</div> <!--Post text -->
+<div class=\"col-sm-12 col-xs-12 alert alert-success\"> View one post {{ post.id }} </div>
 
 
+<!-- Image from SQL table (system_files}, polymorph relation public \$attachOne =[] avatarn is specified in fields.yaml   -->
+\t<p>
+\t{% if post.avatarn.count %} 
+\t\t<!-- Only used if u specifiead in model polymorphic relation as  public \$attachOne =[]--> 
+\t\t<p class=\"small\"><i class=\"fa fa-clone\" style=\"font-size:12px\"></i> Image was loaded as : {{ post.avatarn.filename }}, path (DB {system_files}): <b> {{ post.avatarn.getPath }} </b> </p>  <!-- avata is \$attachOne relation in model -->
+\t\t<img  data-src=\"{{ post.avatarn.getPath}}\" src=\"{{ post.avatarn.getPath }}\" alt=\"{{ post.avatarn.content-type }}\" class=\"medium-img\" />
+\t\t<!-- End Only used if in model specifiead as public \$attachOne --> 
+
+    {% else %}
+\t\t<!-- No connected image in SQL table (system_files},  polymorph relation. Show default image -->
+\t\t<img  data-src=\"{{ url('/') }}/storage/app/media/My_images/no-image.jpg\" src=\"{{ url('/') }}/storage/app/media/My_images/no-image.jpg\" alt=\"no-image\" style=\"max-width: 6%\" />
+    {% endif %}
+    </p><hr>
+<!-- End Image from SQL table (system_files}, polymorph relation public \$attachOne =[]  -->
+\t\t\t
+\t\t\t
+<!--Post text -->\t\t\t
+<div class=\"content\">
+    {{ post.content_html|raw }}
+</div> 
+<!--Post text -->
+
+<!-- \$attachMany images relations ?? --> 
 {% if post.featured_images.count %}
     <div class=\"featured-images text-center\">
         {% for image in post.featured_images %}
@@ -200,6 +271,7 @@ class __TwigTemplate_ec35aa92fb3482f3ed78b87b1701f10950eb473679bd3cf0f21b83c6956
 
 <!-- Info about when was posted -->
 <p class=\"info\">
+    <i class=\"fa fa-calendar\" style=\"font-size:24px\"></i>
     Posted
     {% if post.categories.count %} in
         {% for category in post.categories %}
@@ -207,26 +279,27 @@ class __TwigTemplate_ec35aa92fb3482f3ed78b87b1701f10950eb473679bd3cf0f21b83c6956
         {% endfor %}
     {% endif %}
     on {{ post.published_at|date('M d, Y') }}
-</p>
+</p><hr>
 
 
 <!-- User, added by me, belongsTo relation, defined in \\myoctober\\MyOctoberX\\plugins\\rainlab\\blog\\models\\Post.php -->
-<div class=\"content\">Published by user: {{ post.user }}</div>
-<div class=\"content\">Email: {{ post.user.email }}</div>
-<div class=\"content\">myCustomX: {{ post.myCustomX }}</div>", "C:\\Users\\user\\Downloads\\OSPanel\\domains\\localhost\\myoctober\\MyOctoberX/plugins/rainlab/blog/components/post/default.htm", "");
+
+<div class=\"content\"><i class=\"fa fa-envelope-o\" style=\"font-size:24px\"></i>     Email:             <b>{{ post.user.email }}</b></div>
+<div class=\"content\"><i class=\"\tfa fa-folder-open-o\" style=\"font-size:24px\"></i> myCustomX column:  <b>{{ post.myCustomX }}</b></div><hr>
+<div class=\"content\">var_dump user: {{ post.user }}</div> <hr>", "C:\\Users\\user\\Downloads\\OSPanel\\domains\\localhost\\myoctober\\MyOctoberX/plugins/rainlab/blog/components/post/default.htm", "");
     }
     
     public function checkSecurity()
     {
-        static $tags = array("set" => 1, "if" => 8, "for" => 10);
-        static $filters = array("raw" => 5, "escape" => 13, "date" => 31);
-        static $functions = array();
+        static $tags = array("set" => 1, "if" => 8, "for" => 31);
+        static $filters = array("escape" => 3, "raw" => 24, "date" => 53);
+        static $functions = array("url" => 16);
 
         try {
             $this->sandbox->checkSecurity(
                 ['set', 'if', 'for'],
-                ['raw', 'escape', 'date'],
-                []
+                ['escape', 'raw', 'date'],
+                ['url']
             );
         } catch (SecurityError $e) {
             $e->setSourceContext($this->source);

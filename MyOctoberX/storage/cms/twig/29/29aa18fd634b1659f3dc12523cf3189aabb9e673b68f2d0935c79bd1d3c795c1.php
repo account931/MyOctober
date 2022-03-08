@@ -84,7 +84,8 @@ class __TwigTemplate_9a9ee26744dd5b4d3583a963458691ffdd5d63b79bcedab85f6b99bbace
 </div>
 
 <div class=\"container\">
-
+    
+\t<!-- Just testing below -->
     <div class=\"page-header\">
         <h2>My page <small> !</small></h2>
     </div>
@@ -95,24 +96,24 @@ class __TwigTemplate_9a9ee26744dd5b4d3583a963458691ffdd5d63b79bcedab85f6b99bbace
 
     
 \t";
-        // line 54
+        // line 55
         if (($context["result"] ?? null)) {
-            // line 55
+            // line 56
             echo "    <span class=\"lead\" style=\"color:red;\">
         The result is <span class=\"label label-success\">";
-            // line 56
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(($context["result"] ?? null), 56, $this->source), "html", null, true);
+            // line 57
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(($context["result"] ?? null), 57, $this->source), "html", null, true);
             echo "</span>
     </span>
     ";
         } else {
-            // line 59
+            // line 60
             echo "    <span class=\"text-muted\">
         No result
     </span>
    ";
         }
-        // line 63
+        // line 64
         echo "
 </div>";
     }
@@ -129,7 +130,7 @@ class __TwigTemplate_9a9ee26744dd5b4d3583a963458691ffdd5d63b79bcedab85f6b99bbace
 
     public function getDebugInfo()
     {
-        return array (  116 => 63,  110 => 59,  104 => 56,  101 => 55,  99 => 54,  76 => 33,  72 => 32,  39 => 1,);
+        return array (  117 => 64,  111 => 60,  105 => 57,  102 => 56,  100 => 55,  76 => 33,  72 => 32,  39 => 1,);
     }
 
     public function getSourceContext()
@@ -177,7 +178,8 @@ class __TwigTemplate_9a9ee26744dd5b4d3583a963458691ffdd5d63b79bcedab85f6b99bbace
 </div>
 
 <div class=\"container\">
-
+    
+\t<!-- Just testing below -->
     <div class=\"page-header\">
         <h2>My page <small> !</small></h2>
     </div>
@@ -202,8 +204,8 @@ class __TwigTemplate_9a9ee26744dd5b4d3583a963458691ffdd5d63b79bcedab85f6b99bbace
     
     public function checkSecurity()
     {
-        static $tags = array("component" => 32, "if" => 54);
-        static $filters = array("escape" => 56);
+        static $tags = array("component" => 32, "if" => 55);
+        static $filters = array("escape" => 57);
         static $functions = array();
 
         try {

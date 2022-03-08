@@ -1,13 +1,13 @@
-1646502242a:1:{s:10:"myPage.htm";a:10:{s:8:"fileName";s:10:"myPage.htm";s:7:"content";s:2563:"<?php //view all blog list via rainlab.blog plugin ?>
-title = "MyPage"
+1646733230a:1:{s:10:"myPage.htm";a:10:{s:8:"fileName";s:10:"myPage.htm";s:7:"content";s:2607:"<?php //view all blog list via rainlab.blog plugin ?>
+title = "MyPageBlog"
 url = "/myPage"
 layout = "default"
 is_hidden = 0
 
 [blogPosts]
 pageNumber = "{{ :page }}"
-postsPerPage = 10
-noPostsMessage = "No posts found"
+postsPerPage = 2
+noPostsMessage = "No posts found so far"
 sortOrder = "published_at desc"
 categoryPage = 404
 postPage = "onePost"
@@ -55,7 +55,8 @@ $this['result'] = "yes";
 </div>
 
 <div class="container">
-
+    
+	<!-- Just testing below -->
     <div class="page-header">
         <h2>My page <small> !</small></h2>
     </div>
@@ -75,7 +76,7 @@ $this['result'] = "yes";
     </span>
    {% endif %}
 
-</div>";s:5:"mtime";i:1646501637;s:6:"markup";s:2262:"<?php
+</div>";s:5:"mtime";i:1646728790;s:6:"markup";s:2296:"<?php
 $this['result'] = "yes";
 
 ?>
@@ -118,7 +119,8 @@ $this['result'] = "yes";
 </div>
 
 <div class="container">
-
+    
+	<!-- Just testing below -->
     <div class="page-header">
         <h2>My page <small> !</small></h2>
     </div>
@@ -138,4 +140,4 @@ $this['result'] = "yes";
     </span>
    {% endif %}
 
-</div>";s:4:"code";N;s:5:"title";s:6:"MyPage";s:3:"url";s:7:"/myPage";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:9:"blogPosts";a:6:{s:10:"pageNumber";s:11:"{{ :page }}";s:12:"postsPerPage";s:2:"10";s:14:"noPostsMessage";s:14:"No posts found";s:9:"sortOrder";s:17:"published_at desc";s:12:"categoryPage";s:3:"404";s:8:"postPage";s:7:"onePost";}}}
+</div>";s:4:"code";N;s:5:"title";s:10:"MyPageBlog";s:3:"url";s:7:"/myPage";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:9:"blogPosts";a:6:{s:10:"pageNumber";s:11:"{{ :page }}";s:12:"postsPerPage";s:1:"2";s:14:"noPostsMessage";s:21:"No posts found so far";s:9:"sortOrder";s:17:"published_at desc";s:12:"categoryPage";s:3:"404";s:8:"postPage";s:7:"onePost";}}}

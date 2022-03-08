@@ -12,9 +12,9 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-            'name'        => 'October Dima',
+            'name'        => 'October Demo',
             'description' => 'Provides features used by the provided demonstration theme.',
-            'author'      => 'Dima F',
+            'author'      => 'Alexey Bobkov, Samuel Georges',
             'icon'        => 'icon-leaf'
         ];
     }

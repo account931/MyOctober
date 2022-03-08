@@ -99,11 +99,15 @@ class Post extends Model
             'order' => 'name'
         ]
     ];
+	
+	
+	//Realation for images. Images are stored in build-in table (system_files} via polymorphic relation; 
+	public $attachOne = ['avatarn' => 'System\Models\File']; //avatar is a column in fields.yaml
 
 	
 	//to use relations in update/edit form(makes dropdown list). Relation, db with images {dima_myfirstplugin_images}.
-    //used for column {img_id} in \plugins\rainlab\blog\models\post\fields.yaml
-	public function getImgIdOptions()  //format get{ColumnName}Options
+    //used for column {getimgZ} in \plugins\rainlab\blog\models\post\fields.yaml. getimgZ is a column and hasOne relation specified in this model
+	public function getGetImgZOptions()  //format get{ColumnName}Options
     {
         //return Post::lists('title', 'id');
 		$teams = \Dima\Myfirstplugin\Models\Myfirstplugin_images::all(['img_id', 'img_name']); //columns from {dima_myfirstplugin_images}
@@ -116,9 +120,9 @@ class Post extends Model
         return $teamsOptions;
     }
 	
-	
+	/*
 	//for edit/update
-	public function getIdOptions()  //format get{ColumnName}Options
+	public function getIdTakenOptions()  //format get{ColumnName}Options
     {
 	    $teams = \Dima\Myfirstplugin\Models\Myfirstplugin_images::all(['img_id', 'img_name']); //columns from {dima_myfirstplugin_images}
         $teamsOptions = [];
@@ -129,7 +133,7 @@ class Post extends Model
 
         return $teamsOptions;	
 	}
-	
+	*/
 	
 	
 	

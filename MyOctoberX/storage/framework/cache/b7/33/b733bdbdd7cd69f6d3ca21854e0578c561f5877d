@@ -1,4 +1,4 @@
-1646502003a:1:{s:15:"site/header.htm";a:5:{s:8:"fileName";s:15:"site/header.htm";s:7:"content";s:2250:"<!-- Nav -->
+1646733230a:1:{s:15:"site/header.htm";a:5:{s:8:"fileName";s:15:"site/header.htm";s:7:"content";s:2404:"<!-- Nav -->
 <nav id="layout-nav" class="navbar navbar-inverse navbar-fixed-top navbar-autohide" role="navigation">
     <div class="container">
         <div class="navbar-header">
@@ -19,7 +19,9 @@
 				<li class="{% if this.page.id == 'myPage' %}active{% endif %}">              <a href="{{ 'myPage'|page }}">               myPageBlog        </a></li>
 				<li class="{% if this.page.id == 'user-management' %}active{% endif %}">     <a href="{{ 'user-management'|page }}">      User              </a></li>
 				<li class="{% if this.page.id == 'forum' %}active{% endif %}">               <a href="{{ 'forum'|page }}">                Forum             </a></li>
-                <li class="{% if this.page.id == 'my-plugin-front-end' %}active{% endif %}"> <a href="{{ 'my-plugin-front-end'|page }}">  My1Plug             </a></li>
+                <li class="{% if this.page.id == 'my-plugin-front-end' %}active{% endif %}"> <a href="{{ 'my-plugin-front-end'|page }}">  My1Plug           </a></li>
+				<li class="{% if this.page.id == 'shopaholic' %}active{% endif %}">          <a href="{{ 'shopaholic'|page }}">           Shop               </a></li>
+
 				<li class="{% if this.page.id == 'backend' %}active{% endif %}">             <a href="{{ 'backend' }}">                   Admin </a></li>
 			    <!--<li class="{% if this.page.id == 'onePost' %}active{% endif %}">      <a href="{{ 'onePost'|page }}">      onePost   </a></li>-->
 
@@ -29,7 +31,7 @@
         </div>
     </div>
 </nav>
-";s:5:"mtime";i:1645568661;s:6:"markup";s:2249:"<!-- Nav -->
+";s:5:"mtime";i:1646503811;s:6:"markup";s:2403:"<!-- Nav -->
 <nav id="layout-nav" class="navbar navbar-inverse navbar-fixed-top navbar-autohide" role="navigation">
     <div class="container">
         <div class="navbar-header">
@@ -50,7 +52,9 @@
 				<li class="{% if this.page.id == 'myPage' %}active{% endif %}">              <a href="{{ 'myPage'|page }}">               myPageBlog        </a></li>
 				<li class="{% if this.page.id == 'user-management' %}active{% endif %}">     <a href="{{ 'user-management'|page }}">      User              </a></li>
 				<li class="{% if this.page.id == 'forum' %}active{% endif %}">               <a href="{{ 'forum'|page }}">                Forum             </a></li>
-                <li class="{% if this.page.id == 'my-plugin-front-end' %}active{% endif %}"> <a href="{{ 'my-plugin-front-end'|page }}">  My1Plug             </a></li>
+                <li class="{% if this.page.id == 'my-plugin-front-end' %}active{% endif %}"> <a href="{{ 'my-plugin-front-end'|page }}">  My1Plug           </a></li>
+				<li class="{% if this.page.id == 'shopaholic' %}active{% endif %}">          <a href="{{ 'shopaholic'|page }}">           Shop               </a></li>
+
 				<li class="{% if this.page.id == 'backend' %}active{% endif %}">             <a href="{{ 'backend' }}">                   Admin </a></li>
 			    <!--<li class="{% if this.page.id == 'onePost' %}active{% endif %}">      <a href="{{ 'onePost'|page }}">      onePost   </a></li>-->
 

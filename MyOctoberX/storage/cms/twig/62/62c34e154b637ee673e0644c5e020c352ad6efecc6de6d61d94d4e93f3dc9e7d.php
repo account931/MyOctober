@@ -109,18 +109,27 @@ class __TwigTemplate_da4d775f17a80abd32b3c76cdb45f7138a592c65aaf4958b07ae3ffeada
         }
         echo "\"> <a href=\"";
         echo $this->extensions['Cms\Twig\Extension']->pageFilter("my-plugin-front-end");
-        echo "\">  My1Plug             </a></li>
+        echo "\">  My1Plug           </a></li>
 \t\t\t\t<li class=\"";
         // line 23
-        if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, true, 23), "id", [], "any", false, false, true, 23) == "backend")) {
+        if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, true, 23), "id", [], "any", false, false, true, 23) == "shopaholic")) {
+            echo "active";
+        }
+        echo "\">          <a href=\"";
+        echo $this->extensions['Cms\Twig\Extension']->pageFilter("shopaholic");
+        echo "\">           Shop               </a></li>
+
+\t\t\t\t<li class=\"";
+        // line 25
+        if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, true, 25), "id", [], "any", false, false, true, 25) == "backend")) {
             echo "active";
         }
         echo "\">             <a href=\"";
         echo "backend";
         echo "\">                   Admin </a></li>
 \t\t\t    <!--<li class=\"";
-        // line 24
-        if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, true, 24), "id", [], "any", false, false, true, 24) == "onePost")) {
+        // line 26
+        if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, true, 26), "id", [], "any", false, false, true, 26) == "onePost")) {
             echo "active";
         }
         echo "\">      <a href=\"";
@@ -147,7 +156,7 @@ class __TwigTemplate_da4d775f17a80abd32b3c76cdb45f7138a592c65aaf4958b07ae3ffeada
 
     public function getDebugInfo()
     {
-        return array (  123 => 24,  115 => 23,  107 => 22,  99 => 21,  91 => 20,  83 => 19,  75 => 18,  67 => 17,  59 => 16,  51 => 11,  39 => 1,);
+        return array (  132 => 26,  124 => 25,  115 => 23,  107 => 22,  99 => 21,  91 => 20,  83 => 19,  75 => 18,  67 => 17,  59 => 16,  51 => 11,  39 => 1,);
     }
 
     public function getSourceContext()
@@ -173,7 +182,9 @@ class __TwigTemplate_da4d775f17a80abd32b3c76cdb45f7138a592c65aaf4958b07ae3ffeada
 \t\t\t\t<li class=\"{% if this.page.id == 'myPage' %}active{% endif %}\">              <a href=\"{{ 'myPage'|page }}\">               myPageBlog        </a></li>
 \t\t\t\t<li class=\"{% if this.page.id == 'user-management' %}active{% endif %}\">     <a href=\"{{ 'user-management'|page }}\">      User              </a></li>
 \t\t\t\t<li class=\"{% if this.page.id == 'forum' %}active{% endif %}\">               <a href=\"{{ 'forum'|page }}\">                Forum             </a></li>
-                <li class=\"{% if this.page.id == 'my-plugin-front-end' %}active{% endif %}\"> <a href=\"{{ 'my-plugin-front-end'|page }}\">  My1Plug             </a></li>
+                <li class=\"{% if this.page.id == 'my-plugin-front-end' %}active{% endif %}\"> <a href=\"{{ 'my-plugin-front-end'|page }}\">  My1Plug           </a></li>
+\t\t\t\t<li class=\"{% if this.page.id == 'shopaholic' %}active{% endif %}\">          <a href=\"{{ 'shopaholic'|page }}\">           Shop               </a></li>
+
 \t\t\t\t<li class=\"{% if this.page.id == 'backend' %}active{% endif %}\">             <a href=\"{{ 'backend' }}\">                   Admin </a></li>
 \t\t\t    <!--<li class=\"{% if this.page.id == 'onePost' %}active{% endif %}\">      <a href=\"{{ 'onePost'|page }}\">      onePost   </a></li>-->
 

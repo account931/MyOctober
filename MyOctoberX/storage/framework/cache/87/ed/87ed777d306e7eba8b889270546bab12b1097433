@@ -1,4 +1,4 @@
-1646502320a:1:{s:23:"my-plugin-front-end.htm";a:11:{s:8:"fileName";s:23:"my-plugin-front-end.htm";s:7:"content";s:8471:"<?php //Comment: This page Displays list of all items ?>
+1646733230a:1:{s:23:"my-plugin-front-end.htm";a:11:{s:8:"fileName";s:23:"my-plugin-front-end.htm";s:7:"content";s:8506:"<?php //Comment: This page Displays list of all items ?>
 title = "My plugin front-end"
 url = "/my-plugin-front-end"
 layout = "default"
@@ -142,7 +142,7 @@ pageNumber = "{{ :page }}"
 	<p class="list-group-item"> Created: {{ productMy.created_at }}</p>
     
 	
-	<!-- Image from SQL table (system_files}, polymorph relation public $attachOne =[]   -->
+	<!-- Image from SQL table (system_files}, polymorph relation public $attachOne =[] avatar is specified in fields.yaml   -->
 	<p class="list-group-item">
 	    {% if productMy.avatar.count %} 
 		    <!-- Only used if u specifiead in model polymorphic relation as  public $attachOne =[]--> 
@@ -181,7 +181,7 @@ pageNumber = "{{ :page }}"
 
 <!-- Just instead of CSS margin-top -->
 <div style="height:30em;"></div>
-</div>";s:5:"mtime";i:1646501716;s:6:"markup";s:7949:"<h1>My Plugin frontend </h1>
+</div>";s:5:"mtime";i:1646730020;s:6:"markup";s:7984:"<h1>My Plugin frontend </h1>
 
 <div class="col-sm-12 col-xs-12"> 
 
@@ -307,7 +307,7 @@ pageNumber = "{{ :page }}"
 	<p class="list-group-item"> Created: {{ productMy.created_at }}</p>
     
 	
-	<!-- Image from SQL table (system_files}, polymorph relation public $attachOne =[]   -->
+	<!-- Image from SQL table (system_files}, polymorph relation public $attachOne =[] avatar is specified in fields.yaml   -->
 	<p class="list-group-item">
 	    {% if productMy.avatar.count %} 
 		    <!-- Only used if u specifiead in model polymorphic relation as  public $attachOne =[]--> 

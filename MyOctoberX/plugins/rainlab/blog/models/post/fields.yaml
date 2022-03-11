@@ -33,16 +33,30 @@ fields:
 
         
     #img_blog_id: Dropdown with relations. Images from table {dima_myfirstplugin_images}
-    getimgZ:  #img_id:  #getimgZ is a hasOne relation in model
+    getimgZ: #img_blog_id: #getimgZ: #img_id: #id:  #getimgZ:  #img_id:  #getimgZ is a hasOne relation in model
         label: dima_myfirstplugin_images(FK)
-        type: dropdown
         relation: getimgZ #getimgnnn #relation method
-        valueFrom: img_name
-        emptyOption: 'No found'
+        type: dropdown
+        valueFrom: img_blog_id #img_blog_id
+        emptyOption: 'Not found any connected'
         #placeholder: -- select a status --
-        default: n
+
         
-        
+    
+    #test
+    #img_blog_id:
+        #label: test
+        #relation: getimgnnn
+        #type: relation
+        #commentAbove: test
+        #placeholder: test
+
+    #realtion widget
+    #comments:
+        #type: partial
+        #path: comments # includes _comments.htm from the current controller's path.
+
+    
     #getimgZ:
         #label: Father
         #oc.commentPosition: ''

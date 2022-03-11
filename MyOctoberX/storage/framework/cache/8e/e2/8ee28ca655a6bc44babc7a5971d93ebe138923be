@@ -1,4 +1,4 @@
-1646733230a:1:{s:10:"myPage.htm";a:10:{s:8:"fileName";s:10:"myPage.htm";s:7:"content";s:2607:"<?php //view all blog list via rainlab.blog plugin ?>
+1647013673a:1:{s:10:"myPage.htm";a:10:{s:8:"fileName";s:10:"myPage.htm";s:7:"content";s:2607:"<?php //view all blog list via rainlab.blog plugin ?>
 title = "MyPageBlog"
 url = "/myPage"
 layout = "default"

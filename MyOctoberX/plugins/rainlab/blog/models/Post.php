@@ -34,7 +34,8 @@ class Post extends Model
         'slug'      => ['required', 'regex:/^[a-z0-9\/\:_\-\*\[\]\+\?\|]*$/i', 'unique:rainlab_blog_posts'],
         'content'   => 'required',
 		'myCustomX' => 'required',
-        'excerpt' => ''
+        'excerpt' => '',
+		//'img_blog_id' => 'required',
     ];
 
     /**
@@ -82,7 +83,6 @@ class Post extends Model
     public $belongsTo = [
         'user'      => BackendUser::class,
         'getimgnnn' => ['\Dima\Myfirstplugin\Models\Myfirstplugin_images', 'key' => 'id', 'otherKey' => 'img_blog_id'], //Model, this model ID, that model ID (i.e RainLab\Blog\Models\Post)
-    
 		//'userPost' => Dima\Myfirstplugin\Models\Myfirstplugin_images
 		
     ];
@@ -106,7 +106,7 @@ class Post extends Model
 
 	
 	//to use relations in update/edit form(makes dropdown list). Relation, db with images {dima_myfirstplugin_images}.
-    //used for column {getimgZ} in \plugins\rainlab\blog\models\post\fields.yaml. getimgZ is a column and hasOne relation specified in this model
+    //used for column {id} {getimgZ} in \plugins\rainlab\blog\models\post\fields.yaml. getimgZ is a column and hasOne relation specified in this model
 	public function getGetImgZOptions()  //format get{ColumnName}Options
     {
         //return Post::lists('title', 'id');
@@ -120,6 +120,7 @@ class Post extends Model
         return $teamsOptions;
     }
 	
+
 	/*
 	//for edit/update
 	public function getIdTakenOptions()  //format get{ColumnName}Options
@@ -143,6 +144,16 @@ class Post extends Model
         'featured_images' => [\System\Models\File::class, 'order' => 'sort_order'],
         'content_images'  => \System\Models\File::class
     ];
+	
+	
+
+    
+	//After save trigger, works
+	/*
+	public function afterSave() {
+        //dd("aftersave " . $recordId);
+		dd("aftersave ");
+    } */
 
     /**
      * @var array The accessors to append to the model's array form.

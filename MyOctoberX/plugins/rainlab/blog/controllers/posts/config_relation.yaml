@@ -1,0 +1,17 @@
+# ===================================
+#  Relation Behavior Config
+#  https://octobertricks.com/tricks/add-relation-manager-widget-form
+#  NOT USED!!!!!!!!!!
+# ===================================
+
+getimgZ:
+    label: Invoice Line Item
+    view:
+        form: $/rainlab/blog/models/post/fields.yaml
+        #list: $/rainlab/blog/models/post/columns.yaml
+        toolbarButtons: update|delete
+    manage:
+        #form: $/rainlab/blog/models/post/fields.yaml
+        recordsPerPage: 10
+        list: $/rainlab/blog/models/post/columns.yaml  #added
+        

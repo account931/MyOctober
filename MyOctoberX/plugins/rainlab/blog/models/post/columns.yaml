@@ -44,7 +44,7 @@ columns:
      #Foreign key    
     img_id:
         label: Img(FK)
-        type: number
+        #type: number
         relation: getimgZ  #relation method
         valueFrom: img_name
         

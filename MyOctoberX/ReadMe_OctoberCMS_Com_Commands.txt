@@ -16,6 +16,7 @@ Content:
 12.File upload
 13.Pagination 
 14.Shopaholic
+15.Override default Form Cotroller CRUD actions
 
 33.Image
 34.CLI Commands
@@ -207,7 +208,7 @@ To display in view => {{  record.channelZ.title }}
 	
 
 ===
-10.1 How use Relation if update form with dropdown
+10.1 How use Relation in update form with dropdown. Applicable only for $belongsTo. Works
 
 1.In fields.yaml => https://github.com/account931/MyOctober/blob/main/MyOctoberX/plugins/dima/myfirstplugin/models/myfirstplugin_images/fields.yaml
 #belongsTo relation, Display Column "title" from DB "rainlab_blog_posts"  by "img_blog_id" from DB "dima_myfirstplugin_images". belongsTo relation
@@ -232,7 +233,7 @@ To display in view => {{  record.channelZ.title }}
 	
 	
 ====
-10.2 How use hasOne Relation to update/edit form with dropdown
+10.2 How use $hasOne Relation to update/edit form with dropdown. Not working
 #In model =>
     public $hasOne = [
 	    'getimgZ'  => ['\Dima\Myfirstplugin\Models\Myfirstplugin_images', 'key' => 'img_blog_id',  'otherKey' => 'id'], //Model, that model ID (i.e Myfirstplugin_images), this model ID
@@ -382,6 +383,30 @@ If while installing plugin u encounter error "In Currency.php line 42: Trait 'Kh
 
 
 
+	
+	
+	
+-------------------------
+15.Override default Form Cotroller CRUD actions
+You can override default Cotroller CRUD actions (create, update, delete) by placing you function, e.g for update use "public function update_onSave ($recordId)". See example at => \MyOctoberX\plugins\rainlab\blog\controllers\Post.php
+
+	//mine. Override build-in On update
+	public function update_onSave ($recordId){
+		//dd($recordId);
+		$teamModel = \RainLab\Blog\Models\Post::findOrFail($recordId);
+		//dd($teamModel->getimgZ->img_name); //"Spring is here" //working hasOne relation, related column from table "dima_myfirstplugin_image"
+		//dd(post('Post')['img_blog_id']); //works, gets the form input filed 'img_blog_id'
+		
+        $teamModel->title = "First blog Lala";
+        $teamModel->save();
+		\Flash::success("You performed overrided update successfully");
+	}
+
+    // Override CREATE, if u defined an overrided function (even empty), build-in CREATE won't fire any more, only this overrided 
+    //public function create_onSave(){}
+	
+	//override DELETE
+	//public function update_onDelete($recordId){}
 
 
 

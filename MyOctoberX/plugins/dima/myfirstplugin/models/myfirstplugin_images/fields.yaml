@@ -15,6 +15,10 @@ fields:
     img_blog_id:
         label: BlogNameZ(FK)
         type: dropdown
+        emptyOption: 'No found any connected'
+        #emptyMessage: 'Not ffound'
+        #valueFrom: title
+        relation: channelZ
     
     #File Upload   //in preview show the image at once???
     avatar:

@@ -232,21 +232,75 @@ To display in view => {{  record.channelZ.title }}
     }	
 	
 	
-====
-10.2 How use $hasOne Relation to update/edit form with dropdown. Not working
+====================
+10.2 How use $hasOne Relation to update/edit form with dropdown. Not working 100%(in edit form dropdown field does not select relevant value), lame fix 
 #In model =>
     public $hasOne = [
 	    'getimgZ'  => ['\Dima\Myfirstplugin\Models\Myfirstplugin_images', 'key' => 'img_blog_id',  'otherKey' => 'id'], //Model, that model ID (i.e Myfirstplugin_images), this model ID
     ];
 	
+	
+    /to use relations in update/edit form(makes dropdown list). Relation, db with images {dima_myfirstplugin_images}.
+    //used for column {id} {getimgZ} in \plugins\rainlab\blog\models\post\fields.yaml. getimgZ is a column and hasOne relation specified in this model
+	public function getGetImgZOptions()  //format get{ColumnName}Options
+    {
+        //return Post::lists('title', 'id');
+		$teams = \Dima\Myfirstplugin\Models\Myfirstplugin_images::all(['img_id', 'img_name']); //columns from {dima_myfirstplugin_images}
+        $teamsOptions = [];
+
+        $teams->each(function($team) use (&$teamsOptions) {
+            $teamsOptions[$team->img_id] = $team->img_name;
+        });
+
+        return $teamsOptions;
+    }
+	
+	
+	
 # In In fields.yaml =>
-    #Dropdown with hasOne relations. Images from table {dima_myfirstplugin_images}
-    getimgZ:  #getimgZ is a hasOne relation in model
+           
+    #img_blog_id: Dropdown with relations. Images from table {dima_myfirstplugin_images}
+    getimgZ: #img_blog_id: #getimgZ: #img_id: #id:  #getimgZ:  #img_id:  #getimgZ is a hasOne relation in model
         label: dima_myfirstplugin_images(FK)
-        type: dropdown
         relation: getimgZ #getimgnnn #relation method
-        valueFrom: img_name
-        emptyOption: 'No found'
+        type: dropdown
+        valueFrom: img_blog_id #img_blog_id
+        emptyOption: 'Not found any connected'
+        #placeholder: -- select a status --
+		
+		
+# In relevant controller (\MyOctoberX\plugins\rainlab\blog\controllers\Posts.php) override the parrent public function update_onSave($recordId) to include your logic after the dedault updating => 
+
+    //mine. Override build-in Form Controller function On update. Build-in UPDATE won't be used/engaged/fired at all
+	//Parent update_onSave() is in => \MyOctoberX\modules\backend\behaviors\FormController.php
+	public function update_onSave($recordId){
+		 
+		//Variant 1 (update the form by CMS parent::update_onSave($recordId) + save manually FK hasOne to table "dima_myfirstplugin_image"). Working!!!!
+		//dd(post('Post')['getimgZ']);
+		parent::update_onSave($recordId); //call the parent method update_onSave($recordId), which do all the update process by default (by CMS) if the function is not overridden in controller
+		
+		//update FK hasOne column 'img_blog_id' from other table "dima_myfirstplugin_image"
+		if(post('Post')['getimgZ'] != null){ //if user selected any value from dropdown <select><option>  // post('Post')['getimgZ'] == post('ModelName')['InputField']
+			
+			//reset value, if prev any record in "dima_myfirstplugin_images" has already "img_blog_id" with value $recordId; Logic: only one item can be connected to blog
+			$oldRecord = \Dima\Myfirstplugin\Models\Myfirstplugin_images::where('img_blog_id', $recordId)->firstOrFail();
+			$oldRecord->img_blog_id = null;
+			$oldRecord->save();
+			
+			//assign new selected value in "dima_myfirstplugin_images"
+		    $dima_myfirstplugin = \Dima\Myfirstplugin\Models\Myfirstplugin_images::findOrFail(post('Post')['getimgZ']);//findOrFail(post('Post')['img_blog_id']);//findOrFail($teamModel->getimgZ->img_id);
+		    $dima_myfirstplugin->img_blog_id = $recordId;//post('Post')['img_blog_id'];
+		    $dima_myfirstplugin->save();
+		} 
+		
+		//\Flash::success("You performed overridden update with hasOne FK successfully");
+		\Flash::info("You performed overridden update with hasOne FK successfully"); //if use \Flash::success(""), my message will hideen by flash from parrent method. Now parrent is hidden by mine
+		
+		return false;
+		//End Variant 1 
+		
+	}
+	
 	
 	
 	
@@ -280,6 +334,17 @@ https://habr.com/ru/post/250415/
     {% endfor %}
 
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 --------------------------
 12.File upload
 NB: if you want to uplad images, you don't have to create DB table for them, it already exists. Image is loaded to SQL DB (system_files} and contains column {attachment_type} for polymorphic relations
@@ -348,6 +413,11 @@ NB: if you want to uplad images, you don't have to create DB table for them, it 
 
 
 
+		
+		
+		
+		
+		
 -------------------------
 13.Pagination 
   1.Specify pagination in Active record =>  \MyOctoberX\plugins\dima\myfirstplugin\components\ProductsX.php
@@ -378,6 +448,7 @@ NB: if you want to uplad images, you don't have to create DB table for them, it 
 -------------------------
  
 14.Shopaholic
+(does not work 100%, tested in other copy of CMS)
 If while installing plugin u encounter error "In Currency.php line 42: Trait 'Kharanenka\Scope\ActiveField' not found" => 
     try running composer i in the plugins/lovata/toolbox folder.
 

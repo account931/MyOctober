@@ -1,5 +1,6 @@
 ## October CMS
-- <p>Ready decision for Blog, Forum, User management</p>
+- <p> Ready decision for Blog(rainlab blog), Forum(rainlab), User management(rainlab) + Builder plugin(rainlab)</p>
+- <p> E-shop plugin Shopaholic does not work 100% () </p>
 
 ## Blog and User plugins
 ![Screenshot](ScreenShots/1.png)
@@ -37,6 +38,11 @@
 ## Image uploader in My 1st plug-in on Builder plugin (edit & view one item)
 ![Screenshot](ScreenShots/17.png)
 ![Screenshot](ScreenShots/18.png)
+
+## E-shop Shopaholic (not working 100%)
+![Screenshot](ScreenShots/19.png)
+![Screenshot](ScreenShots/20.png)
+
 
 
 

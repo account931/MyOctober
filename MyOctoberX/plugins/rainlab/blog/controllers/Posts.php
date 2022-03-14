@@ -67,6 +67,7 @@ class Posts extends Controller
 	
 	
 	//mine. Override build-in Form Controller function On update. Build-in UPDATE won't be used/engaged/fired at all
+	//Parent update_onSave() is in => \MyOctoberX\modules\backend\behaviors\FormController.php
 	public function update_onSave ($recordId){
 		 
 		//Variant 1 (update the form by CMS parent::update_onSave($recordId) + save manually FK hasOne to table "dima_myfirstplugin_image"). Working!!!!
@@ -74,12 +75,23 @@ class Posts extends Controller
 		parent::update_onSave($recordId); //call the parent method update_onSave($recordId), which do all the update process by default (by CMS) if the function is not overridden in controller
 		
 		//update FK hasOne column 'img_blog_id' from other table "dima_myfirstplugin_image"
-		$dima_myfirstplugin = \Dima\Myfirstplugin\Models\Myfirstplugin_images::findOrFail(post('Post')['getimgZ']);//findOrFail(post('Post')['img_blog_id']);//findOrFail($teamModel->getimgZ->img_id);
-		$dima_myfirstplugin->img_blog_id = $recordId;//post('Post')['img_blog_id'];
-		$dima_myfirstplugin->save();
+		if(post('Post')['getimgZ'] != null){ //if user selected any value from dropdown <select><option>  // post('Post')['getimgZ'] == post('ModelName')['InputField']
+			
+			//reset value, if prev any record in "dima_myfirstplugin_images" has already "img_blog_id" with value $recordId; Logic: only one item can be connected to blog
+			$oldRecord = \Dima\Myfirstplugin\Models\Myfirstplugin_images::where('img_blog_id', $recordId)->firstOrFail();
+			$oldRecord->img_blog_id = null;
+			$oldRecord->save();
+			
+			//assign new selected value in "dima_myfirstplugin_images"
+		    $dima_myfirstplugin = \Dima\Myfirstplugin\Models\Myfirstplugin_images::findOrFail(post('Post')['getimgZ']);//findOrFail(post('Post')['img_blog_id']);//findOrFail($teamModel->getimgZ->img_id);
+		    $dima_myfirstplugin->img_blog_id = $recordId;//post('Post')['img_blog_id'];
+		    $dima_myfirstplugin->save();
+			
+			
+		} 
 		
-		
-		\Flash::success("You performed overridden update with hasOne FK successfully");
+		//\Flash::success("You performed overridden update with hasOne FK successfully");
+		\Flash::info("You performed overridden update with hasOne FK successfully"); //if use \Flash::success(""), my message will hideen by flash from parrent method. Now parrent is hidden by mine
 		
 		return false;
 		//End Variant 1 

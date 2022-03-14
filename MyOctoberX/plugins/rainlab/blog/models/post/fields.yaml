@@ -37,7 +37,7 @@ fields:
         label: dima_myfirstplugin_images(FK)
         relation: getimgZ #getimgnnn #relation method
         type: dropdown
-        valueFrom: img_blog_id #img_blog_id
+        valueFrom: id #img_blog_id
         emptyOption: 'Not found any connected'
         #placeholder: -- select a status --
 
